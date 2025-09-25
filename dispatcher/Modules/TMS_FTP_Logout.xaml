@@ -1,0 +1,153 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="TMS_FTP_Logout" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="TMS_FTP_Logout_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="TMS_FTP_Logout" sap:VirtualizedContainerService.HintSize="962,1279" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;FTP Client Logout Started&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Firefox: Web Transfer Client" sap:VirtualizedContainerService.HintSize="484,754" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="Simulate" ScopeGuid="4ea48b82-6894-4d99-90d0-4cbd479ec909" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Ausführen" sap:VirtualizedContainerService.HintSize="450,505" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'landeshaup1-stage'" sap:VirtualizedContainerService.HintSize="416,225" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4ea48b82-6894-4d99-90d0-4cbd479ec909" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://sftp012.successfactors.eu/#/outgoing" DesignTimeRectangle="1281, 162, 132, 26" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl class='text' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='text' tag='SPAN' type='' aaname='landeshaup1-stage' check:innerText='landeshaup1-stage' /&gt;" Guid="18c300ce-535a-4888-81ce-1527408d8a99" InformativeScreenshot="274bb792c41a3dc47cbddf1e10002139.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='Web Transfer Client' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target DesignTimeRectangle="1257, 163, 24, 24" ElementType="Icon" FullSelectorArgument="&lt;webctrl tag='MAT-ICON' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='MAT-ICON' type='' class='mat-icon notranslate material-icons mat-icon-no-color' aaname='account_box' check:innerText='account_box' /&gt;" Guid="469e3382-4da0-4bba-90e4-8a0348a8dbc9" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Log-out'" sap:VirtualizedContainerService.HintSize="416,218" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4ea48b82-6894-4d99-90d0-4cbd479ec909" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://sftp012.successfactors.eu/#/outgoing" DesignTimeRectangle="1241, 249, 112, 48" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='Log-out' aria-role='menuitem' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Log-out' aria-role='menuitem' tag='BUTTON' type='' class='mat-focus-indicator mat-menu-item ng-tns-c91-1' check:innerText='Log-out' /&gt;" Guid="305bff29-8ba3-40cc-a3c8-f4a07543483f" InformativeScreenshot="ee59d85a764ce1ba0ea3fe9688ea0220.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='Web Transfer Client' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target DesignTimeRectangle="1241, 201, 112, 48" ElementType="Button" FullSelectorArgument="&lt;webctrl aria-role='menuitem' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='menuitem' tag='BUTTON' type='' class='mat-focus-indicator mat-menu-item ng-tns-c91-1' aaname='Profil' check:innerText='Profil' /&gt;" Guid="c5f6c6b1-eba9-4f21-bdb1-0430af0aa4c1" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="170, 0, 1450, 1032" BrowserType="Firefox" IconBase64="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" InformativeScreenshot="2ef72bce8d9756501dd9db4dd23c72d4.png" Selector="&lt;html app='firefox.exe' title='Web Transfer Client' /&gt;" Title="Web Transfer Client" Url="https://sftp012.successfactors.eu/#/outgoing" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="484,165" sap2010:WorkflowViewState.IdRef="KillProcess_2" ProcessName="firefox.exe" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,164" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;FTP Client Logout Ended&quot;]" />
+  </Sequence>
+</Activity>

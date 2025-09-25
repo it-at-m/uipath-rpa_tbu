@@ -1,0 +1,645 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="TMS_FTP_Get_JSON_Files" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:uascw="clr-namespace:UiPath.Activities.System.Compression.Workflow;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="out_Logfile_DateiGespeichert" Type="OutArgument(x:String)" />
+    <x:Property Name="out_Logfile_DateienTransffered" Type="OutArgument(x:String)" />
+    <x:Property Name="out_Logfile_DateienDispatchOrdner" Type="OutArgument(x:String)" />
+    <x:Property Name="out_bool_zipFileEmpty" Type="OutArgument(x:Boolean)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>TMS_FTP_Get_JSON_Files_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.Activities.System.FileOperations</x:String>
+      <x:String>UiPath.Activities.System.Encode</x:String>
+      <x:String>UiPath.Activities.System.Compression.Workflow</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>UiPath.Core.Activities.Orchestrator</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="" DisplayName="TMS_FTP_Get_JSON_Files" sap:VirtualizedContainerService.HintSize="1187,7397" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="str_JsonDispatcherFolderPath" />
+      <Variable x:TypeArguments="x:String" Name="str_ZipFile" />
+      <Variable x:TypeArguments="x:String" Name="str_JsonNewFolderPath" />
+      <Variable x:TypeArguments="x:String" Name="str_OrchestratorQueueFolder" />
+      <Variable x:TypeArguments="x:Int32" Name="int_CountFilesDispatcherFolder" />
+      <Variable x:TypeArguments="x:Int32" Name="int_filecount" />
+      <Variable x:TypeArguments="x:Boolean" Name="bool_zipFileEmpty" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="640,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Dispatcher started&quot;]" />
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="640,303" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+      <ui:MultipleAssign.AssignOperations>
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[str_JsonDispatcherFolderPath]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[in_Config("rpa005_JsonDispatcherFolderPath").ToString]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[str_ZipFile]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[in_Config("rpa005_ZipFile").ToString]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[str_JsonNewFolderPath]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[in_Config("rpa005_JsonNewFolderPath").ToString]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[str_OrchestratorQueueFolder]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[in_Config("OrchestratorQueueFolder").ToString]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Int32">[int_CountFilesDispatcherFolder]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Int32">[Directory.GetFiles(str_JsonDispatcherFolderPath).Count]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Boolean">[bool_zipFileEmpty]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+        </scg:List>
+      </ui:MultipleAssign.AssignOperations>
+    </ui:MultipleAssign>
+    <uix:NApplicationCard sap2010:Annotation.AnnotationText="Ein Browser, um die JSON-Dateien vom FTP-Server zu laden " AttachMode="ByInstance" DisplayName="Browser: Firefox" sap:VirtualizedContainerService.HintSize="640,6258" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" ScopeGuid="55f00944-7166-46c1-950a-69a9cca5a11a" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Ausführen" sap:VirtualizedContainerService.HintSize="606,5978" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Boolean" Name="bool_FileExist" />
+              <Variable x:TypeArguments="si:FileInfo" Name="str_zipFileInfo" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Auswahl &quot;Meine Dateien" sap:VirtualizedContainerService.HintSize="572,225" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="55f00944-7166-46c1-950a-69a9cca5a11a" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://sftp012.successfactors.eu/#/" DesignTimeRectangle="8, 305, 185, 38" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='folderMeine Dateien' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='folderMeine Dateien' tag='BUTTON' type='' class='mat-focus-indicator mat-button mat-button-base sidebar-button sidebar-button-selected' check:innerText='folderMeine Dateien' /&gt;" Guid="5570687e-34cc-42b3-b541-356bbdcf5ee6" InformativeScreenshot="0c4b9f73b4fcb7dcdecacd64924b1fcc.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='Web Transfer Client' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="48, 315, 92, 20" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Meine Dateien' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Meine Dateien' tag='SPAN' type='' class='text ng-star-inserted' check:innerText='Meine Dateien' /&gt;" Guid="c094e167-6c91-479b-9a1d-07ca7847dde0" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="Browserfenster wird aktualisiert, weil der Browser manchamal nicht korrekt lädt und ein leere Seite anzeigt." ClickType="Single" DisplayName="Click 'Aktualisieren'" sap:VirtualizedContainerService.HintSize="572,282" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="55f00944-7166-46c1-950a-69a9cca5a11a" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://sftp012.successfactors.eu/#/" DesignTimeRectangle="86, 80, 36, 40" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;uia automationid='nav-bar' name='Navigation' role='Symbolleiste' /&gt;&lt;uia automationid='reload-button' name='Neu laden' role='Schaltfläche' /&gt;" FuzzySelectorArgument="&lt;uia automationid='nav-bar' name='Navigation' role='Symbolleiste' /&gt;&lt;uia automationid='reload-button' name='Neu laden' role='Schaltfläche' check:fulltext='Neu laden' /&gt;" Guid="5e81b7e2-1d2b-4117-8dce-07f0fb1113ce" InformativeScreenshot="1586b7ba55838a532dbdc2f2e23f9903.png" ScopeSelectorArgument="&lt;wnd app='firefox.exe' cls='MozillaWindowClass' title='Web Transfer Client – Mozilla Firefox' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="50, 80, 36, 40" FullSelectorArgument="&lt;uia automationid='nav-bar' name='Navigation' role='Symbolleiste' /&gt;&lt;uia automationid='forward-button' name='Vor' role='Schaltfläche' /&gt;" FuzzySelectorArgument="&lt;uia automationid='nav-bar' name='Navigation' role='Symbolleiste' /&gt;&lt;uia automationid='forward-button' name='Vor' role='Schaltfläche' check:fulltext='Vor' /&gt;" Guid="b82f86d6-9957-4e4d-8cf5-1f4538eedb31" SearchSteps="Selector, FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Auswahl &quot;outgoing&quot;" sap:VirtualizedContainerService.HintSize="572,225" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="55f00944-7166-46c1-950a-69a9cca5a11a" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://sftp012.successfactors.eu/#/" DesignTimeRectangle="261, 697, 24, 24" DesignTimeScaleFactor="1" ElementType="Icon" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='8' tag='MAT-ICON' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='MAT-ICON' class='mat-icon notranslate icon material-icons mat-icon-no-color ng-star-inserted' aaname='folder' check:innerText='folder' /&gt;" Guid="343c61d1-f5e0-48a0-a1f5-444a9c02842f" InformativeScreenshot="9a3dced6e2449260bc1d61427d28b2cb.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='Web Transfer Client' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="285, 699, 53, 20" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl class='text' tableRow='8' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl class='text' type='' tag='SPAN' aaname='outgoing' check:innerText='outgoing' /&gt;" Guid="ca5aa181-6e6a-4435-be3f-030ce45be25a" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Auswahl &quot;Beurteilungsdaten" sap:VirtualizedContainerService.HintSize="572,225" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="55f00944-7166-46c1-950a-69a9cca5a11a" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://sftp012.successfactors.eu/#/outgoing" DesignTimeRectangle="239, 413, 16, 16" DesignTimeScaleFactor="1" ElementType="CheckBox" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='SPAN' class='mat-checkbox-inner-container mat-checkbox-inner-container-no-side-margin' aaname='' /&gt;" Guid="abd425fe-16ea-45c4-813f-863ed74f721c" InformativeScreenshot="a9ebafc82320189926c15ac49056fffe.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='Web Transfer Client' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="303, 411, 105, 20" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl class='text' tableRow='2' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl class='text' type='' tag='SPAN' aaname='Beurteilungsdaten' check:innerText='Beurteilungsdaten' /&gt;" Guid="b6f08095-3657-4f34-9e7a-be5c5303d365" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="Der gesamte Ordner &quot;Beurteilungsdaten&quot; wird als Zip-Datei heruntergeladen." ClickType="Single" DisplayName="Button &quot;Herunterladen&quot; " sap:VirtualizedContainerService.HintSize="572,267" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="55f00944-7166-46c1-950a-69a9cca5a11a" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://sftp012.successfactors.eu/#/outgoing" DesignTimeRectangle="287, 230, 85, 20" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Herunterladen' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Herunterladen' tag='SPAN' type='' class='mat-tooltip-trigger button-text' check:text='Herunterladen' /&gt;" Guid="12560de5-a83c-4037-831b-45456068cdff" InformativeScreenshot="9227626f7d5c290187be68aa8ebeabd6.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='Web Transfer Client' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="263, 228, 24, 24" ElementType="Icon" FullSelectorArgument="&lt;webctrl aaname='get_app' tag='MAT-ICON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='get_app' tag='MAT-ICON' type='' class='mat-icon notranslate button-icon material-icons mat-icon-no-color' check:innerText='get_app' /&gt;" Guid="a36b978a-11ac-4e51-9e97-dc22dda5500a" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+            <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="in die Nameszeile des &quot;Speichern unter&quot; Fensters wird der gesamte Pfad des gewollten Ordners eingetragen. " ClickBeforeMode="Single" DisplayName="Speicherort eintragen" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="572,328" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="HardwareEvents" ScopeIdentifier="55f00944-7166-46c1-950a-69a9cca5a11a" Text="[str_JsonDispatcherFolderPath + str_ZipFile]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://sftp012.successfactors.eu/#/outgoing" DesignTimeRectangle="136, 423, 791, 17" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd aaname='Explorer-Fenster' cls='DirectUIHWND' /&gt;&lt;wnd aaname='Dateiname:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Explorer-Fenster' cls='DirectUIHWND' /&gt;&lt;wnd aaname='Dateiname:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;" Guid="1f4f2b59-e82e-4b3b-9258-29eedfc265ff" InformativeScreenshot="d71b8c6f464109097b7858e542c7ff07.png" ScopeSelectorArgument="&lt;wnd app='firefox.exe' cls='#32770' title='Bitte geben Sie den Dateinamen an, unter dem die Datei gespeiche*' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
+              </uix:NTypeInto.Target>
+              <uix:NTypeInto.VerifyOptions>
+                <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionTypeIntoOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionTypeIntoOptions.Retry>
+                  <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                </uix:VerifyExecutionTypeIntoOptions>
+              </uix:NTypeInto.VerifyOptions>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Button &quot;Speichern&quot;" sap:VirtualizedContainerService.HintSize="572,225" sap2010:WorkflowViewState.IdRef="NClick_7" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="55f00944-7166-46c1-950a-69a9cca5a11a" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://sftp012.successfactors.eu/#/outgoing" DesignTimeRectangle="743, 489, 92, 26" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Speichern' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Speichern' check:text='unchecked' /&gt;" Guid="193ac1f9-d9a8-4482-b565-655b18631899" InformativeScreenshot="875485af6e57c7555cac96b7daaf4086.png" ScopeSelectorArgument="&lt;wnd app='firefox.exe' cls='#32770' title='Bitte geben Sie den Dateinamen an, unter dem die Datei gespeiche*' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="847, 489, 88, 26" ElementType="Button" FullSelectorArgument="&lt;wnd ctrlid='2' title='Abbrechen' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='2' title='Abbrechen' check:text='Abbrechen' /&gt;" Guid="497133e8-0e02-4153-a89f-1eaa2966cd99" SearchSteps="Selector, FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <Delay sap2010:Annotation.AnnotationText="Verzögerung, um die Datein vollständig zu laden." Duration="00:00:05" sap:VirtualizedContainerService.HintSize="572,153" sap2010:WorkflowViewState.IdRef="Delay_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Delay>
+            <ui:FileExistsX sap2010:Annotation.AnnotationText="Wenn Zip-Datei nicht gespeichert werden kann, wird eine Systemexception geworfen." DisplayName="Überprüfung ob Zip Datei vorhanden ist" Exists="[bool_FileExist]" sap:VirtualizedContainerService.HintSize="572,207" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="[str_JsonDispatcherFolderPath + str_ZipFile]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:FileExistsX>
+            <If sap2010:Annotation.AnnotationText="Entscheidung was passiert wenn Zip Datei vorhanden ist oder nicht." Condition="[bool_FileExist]" DisplayName="If - Entscheidung" sap:VirtualizedContainerService.HintSize="572,568" sap2010:WorkflowViewState.IdRef="If_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,226" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,166" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Datei: &quot; + str_ZipFile  + &quot; successfully saved to Folder Dispatcher&quot;]" />
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,173" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Throw Exception="[new SystemException(&quot;Beurteilungs Zip wurde nicht gespeichert.&quot;)]" sap:VirtualizedContainerService.HintSize="382,113" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                </Sequence>
+              </If.Else>
+            </If>
+            <ui:GetFileInfoX sap2010:Annotation.AnnotationText="" DisplayName="Get Info - Zip-Datei " FilePath="[str_JsonDispatcherFolderPath + str_ZipFile]" sap:VirtualizedContainerService.HintSize="572,196" sap2010:WorkflowViewState.IdRef="GetFileInfoX_1" Output="[str_zipFileInfo]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:GetFileInfoX>
+            <If sap2010:Annotation.AnnotationText="Wenn Datei &lt; 1KB ist wird der weitere Prozess des Dispatcher beendet, ist die Datei größer, wird die Sequence durchgelaufen " Condition="[str_zipFileInfo.SizeInKB &lt; 1]" DisplayName="If - Entscheidung was passiert, je nach Größe der Zip Datei" sap:VirtualizedContainerService.HintSize="572,3015" sap2010:WorkflowViewState.IdRef="If_2">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="570,525" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign sap2010:Annotation.AnnotationText="Boolean triggert die Dokumentation im Modul &quot;Logfile generieren&quot;, bei TRUE wird eine entsprechende Message in die Excel geschrieben" sap:VirtualizedContainerService.HintSize="536,156" sap2010:WorkflowViewState.IdRef="Assign_3">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Boolean">[bool_zipFileEmpty]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                    </Assign.Value>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Assign>
+                  <ui:DeleteFileX sap2010:Annotation.AnnotationText="Löschen der Zip-Datei falls sie leer ist." DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="536,143" sap2010:WorkflowViewState.IdRef="DeleteFileX_2" Path="[str_JsonDispatcherFolderPath + str_ZipFile]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:DeleteFileX>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="536,166" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Keine Dateien vorhanden, Prozess wird beendet&quot;]" />
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="570,2317" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Sequence DisplayName="Sequence - Verarbeitung JSON_Files und setzten der Queue" sap:VirtualizedContainerService.HintSize="536,2257" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Assign sap2010:Annotation.AnnotationText="Zähler wie viele JSON Files verarbeitet werden" sap:VirtualizedContainerService.HintSize="502,145" sap2010:WorkflowViewState.IdRef="Assign_1">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:Int32">[int_filecount]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                      </Assign.Value>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Assign>
+                    <uascw:ExtractFiles Content="{x:Null}" DestinationFolderInfo="{x:Null}" File="{x:Null}" Password="{x:Null}" sap2010:Annotation.AnnotationText="Extrahieren der Beurteilungs- Zip Datei" CodePage="Default" ConflictResolution="Fail" DestinationFolder="[str_JsonDispatcherFolderPath]" DisplayName="Extract/Unzip Files" ExtractToADedicatedFolder="False" FileToExtract="[str_JsonDispatcherFolderPath + str_ZipFile]" sap:VirtualizedContainerService.HintSize="502,270" sap2010:WorkflowViewState.IdRef="ExtractFiles_1" SkipUnsupportedFiles="False">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uascw:ExtractFiles>
+                    <ui:ForEachFileX DisplayName="For Each File - Verarbeitung der einzelnen JSON Dateien " Filter="*.txt" Folder="[str_JsonDispatcherFolderPath]" sap:VirtualizedContainerService.HintSize="502,1439" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
+                      <ui:ForEachFileX.Body>
+                        <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
+                          <ActivityAction.Argument1>
+                            <DelegateInArgument x:TypeArguments="si:FileInfo" Name="CurrentFile" />
+                          </ActivityAction.Argument1>
+                          <ActivityAction.Argument2>
+                            <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
+                          </ActivityAction.Argument2>
+                          <Sequence DisplayName="Ausführen" sap:VirtualizedContainerService.HintSize="468,1147" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_2">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:Int32">[int_filecount]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:Int32">[int_filecount +1]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,714" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                              <TryCatch.Try>
+                                <Sequence DisplayName="Versuchen" sap:VirtualizedContainerService.HintSize="416,284" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" sap2010:Annotation.AnnotationText="Verschieben der JSON Datei in den &quot;Neu Ordner&quot; sobald es in die Queue geladen wurde " Destination="[str_JsonNewFolderPath]" DisplayName="Verschieben der JSON Datei" sap:VirtualizedContainerService.HintSize="382,224" sap2010:WorkflowViewState.IdRef="MoveFile_1" Path="[str_JsonDispatcherFolderPath + CurrentFile.Name]">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:MoveFile>
+                                </Sequence>
+                              </TryCatch.Try>
+                              <TryCatch.Catches>
+                                <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                                  <ActivityAction x:TypeArguments="s:Exception">
+                                    <ActivityAction.Argument>
+                                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                    </ActivityAction.Argument>
+                                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,173" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <Throw Exception="[new SystemException(&quot;Datei  im JsonNew-Ordner bereits vorhanden&quot;)]" sap:VirtualizedContainerService.HintSize="382,113" sap2010:WorkflowViewState.IdRef="Throw_3" />
+                                    </Sequence>
+                                  </ActivityAction>
+                                </Catch>
+                              </TryCatch.Catches>
+                              <TryCatch.Finally>
+                                <Sequence DisplayName="Endlich" sap:VirtualizedContainerService.HintSize="416,89" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </Sequence>
+                              </TryCatch.Finally>
+                            </TryCatch>
+                            <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="Name der Queue Items ist der Dateiname der jeweiligne JSON-Datei" DisplayName="Add Queue Item" FolderPath="[str_OrchestratorQueueFolder]" sap:VirtualizedContainerService.HintSize="434,259" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="rpa005_Beurteilungsdaten_übertragen" Reference="[CurrentFile.name]">
+                              <ui:AddQueueItem.ItemInformation>
+                                <InArgument x:TypeArguments="x:String" x:Key="qi_Json_Id">[CurrentFile.name]</InArgument>
+                              </ui:AddQueueItem.ItemInformation>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:AddQueueItem>
+                          </Sequence>
+                        </ActivityAction>
+                      </ui:ForEachFileX.Body>
+                    </ui:ForEachFileX>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="502,175" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[int_filecount.ToString + &quot; files transferred to NewFolder&quot;]" />
+                    <ui:DeleteFileX sap2010:Annotation.AnnotationText="Nach der Verarbeitung, wird die Beurteilungs Zip Datei gelöscht. " DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="502,145" sap2010:WorkflowViewState.IdRef="DeleteFileX_1" Path="[str_JsonDispatcherFolderPath + str_ZipFile]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:DeleteFileX>
+                  </Sequence>
+                </Sequence>
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1936, 1048" BrowserType="Firefox" IconBase64="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" InformativeScreenshot="817d48c6dbeb435eeee3669cdd2d898c.png" Selector="&lt;html app='firefox.exe' title='Web Transfer Client' /&gt;" Title="Web Transfer Client" Url="https://sftp012.successfactors.eu/#/" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="640,173" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[int_CountFilesDispatcherFolder.ToString + &quot; Dateien im DispatcherFolder übrig&quot;]" />
+    <ui:MultipleAssign sap2010:Annotation.AnnotationText="Argumente für den Logfile" DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="640,272" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+      <ui:MultipleAssign.AssignOperations>
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[out_Logfile_DateiGespeichert]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[str_ZipFile]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[out_Logfile_DateienTransffered]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[int_filecount.ToString]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[out_Logfile_DateienDispatchOrdner]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[int_CountFilesDispatcherFolder.ToString]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Boolean">[out_bool_zipFileEmpty]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Boolean">[bool_zipFileEmpty]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+        </scg:List>
+      </ui:MultipleAssign.AssignOperations>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:MultipleAssign>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="640,164" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Dispatcher finished&quot;]" />
+  </Sequence>
+</Activity>
