@@ -1,0 +1,12 @@
+﻿{
+  "Name": "C31(1)300 Personalstammdaten pflegen",
+  "Type": "App",
+  "Id": "GkbNFUEc90myk3nc8lVPgg",
+  "Reference": "1yZBQ35rLEKu0B3RznLwPA/GkbNFUEc90myk3nc8lVPgg",
+  "Created": "2025-03-21T09:41:26.8002368Z",
+  "Updated": "2025-03-21T09:41:26.8002368Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.0.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.11.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

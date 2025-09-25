@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Type Into 'CTextField Datenfeld'",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "LCSS-lXZMU2mICyl_zs3kg",
+  "Reference": "1yZBQ35rLEKu0B3RznLwPA/LCSS-lXZMU2mICyl_zs3kg",
+  "ParentRef": "1yZBQ35rLEKu0B3RznLwPA/3_f-XMXNAkmtjEfy_mrPBg",
+  "Created": "2025-03-21T09:41:33.1970952Z",
+  "Updated": "2025-03-21T09:41:33.1970952Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.0.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.11.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

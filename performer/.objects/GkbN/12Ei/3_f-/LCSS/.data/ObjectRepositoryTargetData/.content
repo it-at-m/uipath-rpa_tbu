@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="AmUXfHX4x0adsp-tprwXlA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="488, 332, 23, 24" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;sap id='usr/ctxtP9101-ZURTEIL' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/ctxtP9101-ZURTEIL' /&gt;" Guid="98fe5588-a2cc-4d1d-bd97-d7fd3e3de8c4" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='C31(1)/300 Beurteilung LHM anlegen' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="bebc14ad6637705f36831d4aebe91d12.png" xmlns="">0JqSjUCV5ekalfkT0Nm6kjQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>
