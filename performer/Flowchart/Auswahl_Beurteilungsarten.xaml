@@ -106,7 +106,7 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart DisplayName="Auswahl_Beurteilungsarten" sap:VirtualizedContainerService.HintSize="1102,1045.04" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart DisplayName="Auswahl_Beurteilungsarten" sap:VirtualizedContainerService.HintSize="1204,592.04" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:Int32" Name="int_templateId" />
       <Variable x:TypeArguments="x:String" Name="str_Beurteilungsart" />
@@ -124,7 +124,7 @@
     <Flowchart.StartNode>
       <x:Reference>__ReferenceID33</x:Reference>
     </Flowchart.StartNode>
-    <FlowSwitch x:TypeArguments="x:Int32" x:Name="__ReferenceID33" DisplayName="Flow Switch" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowSwitch`1_1">
+    <FlowSwitch x:TypeArguments="x:Int32" x:Name="__ReferenceID33" DisplayName="Flow Switch" Expression="[in_int_TempladeId]" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowSwitch`1_1">
       <FlowSwitch.Default>
         <FlowStep x:Name="__ReferenceID32" sap2010:WorkflowViewState.IdRef="FlowStep_7">
           <sap:WorkflowViewStateService.ViewState>
@@ -136,9 +136,6 @@
           <Throw Exception="[new SystemException(&quot;Keine JSON Werte gefunden&quot;)]" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Throw_1" />
         </FlowStep>
       </FlowSwitch.Default>
-      <FlowSwitch.Expression>
-        <VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_int_TempladeId" />
-      </FlowSwitch.Expression>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">350,110</av:Point>
@@ -655,7 +652,7 @@
             <OutArgument x:TypeArguments="x:String">[str_Beurteilungsart]</OutArgument>
           </Assign.To>
           <Assign.Value>
-            <InArgument x:TypeArguments="x:String">["01"]</InArgument>
+            <InArgument x:TypeArguments="x:String">["03"]</InArgument>
           </Assign.Value>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
