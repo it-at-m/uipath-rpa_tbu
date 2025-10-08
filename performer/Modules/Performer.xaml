@@ -2,12 +2,6 @@
   <x:Members>
     <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
-    <x:Property Name="out_int_TemplateId" Type="OutArgument(x:Int32)" />
-    <x:Property Name="out_str_PersNr" Type="OutArgument(x:String)" />
-    <x:Property Name="out_str_StartDate_formatted" Type="OutArgument(x:String)" />
-    <x:Property Name="out_str_EndDate_formatted" Type="OutArgument(x:String)" />
-    <x:Property Name="out_str_Gesamturteil" Type="OutArgument(x:String)" />
-    <x:Property Name="out_str_Beurteilungsdatum_unformatted" Type="OutArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -140,7 +134,7 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Dispatcher" sap:VirtualizedContainerService.HintSize="2707,6775" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Dispatcher" sap:VirtualizedContainerService.HintSize="2707,6472" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_JsonFile" />
       <Variable x:TypeArguments="x:String" Name="str_JsonNewFolderPath" />
@@ -160,7 +154,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap2010:Annotation.AnnotationText="" DisplayName="Gesamtsequence" sap:VirtualizedContainerService.HintSize="588,6752" sap2010:WorkflowViewState.IdRef="Sequence_23">
+    <Sequence sap2010:Annotation.AnnotationText="" DisplayName="Gesamtsequence" sap:VirtualizedContainerService.HintSize="588,6449" sap2010:WorkflowViewState.IdRef="Sequence_23">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="str_JsonProcessedFolderPath" />
         <Variable x:TypeArguments="x:String" Name="str_JsonErrorFolderPath" />
@@ -393,60 +387,6 @@
           </Sequence>
         </If.Else>
       </If>
-      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="554,303" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
-        <ui:MultipleAssign.AssignOperations>
-          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
-            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_16">
-              <ui:AssignOperation.To>
-                <OutArgument x:TypeArguments="x:String">[out_str_PersNr]</OutArgument>
-              </ui:AssignOperation.To>
-              <ui:AssignOperation.Value>
-                <InArgument x:TypeArguments="x:String">[str_PersNr]</InArgument>
-              </ui:AssignOperation.Value>
-            </ui:AssignOperation>
-            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_17">
-              <ui:AssignOperation.To>
-                <OutArgument x:TypeArguments="x:String">[out_str_StartDate_formatted]</OutArgument>
-              </ui:AssignOperation.To>
-              <ui:AssignOperation.Value>
-                <InArgument x:TypeArguments="x:String">[str_StartDate_formatted]</InArgument>
-              </ui:AssignOperation.Value>
-            </ui:AssignOperation>
-            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_18">
-              <ui:AssignOperation.To>
-                <OutArgument x:TypeArguments="x:String">[out_str_EndDate_formatted]</OutArgument>
-              </ui:AssignOperation.To>
-              <ui:AssignOperation.Value>
-                <InArgument x:TypeArguments="x:String">[str_EndDate_formatted]</InArgument>
-              </ui:AssignOperation.Value>
-            </ui:AssignOperation>
-            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_19">
-              <ui:AssignOperation.To>
-                <OutArgument x:TypeArguments="x:String">[out_str_Gesamturteil]</OutArgument>
-              </ui:AssignOperation.To>
-              <ui:AssignOperation.Value>
-                <InArgument x:TypeArguments="x:String">[str_Gesamturteil]</InArgument>
-              </ui:AssignOperation.Value>
-            </ui:AssignOperation>
-            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_20">
-              <ui:AssignOperation.To>
-                <OutArgument x:TypeArguments="x:String">[out_str_Beurteilungsdatum_unformatted]</OutArgument>
-              </ui:AssignOperation.To>
-              <ui:AssignOperation.Value>
-                <InArgument x:TypeArguments="x:String">[str_Beurteilungsdatum_unformatted]</InArgument>
-              </ui:AssignOperation.Value>
-            </ui:AssignOperation>
-            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_21">
-              <ui:AssignOperation.To>
-                <OutArgument x:TypeArguments="x:Int32">[out_int_TemplateId]</OutArgument>
-              </ui:AssignOperation.To>
-              <ui:AssignOperation.Value>
-                <InArgument x:TypeArguments="x:Int32">[int_TemplateId]</InArgument>
-              </ui:AssignOperation.Value>
-            </ui:AssignOperation>
-          </scg:List>
-        </ui:MultipleAssign.AssignOperations>
-      </ui:MultipleAssign>
       <Sequence sap:VirtualizedContainerService.HintSize="554,4659" sap2010:WorkflowViewState.IdRef="Sequence_3">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">

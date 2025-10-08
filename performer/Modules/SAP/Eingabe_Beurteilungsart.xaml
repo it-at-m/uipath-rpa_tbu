@@ -112,7 +112,7 @@
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Eingabe_Beurteilungsart" sap:VirtualizedContainerService.HintSize="1162,1597" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Eingabe_Beurteilungsart" sap:VirtualizedContainerService.HintSize="2707,1597" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -151,7 +151,7 @@
                 </ui:Target>
               </ucas:ReadStatusbar.Target>
             </ucas:ReadStatusbar>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="418,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[str_SapToolBarMessageText]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="418,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;SAP Toolbar Message: &quot; + str_SapToolBarMessageText]" />
             <If Condition="[str_SapToolBarMessageType.Equals(&quot;E&quot;)]" sap:VirtualizedContainerService.HintSize="418,475" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
                 <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,255" sap2010:WorkflowViewState.IdRef="Sequence_2">

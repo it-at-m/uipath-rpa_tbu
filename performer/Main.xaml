@@ -4,31 +4,7 @@
     <x:Property sap2010:Annotation.AnnotationText="Allows the Orchestrator folder name where the queue is created to be passed as an argument, instead of only being defined in the configuration file." Name="in_OrchestratorQueueFolder" Type="InArgument(x:String)" />
     <x:Property Name="Produktiv" Type="InArgument(x:Boolean)" />
     <x:Property Name="maxTransaction" Type="InArgument(x:Int32)" />
-    <x:Property Name="in_int_TemplateId" Type="InArgument(x:Int32)" />
-    <x:Property Name="in_str_PersNr" Type="InArgument(x:String)" />
-    <x:Property Name="in_str_StartDate_formatted" Type="InArgument(x:String)" />
-    <x:Property Name="in_str_EndDate_formatted" Type="InArgument(x:String)" />
-    <x:Property Name="in_str_Gesamturteil" Type="InArgument(x:String)" />
-    <x:Property Name="in_str_Beurteilungsdatum_unformatted" Type="InArgument(x:String)" />
   </x:Members>
-  <this:Main.in_int_TemplateId>
-    <InArgument x:TypeArguments="x:Int32" />
-  </this:Main.in_int_TemplateId>
-  <this:Main.in_str_PersNr>
-    <InArgument x:TypeArguments="x:String" />
-  </this:Main.in_str_PersNr>
-  <this:Main.in_str_StartDate_formatted>
-    <InArgument x:TypeArguments="x:String" />
-  </this:Main.in_str_StartDate_formatted>
-  <this:Main.in_str_EndDate_formatted>
-    <InArgument x:TypeArguments="x:String" />
-  </this:Main.in_str_EndDate_formatted>
-  <this:Main.in_str_Gesamturteil>
-    <InArgument x:TypeArguments="x:String" />
-  </this:Main.in_str_Gesamturteil>
-  <this:Main.in_str_Beurteilungsdatum_unformatted>
-    <InArgument x:TypeArguments="x:String" />
-  </this:Main.in_str_Beurteilungsdatum_unformatted>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
@@ -134,7 +110,7 @@
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <StateMachine InitialState="{x:Reference __ReferenceID3}" sap2010:Annotation.AnnotationText="[Process title]&#xA;[Process description]&#xA;[Additional information (e.g., author, contact information and applications involved and required external setup)]" DisplayName="General Business Process" sap:VirtualizedContainerService.HintSize="2724,952.04" sap2010:WorkflowViewState.IdRef="StateMachine_1">
+  <StateMachine InitialState="{x:Reference __ReferenceID3}" sap2010:Annotation.AnnotationText="[Process title]&#xA;[Process description]&#xA;[Additional information (e.g., author, contact information and applications involved and required external setup)]" DisplayName="General Business Process" sap:VirtualizedContainerService.HintSize="1369,819.04" sap2010:WorkflowViewState.IdRef="StateMachine_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -323,12 +299,12 @@
                         <ui:InvokeWorkflowFile.Arguments>
                           <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">[TransactionItem]</InArgument>
                           <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[Config]</InArgument>
-                          <OutArgument x:TypeArguments="x:Int32" x:Key="out_int_TemplatrId">[in_int_TemplateId]</OutArgument>
-                          <OutArgument x:TypeArguments="x:String" x:Key="out_str_PersNr">[in_str_PersNr]</OutArgument>
-                          <OutArgument x:TypeArguments="x:String" x:Key="out_str_StartDate_formatted">[in_str_StartDate_formatted]</OutArgument>
-                          <OutArgument x:TypeArguments="x:String" x:Key="out_str_EndDate_formatted">[in_str_EndDate_formatted]</OutArgument>
-                          <OutArgument x:TypeArguments="x:String" x:Key="out_str_Gesamturteil">[in_str_Gesamturteil]</OutArgument>
-                          <OutArgument x:TypeArguments="x:String" x:Key="out_str_Beurteilungsdatum_unformatted">[in_str_Beurteilungsdatum_unformatted]</OutArgument>
+                          <OutArgument x:TypeArguments="x:Int32" x:Key="out_int_TemplatrId" />
+                          <OutArgument x:TypeArguments="x:String" x:Key="out_str_PersNr" />
+                          <OutArgument x:TypeArguments="x:String" x:Key="out_str_StartDate_formatted" />
+                          <OutArgument x:TypeArguments="x:String" x:Key="out_str_EndDate_formatted" />
+                          <OutArgument x:TypeArguments="x:String" x:Key="out_str_Gesamturteil" />
+                          <OutArgument x:TypeArguments="x:String" x:Key="out_str_Beurteilungsdatum_unformatted" />
                         </ui:InvokeWorkflowFile.Arguments>
                       </ui:InvokeWorkflowFile>
                       <TryCatch DisplayName="Try Catch Set Transaction Status (Success)" sap:VirtualizedContainerService.HintSize="434,583" sap2010:WorkflowViewState.IdRef="TryCatch_10">
