@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryScreenData ContentHash="XDBIkBTvuEuCVzHPbL1PjA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryScreenData.Data>
+    <TargetApp x:Key="TargetApp" Area="266, 189, 462, 252" FilePath="C:\Program Files (x86)\SAP\FrontEnd\SAPGUI\saplogon.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGpSURBVFhH7ZRNSwJRGIVn3TJaj0HtRPoBZb+myLA2Ldq0qggqR7OCCGyR1Q9oE0VpziwUdTSJFIlokzMDfpSpaeDXGzOM49XMZhzRzTxwtvece+77XgzT0NAYNgAwCgBjQ9IIdv/8GV27fWMGqXVXgnlJfkdqNdBjhxSXxm0PMChN2COwR3GJQqk6LTzBIANM2iNAkGwqVxTNOwcI90Gdza0kyyVz5VlkBJsBdNYwzF08gumcVqWFMxqMFjfgu37JnK/dRrFMoVSdaTFHA4wTQUhnS6AWTygOU6tOwHd8kjlBscnsF1I7Chog9dF7gHq9DiQdA/3yEeBbpPAUQu0Uy6XyZWO7r0RrgGL7ubLgze/8T2BYOhDN/6kdpR8BPMEoGMz7gG+4hJs3an8vVLqb87QEUDgD/M09wRjoF+2g23SjtbPpfOXv2lGkLSBomHd6wXxyA2bHtSyZjq/AsOKQzPmbW+XUjtLyD1gCgG97lUlYt2btGTm1o/z+iJRLrJ1RbM6jNoBYO6uodhQ1ARq1yx64TgRe89SpLxnvRZeRTEjWqmloaGh04QdyYN+nyvBtOAAAAABJRU5ErkJggg==" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='S4H(1)/300 Systemnachrichten' idx='*' /&gt;" Title="S4H(1)/300 Systemnachrichten">
+      <imageRef attrName="InformativeScreenshot" originalValue="74c3547c38ec12f0bbe08c90bb840005.png" xmlns="">0Ov4qxCReFkKhEQoojOvjnw</imageRef>
+    </TargetApp>
+  </ObjectRepositoryScreenData.Data>
+</ObjectRepositoryScreenData>

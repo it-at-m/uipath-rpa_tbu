@@ -1,0 +1,13 @@
+﻿{
+  "Name": "S4H(1)300 Systemnachrichten",
+  "Type": "Screen",
+  "Id": "IGRmR4eGNkGyQDi_RriSYg",
+  "Reference": "1yZBQ35rLEKu0B3RznLwPA/IGRmR4eGNkGyQDi_RriSYg",
+  "ParentRef": "1yZBQ35rLEKu0B3RznLwPA/12Ei2JVvMkmT2PWed7ttUA",
+  "Created": "2025-10-20T06:48:14.1796987Z",
+  "Updated": "2025-10-20T06:48:14.1796987Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.0.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.11.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
