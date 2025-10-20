@@ -103,9 +103,10 @@
       <AssemblyReference>System.Private.Uri</AssemblyReference>
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SAP_Statusbar_Workflow" sap:VirtualizedContainerService.HintSize="947,1392" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SAP_Statusbar_Workflow" sap:VirtualizedContainerService.HintSize="1045,1403" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_JsonId" />
       <Variable x:TypeArguments="x:String" Name="str_JsonErrorFolderPath" />
@@ -120,7 +121,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="484,272" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="484,273" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -166,20 +167,20 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[str_JsonErrorFolderPath]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="484,191" sap2010:WorkflowViewState.IdRef="MoveFile_1" Path="[str_JsonNewFolderPath + str_JsonId]" />
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: K31(1)/800 Beurteilung LHM anlegen" sap:VirtualizedContainerService.HintSize="484,793" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="ac280c93-97e8-4abf-a35d-dff0c8e9b4a1" Version="V2">
+    <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[str_JsonErrorFolderPath]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="484,193" sap2010:WorkflowViewState.IdRef="MoveFile_1" Path="[str_JsonNewFolderPath + str_JsonId]" />
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: K31(1)/800 Beurteilung LHM anlegen" sap:VirtualizedContainerService.HintSize="484,800" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="ac280c93-97e8-4abf-a35d-dff0c8e9b4a1" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Ausführen" sap:VirtualizedContainerService.HintSize="450,470" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Ausführen" sap:VirtualizedContainerService.HintSize="450,475" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ucas:ClickToolbarButton ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" DisplayName="Click Toolbar Button 'Button  Abbrechen'" sap:VirtualizedContainerService.HintSize="416,192" sap2010:WorkflowViewState.IdRef="ClickToolbarButton_1" Item="Abbrechen   (F12)">
+            <ucas:ClickToolbarButton ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" DisplayName="Click Toolbar Button 'Button  Abbrechen'" sap:VirtualizedContainerService.HintSize="416,193" sap2010:WorkflowViewState.IdRef="ClickToolbarButton_1" Item="Abbrechen   (F12)">
               <ucas:ClickToolbarButton.Items>
                 <scg:List x:TypeArguments="x:String" Capacity="16">
                   <x:String xml:space="preserve">Weiter   (Enter)</x:String>
@@ -207,7 +208,7 @@
                 </ui:Target>
               </ucas:ClickToolbarButton.Target>
             </ucas:ClickToolbarButton>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Ja'" sap:VirtualizedContainerService.HintSize="416,218" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ac280c93-97e8-4abf-a35d-dff0c8e9b4a1" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Ja'" sap:VirtualizedContainerService.HintSize="416,220" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ac280c93-97e8-4abf-a35d-dff0c8e9b4a1" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="60, 179, 120, 26" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;sap id='usr/btnBUTTON_1' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/btnBUTTON_1' check:text='Ja' /&gt;" Guid="35da509d-1821-482e-bb4f-39c2bb00e41d" InformativeScreenshot="61a008dd21cfcb44c0fdda94a11b043a.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='C31(1)/300 Aktuelles Bild verlassen' idx='*' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
               </uix:NClick.Target>
@@ -229,6 +230,6 @@
         <uix:TargetApp Area="-1492, -222, 1184, 972" FilePath="C:\Program Files (x86)\SAP\FrontEnd\SAPGUI\saplogon.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGpSURBVFhH7ZRNSwJRGIVn3TJaj0HtRPoBZb+myLA2Ldq0qggqR7OCCGyR1Q9oE0VpziwUdTSJFIlokzMDfpSpaeDXGzOM49XMZhzRzTxwtvece+77XgzT0NAYNgAwCgBjQ9IIdv/8GV27fWMGqXVXgnlJfkdqNdBjhxSXxm0PMChN2COwR3GJQqk6LTzBIANM2iNAkGwqVxTNOwcI90Gdza0kyyVz5VlkBJsBdNYwzF08gumcVqWFMxqMFjfgu37JnK/dRrFMoVSdaTFHA4wTQUhnS6AWTygOU6tOwHd8kjlBscnsF1I7Chog9dF7gHq9DiQdA/3yEeBbpPAUQu0Uy6XyZWO7r0RrgGL7ubLgze/8T2BYOhDN/6kdpR8BPMEoGMz7gG+4hJs3an8vVLqb87QEUDgD/M09wRjoF+2g23SjtbPpfOXv2lGkLSBomHd6wXxyA2bHtSyZjq/AsOKQzPmbW+XUjtLyD1gCgG97lUlYt2btGTm1o/z+iJRLrJ1RbM6jNoBYO6uodhQ1ARq1yx64TgRe89SpLxnvRZeRTEjWqmloaGh04QdyYN+nyvBtOAAAAABJRU5ErkJggg==" InformativeScreenshot="3a825eb53862425cabdd0b8b908ddd81.png" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='K31(1)/800 Beurteilung LHM anlegen' /&gt;" Title="K31(1)/800 Beurteilung LHM anlegen" />
       </uix:NApplicationCard.TargetApp>
     </uix:NApplicationCard>
-    <Throw Exception="[New BusinessRuleException(str_SapToolBarMessageText + &quot; PersNr: &quot; + str_PersNr)]" sap:VirtualizedContainerService.HintSize="484,113" sap2010:WorkflowViewState.IdRef="Throw_1" />
+    <Throw Exception="[New BusinessRuleException(str_SapToolBarMessageText)]" sap:VirtualizedContainerService.HintSize="484,114" sap2010:WorkflowViewState.IdRef="Throw_1" />
   </Sequence>
 </Activity>
