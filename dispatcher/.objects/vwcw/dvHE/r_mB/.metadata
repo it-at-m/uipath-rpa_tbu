@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Chrome Server Login",
+  "Type": "Screen",
+  "Id": "r_mBdO1HyEa1FyboFBUDbQ",
+  "Reference": "Ko7hOPgOoUCAXAEAPi8yAg/r_mBdO1HyEa1FyboFBUDbQ",
+  "ParentRef": "Ko7hOPgOoUCAXAEAPi8yAg/dvHEZApsEUuYVaspoq2krA",
+  "Created": "2025-10-22T10:47:49.1392207Z",
+  "Updated": "2025-10-22T10:47:49.1392207Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.0.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.11.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

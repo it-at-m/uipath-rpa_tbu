@@ -4,7 +4,7 @@
   "description": "Robotic Enterprise Framework",
   "main": "Main.xaml",
   "dependencies": {
-    "UiPath.Excel.Activities": "[2.24.4]",
+    "UiPath.Excel.Activities": "[2.24.3]",
     "UiPath.Mail.Activities": "[1.24.1]",
     "UiPath.System.Activities": "[24.10.3]",
     "UiPath.Testing.Activities": "[24.10.0]",

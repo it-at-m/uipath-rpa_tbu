@@ -1,0 +1,12 @@
+﻿{
+  "Name": "Chrome Server Login",
+  "Type": "App",
+  "Id": "vwcwc4LprEy4uBBXp7jRCA",
+  "Reference": "Ko7hOPgOoUCAXAEAPi8yAg/vwcwc4LprEy4uBBXp7jRCA",
+  "Created": "2025-10-22T10:47:43.8125252Z",
+  "Updated": "2025-10-22T10:47:43.8125252Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.0.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.11.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -110,9 +110,11 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
       <AssemblyReference>System.Collections</AssemblyReference>
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.Extensions.DependencyModel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TMS_FTP_Logging" sap:VirtualizedContainerService.HintSize="985,2294" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="TMS_FTP_Logging" sap:VirtualizedContainerService.HintSize="1039,2311" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_FtpClientUrl" />
       <Variable x:TypeArguments="x:String" Name="str_OrchestratorQueueFolderName" />
@@ -124,8 +126,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="954,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;FTP Client Loggin Started&quot;]" />
-    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="954,179" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="954,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;FTP Client Loggin Started&quot;]" />
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="954,180" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -147,25 +149,25 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="rpa005_TMS_FTP_Account" CacheStrategy="None" DisplayName="Get Credential" FolderPath="[str_OrchestratorQueueFolderName]" sap:VirtualizedContainerService.HintSize="954,175" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[secstr_FTPClient_Password]" Username="[str_FTPClient_UserID]" />
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Firefox: Neuer Tab" sap:VirtualizedContainerService.HintSize="954,1101" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" ScopeGuid="5ffd04ad-0bf9-4df9-98d2-a21d0f18b06d" Version="V2">
+    <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="rpa005_TMS_FTP_Account" CacheStrategy="None" DisplayName="Get Credential" FolderPath="[str_OrchestratorQueueFolderName]" sap:VirtualizedContainerService.HintSize="954,176" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[secstr_FTPClient_Password]" Username="[str_FTPClient_UserID]" />
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome" sap:VirtualizedContainerService.HintSize="954,1108" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" ScopeGuid="7bedaa22-c6bd-4f81-bb28-9de85ce29717" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Ausführen" sap:VirtualizedContainerService.HintSize="450,852" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,858" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Username'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="416,286" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="5ffd04ad-0bf9-4df9-98d2-a21d0f18b06d" Text="[str_FTPClient_UserID]" Version="V3">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Username'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="416,288" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="7bedaa22-c6bd-4f81-bb28-9de85ce29717" Text="[str_FTPClient_UserID]" Version="V3">
               <uix:NTypeInto.Target>
-                <uix:TargetAnchorable BrowserURL="https://sftp012.successfactors.eu/Web/Account/Login.htm#/" DesignTimeRectangle="888, 512, 228, 21" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='username' tableRow='1' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='username' type='text' tag='INPUT' class='tbInput' aaname='Username:' /&gt;" Guid="370806ec-d735-45f2-b875-4523c8b95618" InformativeScreenshot="127110a58d99e8cfa93caee976ee12fc.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='firefox.exe' title='Server Login' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
+                <uix:TargetAnchorable BrowserURL="https://sftp012.successfactors.eu/Web/Account/Login.htm#/" DesignTimeRectangle="778, 536, 228, 21" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='username' tableRow='1' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='username' type='text' tag='INPUT' class='tbInput' aaname='Username:' /&gt;" Guid="89e53908-f667-471e-b5b9-bb091607ae07" InformativeScreenshot="0b0a4942a5c261cc14997824e7cd030d.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Server Login' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                      <uix:Target DesignTimeRectangle="816, 516, 69, 15" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='userNameLabel' tableRow='1' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='userNameLabel' type='' tag='LABEL' class='' aaname='sername:' check:innerText='Username:' /&gt;" Guid="304f851a-e636-4a3b-b988-71a87206caad" SearchSteps="FuzzySelector" />
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target DesignTimeRectangle="708, 539, 67, 15" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='userNameLabel' tableRow='1' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='userNameLabel' type='' tag='LABEL' class='' aaname='sername:' check:innerText='Username:' /&gt;" Guid="9e9551e8-f38a-4b93-a5b5-34596027fc38" SearchSteps="FuzzySelector" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>
                 </uix:TargetAnchorable>
@@ -181,12 +183,12 @@
                 </uix:VerifyExecutionTypeIntoOptions>
               </uix:NTypeInto.VerifyOptions>
             </uix:NTypeInto>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Password'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="416,286" sap2010:WorkflowViewState.IdRef="NTypeInto_2" IsPassword="True" ScopeIdentifier="5ffd04ad-0bf9-4df9-98d2-a21d0f18b06d" SecureText="[secstr_FTPClient_Password]" Version="V3">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Password'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="416,288" sap2010:WorkflowViewState.IdRef="NTypeInto_4" IsPassword="True" ScopeIdentifier="7bedaa22-c6bd-4f81-bb28-9de85ce29717" SecureText="[secstr_FTPClient_Password]" Version="V3">
               <uix:NTypeInto.Target>
-                <uix:TargetAnchorable BrowserURL="https://sftp012.successfactors.eu/Web/Account/Login.htm#/" DesignTimeRectangle="888, 556, 228, 21" DesignTimeScaleFactor="1" ElementType="InputBoxPassword" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='password' tableRow='3' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='password' type='password' tag='INPUT' class='tbInput' aaname='Password:' /&gt;" Guid="ff8ff0dc-bb3f-4f18-9aa4-f5aa8a46a63b" InformativeScreenshot="9e8c13fbd2668089d44e76b1aaebb655.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='Server Login' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
+                <uix:TargetAnchorable BrowserURL="https://sftp012.successfactors.eu/Web/Account/Login.htm#/" DesignTimeRectangle="778, 580, 228, 21" DesignTimeScaleFactor="1" ElementType="InputBoxPassword" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='password' tableRow='3' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='password' type='password' tag='INPUT' class='tbInput' aaname='Password:' /&gt;" Guid="9692611a-f4e7-48bb-848d-16275a5a4f4e" InformativeScreenshot="22d0ea31fdfb861ed5039cde4821af4d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Server Login' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                      <uix:Target DesignTimeRectangle="818, 560, 67, 15" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='passwordLabel' tableRow='3' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='passwordLabel' type='' tag='LABEL' class='' aaname='assword:' check:innerText='Password:' /&gt;" Guid="65d60b92-8d1e-48bf-a3b8-f48474d94506" SearchSteps="FuzzySelector" />
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target DesignTimeRectangle="713, 583, 62, 15" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='passwordLabel' tableRow='3' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='passwordLabel' type='' tag='LABEL' class='' aaname='assword:' check:innerText='Password:' /&gt;" Guid="279fdd6a-32d0-4184-9eff-b698417f2236" SearchSteps="FuzzySelector" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>
                 </uix:TargetAnchorable>
@@ -202,9 +204,9 @@
                 </uix:VerifyExecutionTypeIntoOptions>
               </uix:NTypeInto.VerifyOptions>
             </uix:NTypeInto>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Log in'" sap:VirtualizedContainerService.HintSize="416,218" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5ffd04ad-0bf9-4df9-98d2-a21d0f18b06d" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Log in'" sap:VirtualizedContainerService.HintSize="416,220" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7bedaa22-c6bd-4f81-bb28-9de85ce29717" Version="V3">
               <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="https://sftp012.successfactors.eu/Web/Account/Login.htm#/" DesignTimeRectangle="924, 619, 90, 25" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='loginSubmit' tableRow='6' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='loginSubmit' type='submit' tag='INPUT' class='' aaname='Log in' check:text='Log in' /&gt;" Guid="03b9029a-f583-416b-a04a-5da2457030d8" InformativeScreenshot="a5b4dd967a25345d846be9d21249394c.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='Server Login' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive" />
+                <uix:TargetAnchorable BrowserURL="https://sftp012.successfactors.eu/Web/Account/Login.htm#/" DesignTimeRectangle="814, 643, 90, 25" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='loginSubmit' tableRow='6' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='loginSubmit' type='submit' tag='INPUT' class='' aaname='Log in' check:text='Log in' /&gt;" Guid="d9e6dba0-9045-499c-b2ab-8183d0787990" InformativeScreenshot="43608a420e5795da01f3593aa3169c44.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Server Login' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive" />
               </uix:NClick.Target>
               <uix:NClick.VerifyOptions>
                 <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
@@ -221,40 +223,40 @@
         </ActivityAction>
       </uix:NApplicationCard.Body>
       <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp Area="-8, -8, 1936, 1048" BrowserType="Firefox" IconBase64="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" InformativeScreenshot="dbdf6beda1b1898c6c052c5c157e468d.png" Selector="&lt;html app='firefox.exe' url='https://sftp012.successfactors.eu/Web/Account/Login.htm#/' /&gt;" Title="Neuer Tab" Url="https://sftp012.successfactors.eu/Web/Account/Login.htm#/" />
+        <uix:TargetApp Area="-3339, -168, 2196, 1297" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="12eac56ed1e110ed5caa30872868f2ac.jpg" Selector="&lt;html app='chrome.exe' url='https://sftp012.successfactors.eu/Web/Account/Login.htm#/' /&gt;" Title="(79) WiLMA | Startseite" Url="https://sftp012.successfactors.eu/Web/Account/Login.htm#/" />
       </uix:NApplicationCard.TargetApp>
     </uix:NApplicationCard>
-    <uix:NCheckState DisplayName="Check App State 'folderMeine Dateien'" sap:VirtualizedContainerService.HintSize="954,479" sap2010:WorkflowViewState.IdRef="NCheckState_2" Timeout="10" Version="V3">
+    <uix:NCheckState DisplayName="Check App State 'Meine Dateien'" sap:VirtualizedContainerService.HintSize="954,483" sap2010:WorkflowViewState.IdRef="NCheckState_3" Version="V3">
       <uix:NCheckState.IfExists>
-        <Sequence DisplayName="Ziel wird angezeigt" sap:VirtualizedContainerService.HintSize="450,230" sap2010:WorkflowViewState.IdRef="Sequence_4">
+        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,232" sap2010:WorkflowViewState.IdRef="Sequence_7">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;FTP Client Successfully Logged-in&quot;]" />
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,170" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;FTP Client successfully logged-in&quot;]" />
         </Sequence>
       </uix:NCheckState.IfExists>
       <uix:NCheckState.IfNotExists>
-        <Sequence DisplayName="Ziel wird nicht angezeigt" sap:VirtualizedContainerService.HintSize="450,177" sap2010:WorkflowViewState.IdRef="Sequence_5">
+        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,178" sap2010:WorkflowViewState.IdRef="Sequence_8">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Throw Exception="[New SystemException(&quot;FTP Client Login Error&quot;)]" sap:VirtualizedContainerService.HintSize="416,115" sap2010:WorkflowViewState.IdRef="Throw_2" />
+          <Throw Exception="[new SystemException(&quot;FTP Client Logging failed&quot;)]" sap:VirtualizedContainerService.HintSize="416,116" sap2010:WorkflowViewState.IdRef="Throw_3" />
         </Sequence>
       </uix:NCheckState.IfNotExists>
       <uix:NCheckState.Target>
-        <uix:TargetAnchorable BrowserURL="https://sftp012.successfactors.eu/#/" DesignTimeRectangle="209, 280, 112, 26" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname=' Meine Dateien ' class='mat-button-wrapper' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' Meine Dateien ' class='mat-button-wrapper' tag='SPAN' type='' check:innerText='Meine Dateien' /&gt;" Guid="399fb413-e918-4880-ac8b-25aab8a6b9a0" InformativeScreenshot="dc9bf80350cf49e8d2053cc971431454.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='Web Transfer Client' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
+        <uix:TargetAnchorable BrowserURL="https://sftp012.successfactors.eu/#/" DesignTimeRectangle="209, 312, 105, 26" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname=' Meine Dateien ' class='mat-button-wrapper' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' Meine Dateien ' class='mat-button-wrapper' tag='SPAN' type='' check:innerText='Meine Dateien' /&gt;" Guid="bdbaf5aa-1164-411b-92f1-1064603849c8" InformativeScreenshot="fd2ac6b8bc6f6a36fcc6fd6dfdc4e000.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Web Transfer Client' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
           <uix:TargetAnchorable.Anchors>
-            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-              <uix:Target DesignTimeRectangle="204, 275, 122, 36" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname=' Meine Dateien ' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' Meine Dateien ' tag='BUTTON' type='' class='mat-focus-indicator breadcrumb-button mat-button mat-button-base mat-button-disabled ng-star-inserted' check:innerText='Meine Dateien' /&gt;" Guid="e9915408-f796-4b99-8def-7ee69a06c8fb" SearchSteps="FuzzySelector" />
+            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+              <uix:Target DesignTimeRectangle="204, 307, 115, 36" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname=' Meine Dateien ' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' Meine Dateien ' tag='BUTTON' type='' class='mat-focus-indicator breadcrumb-button mat-button mat-button-base mat-button-disabled ng-star-inserted' check:innerText='Meine Dateien' /&gt;" Guid="4f365cb0-543a-458a-b4d0-81a381c089e2" SearchSteps="FuzzySelector" />
             </scg:List>
           </uix:TargetAnchorable.Anchors>
         </uix:TargetAnchorable>
       </uix:NCheckState.Target>
     </uix:NCheckState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="954,164" sap2010:WorkflowViewState.IdRef="LogMessage_4" Message="[&quot;FTP Client Logging Ended&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="954,166" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;FTP Client Logging Ended&quot;]" />
   </Sequence>
 </Activity>
