@@ -79,20 +79,20 @@
       <AssemblyReference>UiPath.Platform</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TMS_FTP_Logout" sap:VirtualizedContainerService.HintSize="1039,1290" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="TMS_FTP_Logout" sap:VirtualizedContainerService.HintSize="1039,1744" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,175" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;FTP Client Logout Started&quot;]" />
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome Server Login" sap:VirtualizedContainerService.HintSize="484,759" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="4ea48b82-6894-4d99-90d0-4cbd479ec909" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome Server Login" sap:VirtualizedContainerService.HintSize="484,1213" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="4ea48b82-6894-4d99-90d0-4cbd479ec909" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Ausführen" sap:VirtualizedContainerService.HintSize="450,509" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Ausführen" sap:VirtualizedContainerService.HintSize="450,963" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -113,12 +113,54 @@
                 </uix:VerifyExecutionOptions>
               </uix:NClick.VerifyOptions>
             </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Log-out'" sap:VirtualizedContainerService.HintSize="416,220" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4ea48b82-6894-4d99-90d0-4cbd479ec909" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Log-out'" sap:VirtualizedContainerService.HintSize="416,227" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4ea48b82-6894-4d99-90d0-4cbd479ec909" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://sftp012.successfactors.eu/#/outgoing" DesignTimeRectangle="1725, 237, 112, 48" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='Log-out' aria-role='menuitem' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Log-out' aria-role='menuitem' tag='BUTTON' type='' class='mat-focus-indicator mat-menu-item ng-tns-c91-1' check:innerText='Log-out' /&gt;" Guid="49570ede-6193-4d26-9efe-6b4dbb3ff027" InformativeScreenshot="9749d0b5f468e42d7187d8ede076961b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Web Transfer Client' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                       <uix:Target DesignTimeRectangle="1725, 189, 112, 48" ElementType="Button" FullSelectorArgument="&lt;webctrl aria-role='menuitem' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='menuitem' tag='BUTTON' type='' class='mat-focus-indicator mat-menu-item ng-tns-c91-1 cdk-focused cdk-mouse-focused' aaname='Profil' check:innerText='Profil' /&gt;" Guid="ffc74789-b10d-4f09-8515-479399e78f44" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Einstellungen'" sap:VirtualizedContainerService.HintSize="416,227" sap2010:WorkflowViewState.IdRef="NClick_7" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4ea48b82-6894-4d99-90d0-4cbd479ec909" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://sftp012.successfactors.eu/#/outgoing" DesignTimeRectangle="1473, 46, 34, 34" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;ctrl name='Web Transfer Client - Google Chrome' role='pane' /&gt;&lt;ctrl name='Chrome' role='menu button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Web Transfer Client - Google Chrome' role='pane' /&gt;&lt;ctrl name='Chrome' role='menu button' automationid='' check:text='Chrome' /&gt;" Guid="36d480d9-27cb-4d0b-a1c0-d458010badd9" InformativeScreenshot="c8aa584727b79926a42c40f7aef6604b.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Web Transfer Client - Google Chrome' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target DesignTimeRectangle="1383, 46, 34, 34" ElementType="Button" FullSelectorArgument="&lt;ctrl name='Web Transfer Client - Google Chrome' role='pane' /&gt;&lt;ctrl name='Erweiterungen' role='menu button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Web Transfer Client - Google Chrome' role='pane' /&gt;&lt;ctrl name='Erweiterungen' role='menu button' automationid='' check:text='Erweiterungen' /&gt;" Guid="caa18bc6-fe11-4752-a913-10202c4f1462" SearchSteps="Selector, FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Chrome beenden'" sap:VirtualizedContainerService.HintSize="416,220" sap2010:WorkflowViewState.IdRef="NClick_8" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4ea48b82-6894-4d99-90d0-4cbd479ec909" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://sftp012.successfactors.eu/#/outgoing" DesignTimeRectangle="24, 640, 412, 28" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;ctrl name='Beenden' role='menu item' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Beenden' role='menu item' automationid='' check:text='Beenden' /&gt;" Guid="a94226bc-7ba9-40f3-a52d-f79937d30647" InformativeScreenshot="41371f53f60f66291a624c767cc6f182.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' idx='*' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target DesignTimeRectangle="24, 612, 412, 28" FullSelectorArgument="&lt;ctrl name='Einstellungen' role='menu item' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Einstellungen' role='menu item' automationid='' check:text='Einstellungen' /&gt;" Guid="9dbf6d35-09bd-406d-9142-d80f73f59591" SearchSteps="Selector, FuzzySelector" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>
                 </uix:TargetAnchorable>
