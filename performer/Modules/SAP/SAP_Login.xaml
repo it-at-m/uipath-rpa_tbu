@@ -108,13 +108,13 @@
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SAP_Login" sap:VirtualizedContainerService.HintSize="1056,3120" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SAP_Login" sap:VirtualizedContainerService.HintSize="2602,3196" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap:VirtualizedContainerService.HintSize="1056,3097" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence sap:VirtualizedContainerService.HintSize="1056,3173" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="str_sap_Username" />
         <Variable x:TypeArguments="ss:SecureString" Name="secstr_sap_Password" />
@@ -167,14 +167,14 @@
           </scg:List>
         </ui:MultipleAssign.AssignOperations>
       </ui:MultipleAssign>
-      <ui:GetRobotCredential TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="Zugangsdaten für das SAP System C31 aus den Assets holen." AssetName="rpa005_SAP-Account_K31" CacheStrategy="None" DisplayName="Get Credential" FolderPath="[str_OrchestratorQueueFolder]" sap:VirtualizedContainerService.HintSize="1022,221" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[secstr_sap_Password]" Username="[str_sap_Username]">
+      <ui:GetRobotCredential TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="Zugangsdaten für das SAP System aus den Assets holen." AssetName="rpa005_SAP-Account" CacheStrategy="None" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="1022,221" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[secstr_sap_Password]" Username="[str_sap_Username]">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:GetRobotCredential>
-      <ucas:Logon Window="{x:Null}" sap2010:Annotation.AnnotationText="SAP.exe starten und das System C31 aufrufen." ConnectionName="[str_sap_ConnectionName]" DelayBetweenRetries="500" DisplayName="SAP Logon" sap:VirtualizedContainerService.HintSize="1022,203" sap2010:WorkflowViewState.IdRef="Logon_1" Retries="5" SAPLogonPath="C:\Program Files (x86)\SAP\FrontEnd\SAPGUI\saplogon.exe">
+      <ucas:Logon Window="{x:Null}" sap2010:Annotation.AnnotationText="SAP.exe starten und das angegebene SAP System aufrufen." ConnectionName="[str_sap_ConnectionName]" DelayBetweenRetries="500" DisplayName="SAP Logon" sap:VirtualizedContainerService.HintSize="1022,217" sap2010:WorkflowViewState.IdRef="Logon_1" Retries="5" SAPLogonPath="C:\Program Files (x86)\SAP\FrontEnd\SAPGUI\saplogon.exe">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -198,15 +198,15 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ucas:Login>
-      <uix:NCheckState DisplayName="Check App State 'Systemnachricht'" sap:VirtualizedContainerService.HintSize="1022,1098" sap2010:WorkflowViewState.IdRef="NCheckState_2" Timeout="3" Version="V3">
+      <uix:NCheckState sap2010:Annotation.AnnotationText="Überprüft ob eine Systemnachricht beim Starten von SAP angezeigt wird. Sollte dies der Fall sein, wird das Systemnachrichten-Fenster mit den Beenden Button geschlossen. " DisplayName="Check App State 'Systemnachricht'" sap:VirtualizedContainerService.HintSize="1022,1121" sap2010:WorkflowViewState.IdRef="NCheckState_2" Timeout="3" Version="V3">
         <uix:NCheckState.IfExists>
-          <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="518,879" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="518,839" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application 'SAP'" sap:VirtualizedContainerService.HintSize="484,647" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="5467f3cc-ba2c-40ef-85f8-50655b54d153" Version="V2">
+            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application 'SAP'" sap:VirtualizedContainerService.HintSize="484,607" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="5467f3cc-ba2c-40ef-85f8-50655b54d153" Version="V2">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
@@ -256,8 +256,13 @@
         <uix:NCheckState.Target>
           <uix:TargetAnchorable DesignTimeRectangle="0, 0, 462, 252" DesignTimeScaleFactor="1" ElementType="Toolbar" Guid="af1e6b0f-887a-4fb0-8f38-e12608dc5f3c" InformativeScreenshot="9a817baf62c5f7aa428debdba5909512.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='*(1)/* Systemnachrichten' idx='*' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
         </uix:NCheckState.Target>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
       </uix:NCheckState>
-      <uix:NCheckState DisplayName="Check App State 'Favoriten'" sap:VirtualizedContainerService.HintSize="1022,483" sap2010:WorkflowViewState.IdRef="NCheckState_1" Timeout="3" Version="V3">
+      <uix:NCheckState sap2010:Annotation.AnnotationText="überprüft ob SAP sich auf der Hauptseite befindet. Wird nach dem Login, nicht die Hauptseite der SAP GUI angezeigt, wird eine Systemexception geworfen." DisplayName="Check App State 'Favoriten'" sap:VirtualizedContainerService.HintSize="1022,514" sap2010:WorkflowViewState.IdRef="NCheckState_1" Timeout="3" Version="V3">
         <uix:NCheckState.IfExists>
           <Sequence DisplayName="Ziel wird angezeigt" sap:VirtualizedContainerService.HintSize="450,232" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
@@ -279,8 +284,13 @@
           </Sequence>
         </uix:NCheckState.IfNotExists>
         <uix:NCheckState.Target>
-          <uix:TargetAnchorable DesignTimeRectangle="53, 145, 61, 23" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;sap id='usr/cntlIMAGE_CONTAINER/shellcont/shell/shellcont[0]/shell' relpath='Favoriten' /&gt;&lt;sap itemId='1' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/cntlIMAGE_CONTAINER/shellcont/shell/shellcont[0]/shell' relpath='Favoriten' /&gt;&lt;sap itemId='1' check:text='Favoriten' /&gt;" Guid="916053d7-9fee-473f-99fb-c0f9d9406286" InformativeScreenshot="3dc6ee569d4185828e02d643708eda2d.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='K31(1)/800 SAP Easy Access  -  Benutzermenü für RPA-BOT-TMS' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+          <uix:TargetAnchorable DesignTimeRectangle="68, 158, 54, 17" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;sap id='usr/cntlIMAGE_CONTAINER/shellcont/shell/shellcont[0]/shell' relpath='Favoriten' /&gt;&lt;sap itemId='1' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/cntlIMAGE_CONTAINER/shellcont/shell/shellcont[0]/shell' relpath='Favoriten' /&gt;&lt;sap itemId='1' check:text='Favoriten' /&gt;" Guid="916053d7-9fee-473f-99fb-c0f9d9406286" InformativeScreenshot="e8a4ecda0a9f7674db9929de03e3d31f.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='?31(1)/?00 SAP Easy Access  -  Benutzermenü für RPA-BOT-TMS' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
         </uix:NCheckState.Target>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
       </uix:NCheckState>
       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1022,166" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;SAP_Login Ended&quot;]" />
     </Sequence>

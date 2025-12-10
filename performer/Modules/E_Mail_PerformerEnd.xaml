@@ -102,20 +102,21 @@
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="E_Mail_Versand" sap:VirtualizedContainerService.HintSize="1203,817.6566666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="E_Mail_Versand" sap:VirtualizedContainerService.HintSize="886,967.6566666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="int_email_Port" />
       <Variable x:TypeArguments="x:String" Name="str_smtpServer" />
-      <Variable x:TypeArguments="x:String" Name="str_GroupMailbox" />
+      <Variable x:TypeArguments="x:String" Name="str_Bot_Email_Address" />
       <Variable x:TypeArguments="x:String" Name="str_por_Bot_UserId" />
       <Variable x:TypeArguments="ss:SecureString" Name="secstr_por_Bot_Password" />
+      <Variable x:TypeArguments="x:String" Name="str_EmailGroupMailbox" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478,211" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478,242" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -136,17 +137,25 @@
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
             <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:String">[str_GroupMailbox]</OutArgument>
+              <OutArgument x:TypeArguments="x:String">[str_Bot_Email_Address]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">[in_Config("rpa005_TestGroup_Mailbox").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String">[in_Config("rpa005_Bot_Email_Address").ToString]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[str_EmailGroupMailbox]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[in_Config("rpa005_Email_Group_Mailbox").ToString]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="por_Account_Robot" CacheStrategy="None" DisplayName="Get Credential" FolderPath="Test/POR" sap:VirtualizedContainerService.HintSize="478,176" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[secstr_por_Bot_Password]" Username="[str_por_Bot_UserId]" />
-    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" ResourceAttachmentList="{x:Null}" ResourceAttachments="{x:Null}" Result="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" sap2010:Annotation.AnnotationText="E-mail wird nach dem Durchlauf des Dispatchers versand. Empfänger ist der Fachbereich, der sich fachlich um den Prozess kümmert." AttachmentInputMode="Existing" Body="Lieber Statusempfänger,&#xD;&#xA;&#xD;&#xA;der Durchlauf ist beendet, Details entnehmen Sie bitte den Berichten im dafür vorgesehene Ordner!&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;Mit freundlichen Grüßen,&#xD;&#xA;Ihr IT.TMS/Paul@-Roboter&#xD;&#xA;" DisplayName="Mailversand an ein Gruppenpostfach" Email="[str_por_Bot_UserId]" EnableSSL="True" From="[str_GroupMailbox]" sap:VirtualizedContainerService.HintSize="478,331" sap2010:WorkflowViewState.IdRef="SendMail_4" IgnoreCRL="False" IsBodyHtml="False" Port="[int_email_Port]" SecureConnection="Auto" SecurePassword="[secstr_por_Bot_Password]" Server="[str_smtpServer]" Subject="Status Bot: Performerlauf beendet" To="rpa-entwicklung@muenchen.de">
+    <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="por_Account_Robot" CacheStrategy="None" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="478,176" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[secstr_por_Bot_Password]" Username="[str_por_Bot_UserId]" />
+    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" ResourceAttachmentList="{x:Null}" ResourceAttachments="{x:Null}" Result="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" sap2010:Annotation.AnnotationText="E-mail wird nach dem Durchlauf des Dispatchers versand. Empfänger ist der Fachbereich, der sich fachlich um den Prozess kümmert." AttachmentInputMode="Existing" Body="Lieber Statusempfänger,&#xD;&#xA;&#xD;&#xA;der Performerlauf ist beendet, Details entnehmen Sie bitte den Berichten im dafür vorgesehene Ordner!&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;Bitte antworten Sie nicht auf diese E-Mail, da sie automatisch generiert wurde.&#xD;&#xA;Mit freundlichen Grüßen,&#xD;&#xA;Ihr IT.TMS/Paul@-Roboter&#xD;&#xA;" DisplayName="Mailversand an ein Gruppenpostfach" Email="[str_por_Bot_UserId]" EnableSSL="True" From="[str_Bot_Email_Address]" sap:VirtualizedContainerService.HintSize="478,457" sap2010:WorkflowViewState.IdRef="SendMail_4" IgnoreCRL="False" IsBodyHtml="False" Port="[int_email_Port]" SecureConnection="Auto" SecurePassword="[secstr_por_Bot_Password]" Server="[str_smtpServer]" Subject="Status Bot: Performerlauf beendet" To="[str_EmailGroupMailbox]">
       <ui:SendMail.AttachmentsBackup>
         <usau:BackupSlot x:TypeArguments="umame:AttachmentInputMode" StoredValue="Existing">
           <usau:BackupSlot.BackupValues>

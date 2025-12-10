@@ -112,19 +112,19 @@
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Eingabe_Beurteilungsart" sap:VirtualizedContainerService.HintSize="2707,1597" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Eingabe_Beurteilungsart" sap:VirtualizedContainerService.HintSize="880,1731" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Personalstammdaten pflegen" sap:VirtualizedContainerService.HintSize="486,1574" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="af64ea9f-d7a7-4d40-a2dc-212435e9c911" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Personalstammdaten pflegen" sap:VirtualizedContainerService.HintSize="520,1708" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="af64ea9f-d7a7-4d40-a2dc-212435e9c911" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence sap:VirtualizedContainerService.HintSize="452,1260" sap2010:WorkflowViewState.IdRef="Sequence_9">
+          <Sequence sap:VirtualizedContainerService.HintSize="486,1392" sap2010:WorkflowViewState.IdRef="Sequence_9">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="str_SapToolBarMessageType" />
               <Variable x:TypeArguments="x:String" Name="str_SapToolBarMessageText" />
@@ -134,12 +134,17 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'CTextField Datenfeld'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="418,250" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="af64ea9f-d7a7-4d40-a2dc-212435e9c911" Text="[in_str_Beurteilungsart+  &quot; [k(enter)]&quot;]" Version="V3">
+            <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="" ClickBeforeMode="Single" DisplayName="Type into &quot;Beurteilungsart&quot;" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="452,282" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="af64ea9f-d7a7-4d40-a2dc-212435e9c911" Text="[in_str_Beurteilungsart+  &quot; [k(enter)]&quot;]" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="488, 305, 23, 24" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;sap id='usr/ctxtP9101-ZBEURTEILART' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/ctxtP9101-ZBEURTEILART' /&gt;" Guid="39a5b755-20e0-4cbb-8c16-cbba0b3bd1c7" InformativeScreenshot="971bdc24e5fcf35addec2e50183695c0.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='C31(1)/300 Beurteilung LHM anlegen' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
               </uix:NTypeInto.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </uix:NTypeInto>
-            <ucas:ReadStatusbar ContinueOnError="{x:Null}" MessageData="{x:Null}" MessageId="{x:Null}" MessageNumber="{x:Null}" DisplayName="Read Status Bar 'Statusbar Für'" sap:VirtualizedContainerService.HintSize="418,298" sap2010:WorkflowViewState.IdRef="ReadStatusbar_1" MessageText="[str_SapToolBarMessageText]" MessageType="[str_SapToolBarMessageType]">
+            <ucas:ReadStatusbar ContinueOnError="{x:Null}" MessageData="{x:Null}" MessageId="{x:Null}" MessageNumber="{x:Null}" sap2010:Annotation.AnnotationText="Liest die Statusbar im SAP aus und gibt den Messagetyp und den Messagetext aus" DisplayName="Read Status Bar" sap:VirtualizedContainerService.HintSize="452,346" sap2010:WorkflowViewState.IdRef="ReadStatusbar_1" MessageText="[str_SapToolBarMessageText]" MessageType="[str_SapToolBarMessageType]">
               <ucas:ReadStatusbar.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9a644759-4fdb-47b7-9908-d2c75083d474" InformativeScreenshot="8ea0ae68c07eb49ce0913d428b910ef7" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='*00 Beurteilung LHM anlegen' /&gt;&lt;sap id='sbar' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -150,11 +155,21 @@
                   </ui:Target.WaitForReady>
                 </ui:Target>
               </ucas:ReadStatusbar.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </ucas:ReadStatusbar>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="418,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;SAP Toolbar Message: &quot; + str_SapToolBarMessageText]" />
-            <If Condition="[str_SapToolBarMessageType.Equals(&quot;E&quot;)]" sap:VirtualizedContainerService.HintSize="418,475" sap2010:WorkflowViewState.IdRef="If_1">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,177" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;SAP Toolbar Message: &quot; + str_SapToolBarMessageText]" />
+            <If sap2010:Annotation.AnnotationText="Wenn Messagetype Error ist, wird das Modul Statusbar_Workflow ausgeführt." Condition="[str_SapToolBarMessageType.Equals(&quot;E&quot;)]" DisplayName="Entscheidung ob Messagetype &quot;Error&quot; ist oder nicht" sap:VirtualizedContainerService.HintSize="452,525" sap2010:WorkflowViewState.IdRef="If_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,255" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,258" sap2010:WorkflowViewState.IdRef="Sequence_2">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Default="S:\KM\KM6\KM61_neu\15_RPA\02 Beurteilungsdaten übertragen\RPA_TMS_SAP\TEST_JSON_Error\" Name="str_TESTJSONErrorFolderPath" />
                     <Variable x:TypeArguments="x:String" Name="Test_Exception" />
@@ -164,7 +179,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Statusbar_Workflow - Invoke Workflow File (Modules\Statusbar_Workflow.xaml)" sap:VirtualizedContainerService.HintSize="382,195" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Modules\SAP\Statusbar_Workflow.xaml">
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Statusbar_Workflow" sap:VirtualizedContainerService.HintSize="416,198" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Modules\SAP\Statusbar_Workflow.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
                       <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">[in_TransactionItem]</InArgument>
@@ -175,7 +190,7 @@
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,89" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>

@@ -111,7 +111,7 @@
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Beurteilungsdatum" sap:VirtualizedContainerService.HintSize="1007,1141" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Beurteilungsdatum" sap:VirtualizedContainerService.HintSize="880,1185" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_Beurteilungsdatum_unformatted" />
       <Variable x:TypeArguments="x:String" Name="str_Beurteilungsdatum_formatted" />
@@ -121,7 +121,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap:VirtualizedContainerService.HintSize="484,114" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign DisplayName="Argument in Variable speichern" sap:VirtualizedContainerService.HintSize="484,175" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[str_Beurteilungsdatum_unformatted]</OutArgument>
       </Assign.To>
@@ -129,7 +129,7 @@
         <InArgument x:TypeArguments="x:String">[in_str_Beurteilungsdatum_unformatted]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ModifyDate OutDate="{x:Null}" sap2010:Annotation.AnnotationText="Beurteilungsdatum wird in das Format &quot;27.09.2024&quot; formatiert" CustomDateFormat="dd.MM.yyyy" DisplayName="Modifizierung des Beurteilungsdatums" FormatAsText="True" sap:VirtualizedContainerService.HintSize="484,311" sap2010:WorkflowViewState.IdRef="ModifyDate_1" OutText="[str_Beurteilungsdatum_formatted]" PredefinedDateFormat="MM_dd_yyyy" SourceDate="[cdate(str_Beurteilungsdatum_unformatted)]" UseCustomDateFormat="True">
+    <ui:ModifyDate OutDate="{x:Null}" sap2010:Annotation.AnnotationText="Beurteilungsdatum wird in das Format &quot;27.09.2024&quot; formatiert" CustomDateFormat="dd.MM.yyyy" DisplayName="Modifizierung des Beurteilungsdatums" FormatAsText="True" sap:VirtualizedContainerService.HintSize="484,328" sap2010:WorkflowViewState.IdRef="ModifyDate_1" OutText="[str_Beurteilungsdatum_formatted]" PredefinedDateFormat="MM_dd_yyyy" SourceDate="[cdate(str_Beurteilungsdatum_unformatted)]" UseCustomDateFormat="True">
       <ui:ModifyDate.Body>
         <ActivityAction>
           <Sequence DisplayName="Ausführen" sap2010:WorkflowViewState.IdRef="Sequence_4">
@@ -149,19 +149,19 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ModifyDate>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Personalstammdaten pflegen" sap:VirtualizedContainerService.HintSize="484,693" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="af64ea9f-d7a7-4d40-a2dc-212435e9c911" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Personalstammdaten pflegen" sap:VirtualizedContainerService.HintSize="484,659" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="af64ea9f-d7a7-4d40-a2dc-212435e9c911" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Ausführen" sap:VirtualizedContainerService.HintSize="450,339" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence DisplayName="Ausführen" sap:VirtualizedContainerService.HintSize="450,343" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'CTextField Datenfeld'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="416,279" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="af64ea9f-d7a7-4d40-a2dc-212435e9c911" Text="[str_Beurteilungsdatum_formatted]" Version="V3">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type into &quot;Beurteilungsdatum&quot;" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="416,281" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="af64ea9f-d7a7-4d40-a2dc-212435e9c911" Text="[str_Beurteilungsdatum_formatted]" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="488, 359, 87, 24" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;sap id='usr/ctxtP9101-ZDATUM' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/ctxtP9101-ZDATUM' /&gt;" Guid="7822f81c-479b-4c15-be1e-131dddd8abae" InformativeScreenshot="b1d0b93d619d783ce2afcbbd7b400a30.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='C31(1)/300 Beurteilung LHM anlegen' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
               </uix:NTypeInto.Target>

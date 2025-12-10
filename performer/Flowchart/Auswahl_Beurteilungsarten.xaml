@@ -106,7 +106,7 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart DisplayName="Auswahl_Beurteilungsarten" sap:VirtualizedContainerService.HintSize="1204,592.04" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart sap2010:Annotation.AnnotationText="Je nach Nummer der Beurteilungsart wird der bestimmte Flow durchgelaufen." DisplayName="Auswahl_Beurteilungsarten" sap:VirtualizedContainerService.HintSize="886,968" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:Int32" Name="int_templateId" />
       <Variable x:TypeArguments="x:String" Name="str_Beurteilungsart" />
@@ -119,6 +119,7 @@
         <av:Size x:Key="ShapeSize">50,50</av:Size>
         <av:Point x:Key="ShapeLocation">355,5</av:Point>
         <av:PointCollection x:Key="ConnectorLocation">380,55 380,110</av:PointCollection>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>

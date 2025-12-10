@@ -109,7 +109,7 @@
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Eingabe_Gesamturteil" sap:VirtualizedContainerService.HintSize="1007,1244" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Eingabe_Gesamturteil" sap:VirtualizedContainerService.HintSize="880,1312" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_Gesamturteil" />
     </Sequence.Variables>
@@ -118,7 +118,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap:VirtualizedContainerService.HintSize="486,114" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign sap:VirtualizedContainerService.HintSize="520,175" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[str_Gesamturteil]</OutArgument>
       </Assign.To>
@@ -126,27 +126,27 @@
         <InArgument x:TypeArguments="x:String">[in_str_Gesamturteil]</InArgument>
       </Assign.Value>
     </Assign>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Personalstammdaten pflegen" sap:VirtualizedContainerService.HintSize="486,1107" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="af64ea9f-d7a7-4d40-a2dc-212435e9c911" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Personalstammdaten pflegen" sap:VirtualizedContainerService.HintSize="520,1114" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="af64ea9f-d7a7-4d40-a2dc-212435e9c911" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Ausführen" sap:VirtualizedContainerService.HintSize="452,793" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence DisplayName="Ausführen" sap:VirtualizedContainerService.HintSize="486,798" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[convert.ToInt32(str_Gesamturteil) &lt; 10]" sap:VirtualizedContainerService.HintSize="418,733" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[convert.ToInt32(str_Gesamturteil) &lt; 10]" sap:VirtualizedContainerService.HintSize="452,736" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
-                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,301" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,302" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'CTextField Datenfeld'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="382,241" sap2010:WorkflowViewState.IdRef="NTypeInto_6" ScopeIdentifier="af64ea9f-d7a7-4d40-a2dc-212435e9c911" Text="[&quot;0&quot; + str_Gesamturteil + &quot;[k(enter)]&quot;]" Version="V3">
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type into &quot;Gesamturteil&quot;" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="416,242" sap2010:WorkflowViewState.IdRef="NTypeInto_6" ScopeIdentifier="af64ea9f-d7a7-4d40-a2dc-212435e9c911" Text="[&quot;0&quot; + str_Gesamturteil + &quot;[k(enter)]&quot;]" Version="V3">
                     <uix:NTypeInto.Target>
                       <uix:TargetAnchorable DesignTimeRectangle="488, 332, 23, 24" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;sap id='usr/ctxtP9101-ZURTEIL' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/ctxtP9101-ZURTEIL' /&gt;" Guid="2c1c454b-9ca7-4651-a606-19f9ae6ee000" InformativeScreenshot="8185dffed8641f9c7bf663e026bfed0a.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='C31(1)/300 Beurteilung LHM anlegen' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
                     </uix:NTypeInto.Target>
@@ -154,13 +154,13 @@
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,301" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,302" sap2010:WorkflowViewState.IdRef="Sequence_5">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'CTextField Datenfeld'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="382,241" sap2010:WorkflowViewState.IdRef="NTypeInto_7" ScopeIdentifier="af64ea9f-d7a7-4d40-a2dc-212435e9c911" Text="[str_Gesamturteil + &quot;[k(enter)]&quot;]" Version="V3">
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type into &quot;Gesamturteil&quot;" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="416,242" sap2010:WorkflowViewState.IdRef="NTypeInto_7" ScopeIdentifier="af64ea9f-d7a7-4d40-a2dc-212435e9c911" Text="[str_Gesamturteil + &quot;[k(enter)]&quot;]" Version="V3">
                     <uix:NTypeInto.Target>
                       <uix:TargetAnchorable ContentHash="AmUXfHX4x0adsp-tprwXlA" DesignTimeRectangle="488, 332, 23, 24" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;sap id='usr/ctxtP9101-ZURTEIL' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/ctxtP9101-ZURTEIL' /&gt;" Guid="98fe5588-a2cc-4d1d-bd97-d7fd3e3de8c4" InformativeScreenshot="bebc14ad6637705f36831d4aebe91d12.png" Reference="1yZBQ35rLEKu0B3RznLwPA/LCSS-lXZMU2mICyl_zs3kg" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='C31(1)/300 Beurteilung LHM anlegen' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
                     </uix:NTypeInto.Target>

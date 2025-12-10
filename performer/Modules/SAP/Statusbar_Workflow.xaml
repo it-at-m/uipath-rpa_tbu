@@ -106,7 +106,7 @@
       <AssemblyReference>NPOI.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SAP_Statusbar_Workflow" sap:VirtualizedContainerService.HintSize="1045,1403" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SAP_Statusbar_Workflow" sap:VirtualizedContainerService.HintSize="2602,1556" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_JsonId" />
       <Variable x:TypeArguments="x:String" Name="str_JsonErrorFolderPath" />
@@ -167,20 +167,26 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[str_JsonErrorFolderPath]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="484,193" sap2010:WorkflowViewState.IdRef="MoveFile_1" Path="[str_JsonNewFolderPath + str_JsonId]" />
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: K31(1)/800 Beurteilung LHM anlegen" sap:VirtualizedContainerService.HintSize="484,800" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="ac280c93-97e8-4abf-a35d-dff0c8e9b4a1" Version="V2">
+    <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" sap2010:Annotation.AnnotationText="JSON-Datei wird in den Error-Ordner verschoben." Destination="[str_JsonErrorFolderPath]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="484,224" sap2010:WorkflowViewState.IdRef="MoveFile_1" Path="[str_JsonNewFolderPath + str_JsonId]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:MoveFile>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: K31(1)/800 Beurteilung LHM anlegen" sap:VirtualizedContainerService.HintSize="484,845" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="ac280c93-97e8-4abf-a35d-dff0c8e9b4a1" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Ausführen" sap:VirtualizedContainerService.HintSize="450,475" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Ausführen" sap:VirtualizedContainerService.HintSize="450,520" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ucas:ClickToolbarButton ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" DisplayName="Click Toolbar Button 'Button  Abbrechen'" sap:VirtualizedContainerService.HintSize="416,193" sap2010:WorkflowViewState.IdRef="ClickToolbarButton_1" Item="Abbrechen   (F12)">
+            <ucas:ClickToolbarButton ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" sap2010:Annotation.AnnotationText="Abbrechen Button wird gedrückt. (Bearbeitung des Falls wird abgebrochen)" DisplayName="Click Toolbar Button 'Button  Abbrechen'" sap:VirtualizedContainerService.HintSize="416,238" sap2010:WorkflowViewState.IdRef="ClickToolbarButton_1" Item="Abbrechen   (F12)">
               <ucas:ClickToolbarButton.Items>
                 <scg:List x:TypeArguments="x:String" Capacity="16">
                   <x:String xml:space="preserve">Weiter   (Enter)</x:String>
@@ -207,6 +213,11 @@
                   </ui:Target.WaitForReady>
                 </ui:Target>
               </ucas:ClickToolbarButton.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </ucas:ClickToolbarButton>
             <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Ja'" sap:VirtualizedContainerService.HintSize="416,220" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ac280c93-97e8-4abf-a35d-dff0c8e9b4a1" Version="V3">
               <uix:NClick.Target>
@@ -230,6 +241,12 @@
         <uix:TargetApp Area="-1492, -222, 1184, 972" FilePath="C:\Program Files (x86)\SAP\FrontEnd\SAPGUI\saplogon.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGpSURBVFhH7ZRNSwJRGIVn3TJaj0HtRPoBZb+myLA2Ldq0qggqR7OCCGyR1Q9oE0VpziwUdTSJFIlokzMDfpSpaeDXGzOM49XMZhzRzTxwtvece+77XgzT0NAYNgAwCgBjQ9IIdv/8GV27fWMGqXVXgnlJfkdqNdBjhxSXxm0PMChN2COwR3GJQqk6LTzBIANM2iNAkGwqVxTNOwcI90Gdza0kyyVz5VlkBJsBdNYwzF08gumcVqWFMxqMFjfgu37JnK/dRrFMoVSdaTFHA4wTQUhnS6AWTygOU6tOwHd8kjlBscnsF1I7Chog9dF7gHq9DiQdA/3yEeBbpPAUQu0Uy6XyZWO7r0RrgGL7ubLgze/8T2BYOhDN/6kdpR8BPMEoGMz7gG+4hJs3an8vVLqb87QEUDgD/M09wRjoF+2g23SjtbPpfOXv2lGkLSBomHd6wXxyA2bHtSyZjq/AsOKQzPmbW+XUjtLyD1gCgG97lUlYt2btGTm1o/z+iJRLrJ1RbM6jNoBYO6uodhQ1ARq1yx64TgRe89SpLxnvRZeRTEjWqmloaGh04QdyYN+nyvBtOAAAAABJRU5ErkJggg==" InformativeScreenshot="3a825eb53862425cabdd0b8b908ddd81.png" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='K31(1)/800 Beurteilung LHM anlegen' /&gt;" Title="K31(1)/800 Beurteilung LHM anlegen" />
       </uix:NApplicationCard.TargetApp>
     </uix:NApplicationCard>
-    <Throw Exception="[New BusinessRuleException(str_SapToolBarMessageText)]" sap:VirtualizedContainerService.HintSize="484,114" sap2010:WorkflowViewState.IdRef="Throw_1" />
+    <Throw sap2010:Annotation.AnnotationText="Es wird eine Business Exception geworfen. Im Modul Performer wird diese von einem Try/Catch Block abgefangen und das Business Handling durchlaufen." DisplayName="Throw Bussines Exception" Exception="[New BusinessRuleException(str_SapToolBarMessageText)]" sap:VirtualizedContainerService.HintSize="484,191" sap2010:WorkflowViewState.IdRef="Throw_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Throw>
   </Sequence>
 </Activity>
