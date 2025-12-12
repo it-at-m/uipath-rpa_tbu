@@ -109,7 +109,7 @@
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Eingabe_Gesamturteil" sap:VirtualizedContainerService.HintSize="880,1312" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Eingabe_Gesamturteil" sap:VirtualizedContainerService.HintSize="1078,1312" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_Gesamturteil" />
     </Sequence.Variables>
@@ -126,7 +126,7 @@
         <InArgument x:TypeArguments="x:String">[in_str_Gesamturteil]</InArgument>
       </Assign.Value>
     </Assign>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Personalstammdaten pflegen" sap:VirtualizedContainerService.HintSize="520,1114" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="af64ea9f-d7a7-4d40-a2dc-212435e9c911" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="C31(1)300 Personalstammdaten pflegen" sap:VirtualizedContainerService.HintSize="520,1114" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="af64ea9f-d7a7-4d40-a2dc-212435e9c911" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -172,7 +172,7 @@
         </ActivityAction>
       </uix:NApplicationCard.Body>
       <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp Area="0, 0, 0, 0" ContentHash="GmFalbH8eEO-DIqTBXDAag" FilePath="C:\Program Files (x86)\SAP\FrontEnd\SAPGUI\saplogon.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGpSURBVFhH7ZRNSwJRGIVn3TJaj0HtRPoBZb+myLA2Ldq0qggqR7OCCGyR1Q9oE0VpziwUdTSJFIlokzMDfpSpaeDXGzOM49XMZhzRzTxwtvece+77XgzT0NAYNgAwCgBjQ9IIdv/8GV27fWMGqXVXgnlJfkdqNdBjhxSXxm0PMChN2COwR3GJQqk6LTzBIANM2iNAkGwqVxTNOwcI90Gdza0kyyVz5VlkBJsBdNYwzF08gumcVqWFMxqMFjfgu37JnK/dRrFMoVSdaTFHA4wTQUhnS6AWTygOU6tOwHd8kjlBscnsF1I7Chog9dF7gHq9DiQdA/3yEeBbpPAUQu0Uy6XyZWO7r0RrgGL7ubLgze/8T2BYOhDN/6kdpR8BPMEoGMz7gG+4hJs3an8vVLqb87QEUDgD/M09wRjoF+2g23SjtbPpfOXv2lGkLSBomHd6wXxyA2bHtSyZjq/AsOKQzPmbW+XUjtLyD1gCgG97lUlYt2btGTm1o/z+iJRLrJ1RbM6jNoBYO6uodhQ1ARq1yx64TgRe89SpLxnvRZeRTEjWqmloaGh04QdyYN+nyvBtOAAAAABJRU5ErkJggg==" InformativeScreenshot="e78a81afa5d59a444038c7976c97a676.png" Reference="1yZBQ35rLEKu0B3RznLwPA/3_f-XMXNAkmtjEfy_mrPBg" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='K31(1)/800 Beurteilung LHM anlegen' /&gt;" Title="K31(1)/800 Beurteilung LHM anlegen" />
+        <uix:TargetApp Area="0, 0, 0, 0" ContentHash="1fi47z1PGEuMAHMU90ZGsQ" FilePath="C:\Program Files (x86)\SAP\FrontEnd\SAPGUI\saplogon.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGpSURBVFhH7ZRNSwJRGIVn3TJaj0HtRPoBZb+myLA2Ldq0qggqR7OCCGyR1Q9oE0VpziwUdTSJFIlokzMDfpSpaeDXGzOM49XMZhzRzTxwtvece+77XgzT0NAYNgAwCgBjQ9IIdv/8GV27fWMGqXVXgnlJfkdqNdBjhxSXxm0PMChN2COwR3GJQqk6LTzBIANM2iNAkGwqVxTNOwcI90Gdza0kyyVz5VlkBJsBdNYwzF08gumcVqWFMxqMFjfgu37JnK/dRrFMoVSdaTFHA4wTQUhnS6AWTygOU6tOwHd8kjlBscnsF1I7Chog9dF7gHq9DiQdA/3yEeBbpPAUQu0Uy6XyZWO7r0RrgGL7ubLgze/8T2BYOhDN/6kdpR8BPMEoGMz7gG+4hJs3an8vVLqb87QEUDgD/M09wRjoF+2g23SjtbPpfOXv2lGkLSBomHd6wXxyA2bHtSyZjq/AsOKQzPmbW+XUjtLyD1gCgG97lUlYt2btGTm1o/z+iJRLrJ1RbM6jNoBYO6uodhQ1ARq1yx64TgRe89SpLxnvRZeRTEjWqmloaGh04QdyYN+nyvBtOAAAAABJRU5ErkJggg==" InformativeScreenshot="e78a81afa5d59a444038c7976c97a676.png" Reference="1yZBQ35rLEKu0B3RznLwPA/3_f-XMXNAkmtjEfy_mrPBg" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='?31(1)/?00 Beurteilung LHM anlegen' /&gt;" Title="K31(1)/800 Beurteilung LHM anlegen" />
       </uix:NApplicationCard.TargetApp>
     </uix:NApplicationCard>
   </Sequence>

@@ -3,7 +3,7 @@
   "entryPoints": [
     {
       "filePath": "Main.xaml",
-      "uniqueId": "b387a77b-19fd-4dcb-b1c7-03091e3ef69a",
+      "uniqueId": "0d827b4d-b130-4fc2-b0ab-a20d67266433",
       "type": "process",
       "input": {
         "type": "object",
@@ -13,14 +13,6 @@
           },
           "in_OrchestratorQueueFolder": {
             "type": "string"
-          },
-          "Produktiv": {
-            "type": "boolean"
-          },
-          "maxTransaction": {
-            "type": "integer",
-            "minimum": -2147483648,
-            "maximum": 2147483647
           }
         },
         "required": []

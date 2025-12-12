@@ -110,7 +110,7 @@
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="E_Mail_System_Exception_InitAllApplication" sap:VirtualizedContainerService.HintSize="1279,827.6566666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="E_Mail_System_Exception_InitAllApplication" sap:VirtualizedContainerService.HintSize="1220,827.6566666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="int_email_Port" />
       <Variable x:TypeArguments="x:String" Name="str_smtpServer" />
@@ -118,13 +118,15 @@
       <Variable x:TypeArguments="x:String" Name="str_systemExceptionMessage" />
       <Variable x:TypeArguments="x:String" Name="str_por_Bot_UserId" />
       <Variable x:TypeArguments="ss:SecureString" Name="secstr_por_Bot_Password" />
+      <Variable x:TypeArguments="x:String" Name="str_EmailExceptionMailbox" />
+      <Variable x:TypeArguments="x:String" Name="str_Bot_Email_Address" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478,242" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478,273" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -143,14 +145,6 @@
               <InArgument x:TypeArguments="x:String">[in_Config("rpa005_EmailSmtpServer").ToString]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
-          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
-            <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:String">[str_GroupMailbox]</OutArgument>
-            </ui:AssignOperation.To>
-            <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">[in_Config("rpa005_TestGroup_Mailbox").ToString]</InArgument>
-            </ui:AssignOperation.Value>
-          </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
             <ui:AssignOperation.To>
               <OutArgument x:TypeArguments="x:String">[str_systemExceptionMessage]</OutArgument>
@@ -159,11 +153,27 @@
               <InArgument x:TypeArguments="x:String">[in_ExceptionMessage]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[str_EmailExceptionMailbox]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[in_Config("rpa005_Email_Exception_Mailbox").ToString]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[str_Bot_Email_Address]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[in_Config("rpa005_Bot_Email_Address").ToString]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="por_Account_Robot" CacheStrategy="None" DisplayName="Get Credential" FolderPath="Test/POR" sap:VirtualizedContainerService.HintSize="478,176" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[secstr_por_Bot_Password]" Username="[str_por_Bot_UserId]" />
-    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" ResourceAttachmentList="{x:Null}" ResourceAttachments="{x:Null}" Result="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" sap2010:Annotation.AnnotationText="E-mail wird nach dem Durchlauf des Dispatchers versand. Empfänger ist der Fachbereich, der sich fachlich um den Prozess kümmert." AttachmentInputMode="Existing" Body="[&quot;Liebe/r Statusempfänger/in,&#xD;&#xA;&#xD;&#xA;während der Phase 'InitAllApplication' im Dispatcher, ist eine SystemException aufgetretten!&#xD;&#xA;&#x9;&#xD;&#xA;Fehlermeldung: &quot; + str_systemExceptionMessage + &quot; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;Mit freundlichen Grüßen,&#xD;&#xA;Ihr IT.TMS/Paul@-Roboter&#xD;&#xA;&quot;]" DisplayName="Mailversand an ein Gruppenpostfach" Email="[str_por_Bot_UserId]" EnableSSL="True" From="[str_GroupMailbox]" sap:VirtualizedContainerService.HintSize="478,331" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="False" Port="[int_email_Port]" SecureConnection="Auto" SecurePassword="[secstr_por_Bot_Password]" Server="[str_smtpServer]" Subject="Status Bot: SYSTEM EXCEPTION occurred TMS/Paul@Übertragung" To="rpa-entwicklung@muenchen.de">
+    <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="por_Account_Robot" CacheStrategy="None" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="478,176" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[secstr_por_Bot_Password]" Username="[str_por_Bot_UserId]" />
+    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" ResourceAttachmentList="{x:Null}" ResourceAttachments="{x:Null}" Result="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" sap2010:Annotation.AnnotationText="E-mail wird nach dem Durchlauf des Dispatchers versand. Empfänger ist der Fachbereich, der sich fachlich um den Prozess kümmert." AttachmentInputMode="Existing" Body="[&quot;Liebe/r Statusempfänger/in,&#xD;&#xA;&#xD;&#xA;während der Phase 'InitAllApplication' im Dispatcher, ist eine SystemException aufgetretten!&#xD;&#xA;&#x9;&#xD;&#xA;Fehlermeldung: &quot; + str_systemExceptionMessage + &quot; &#xD;&#xA;&#xD;&#xA;Bitte antworten Sie nicht auf diese E-Mail, da sie automatisch generiert wurde.&#xD;&#xA;Mit freundlichen Grüßen,&#xD;&#xA;Ihr IT.TMS/Paul@-Roboter&#xD;&#xA;&quot;]" DisplayName="Mailversand an ein Gruppenpostfach" Email="[str_por_Bot_UserId]" EnableSSL="True" From="[str_Bot_Email_Address]" sap:VirtualizedContainerService.HintSize="478,331" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="False" Port="[int_email_Port]" SecureConnection="Auto" SecurePassword="[secstr_por_Bot_Password]" Server="[str_smtpServer]" Subject="Status Bot: SYSTEM EXCEPTION occurred TMS/Paul@Übertragung" To="[str_EmailExceptionMailbox]">
       <ui:SendMail.AttachmentsBackup>
         <usau:BackupSlot x:TypeArguments="umame:AttachmentInputMode" StoredValue="Existing">
           <usau:BackupSlot.BackupValues>
