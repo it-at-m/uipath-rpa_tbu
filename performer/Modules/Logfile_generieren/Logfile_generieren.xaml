@@ -109,7 +109,7 @@
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Logfile_generieren" sap:VirtualizedContainerService.HintSize="880,2479" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Logfile_generieren" sap:VirtualizedContainerService.HintSize="1230,4147" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_logFileFolderPath" />
       <Variable x:TypeArguments="x:String" Name="str_logFileName" />
@@ -174,37 +174,37 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <Switch x:TypeArguments="x:Int32" DisplayName="Switch - Textauswahl für den Eintrag der Beurteilungsart im Logfile" Expression="[int_TemplateId]" sap:VirtualizedContainerService.HintSize="606,57" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+    <Switch x:TypeArguments="x:Int32" DisplayName="Switch - Textauswahl für den Eintrag der Beurteilungsart im Logfile" Expression="[int_TemplateId]" sap:VirtualizedContainerService.HintSize="606,1725" sap2010:WorkflowViewState.IdRef="Switch`1_1">
       <Switch.Default>
-        <Sequence DisplayName="Standard" sap:VirtualizedContainerService.HintSize="468,165" sap2010:WorkflowViewState.IdRef="Sequence_4">
+        <Sequence DisplayName="Standard" sap:VirtualizedContainerService.HintSize="471,226" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_6">
+          <Assign sap:VirtualizedContainerService.HintSize="437,166" sap2010:WorkflowViewState.IdRef="Assign_6">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[str_beurteilungsart]</OutArgument>
             </Assign.To>
             <Assign.Value>
-              <InArgument x:TypeArguments="x:String">Keine Beurteilung ausgewählt, bitte KM61 Support kontaktieren</InArgument>
+              <InArgument x:TypeArguments="x:String">["Beurteilungsart ID nicht korrekt, bitte technischen Support kontaktieren"]</InArgument>
             </Assign.Value>
           </Assign>
         </Sequence>
       </Switch.Default>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence x:Key="661" DisplayName="Body" sap:VirtualizedContainerService.HintSize="468,165" sap2010:WorkflowViewState.IdRef="Sequence_5">
+      <Sequence x:Key="600" DisplayName="Body" sap:VirtualizedContainerService.HintSize="471,226" sap2010:WorkflowViewState.IdRef="Sequence_5">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_1">
+        <Assign sap:VirtualizedContainerService.HintSize="437,166" sap2010:WorkflowViewState.IdRef="Assign_1">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[str_beurteilungsart]</OutArgument>
           </Assign.To>
@@ -213,13 +213,13 @@
           </Assign.Value>
         </Assign>
       </Sequence>
-      <Sequence x:Key="601" DisplayName="Body" sap:VirtualizedContainerService.HintSize="468,165" sap2010:WorkflowViewState.IdRef="Sequence_6">
+      <Sequence x:Key="521" DisplayName="Body" sap:VirtualizedContainerService.HintSize="471,226" sap2010:WorkflowViewState.IdRef="Sequence_6">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_2">
+        <Assign sap:VirtualizedContainerService.HintSize="437,166" sap2010:WorkflowViewState.IdRef="Assign_2">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[str_beurteilungsart]</OutArgument>
           </Assign.To>
@@ -228,13 +228,13 @@
           </Assign.Value>
         </Assign>
       </Sequence>
-      <Sequence x:Key="602" DisplayName="Body" sap:VirtualizedContainerService.HintSize="468,165" sap2010:WorkflowViewState.IdRef="Sequence_7">
+      <Sequence x:Key="520" DisplayName="Body" sap:VirtualizedContainerService.HintSize="471,226" sap2010:WorkflowViewState.IdRef="Sequence_7">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_3">
+        <Assign sap:VirtualizedContainerService.HintSize="437,166" sap2010:WorkflowViewState.IdRef="Assign_3">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[str_beurteilungsart]</OutArgument>
           </Assign.To>
@@ -243,13 +243,13 @@
           </Assign.Value>
         </Assign>
       </Sequence>
-      <Sequence x:Key="606" DisplayName="Body" sap:VirtualizedContainerService.HintSize="468,165" sap2010:WorkflowViewState.IdRef="Sequence_8">
+      <Sequence x:Key="525" DisplayName="Body" sap:VirtualizedContainerService.HintSize="471,226" sap2010:WorkflowViewState.IdRef="Sequence_8">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_4">
+        <Assign sap:VirtualizedContainerService.HintSize="437,166" sap2010:WorkflowViewState.IdRef="Assign_4">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[str_beurteilungsart]</OutArgument>
           </Assign.To>
@@ -258,13 +258,13 @@
           </Assign.Value>
         </Assign>
       </Sequence>
-      <Sequence x:Key="605" DisplayName="Body" sap:VirtualizedContainerService.HintSize="468,165" sap2010:WorkflowViewState.IdRef="Sequence_9">
+      <Sequence x:Key="524" DisplayName="Body" sap:VirtualizedContainerService.HintSize="471,226" sap2010:WorkflowViewState.IdRef="Sequence_9">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_5">
+        <Assign sap:VirtualizedContainerService.HintSize="437,166" sap2010:WorkflowViewState.IdRef="Assign_5">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[str_beurteilungsart]</OutArgument>
           </Assign.To>
