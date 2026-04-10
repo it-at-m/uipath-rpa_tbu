@@ -112,7 +112,7 @@
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Eingabe_Feststellungsvermerk" sap:VirtualizedContainerService.HintSize="1007,2975" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Eingabe_Feststellungsvermerk" sap:VirtualizedContainerService.HintSize="880,3274" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_Qualifizierungsebene" />
       <Variable x:TypeArguments="x:String" Name="str_JsonErrorFolderPath" />
@@ -124,7 +124,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="522,241" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="645,242" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -162,29 +162,29 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Personalstammdaten pflegen" sap:VirtualizedContainerService.HintSize="522,2711" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="af64ea9f-d7a7-4d40-a2dc-212435e9c911" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Personalstammdaten pflegen" sap:VirtualizedContainerService.HintSize="645,3009" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="af64ea9f-d7a7-4d40-a2dc-212435e9c911" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Ausführen" sap:VirtualizedContainerService.HintSize="488,2397" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Ausführen" sap:VirtualizedContainerService.HintSize="611,2693" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[str_Qualifizierungsebene]" sap:VirtualizedContainerService.HintSize="454,2337" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+            <Switch x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Text wird aus der Variable Qualifizierungsebene übernommen. Fachlich ist möglich, dass sich diese Texte ändern. Diese Switch Aktivität erlaubt in den Cases nur die festen Texte. Sollten Sie sich ändern oder leer sein wird der &quot;Standard Case&quot; ausgeführt und ein Business Exception Handling gestartet." DisplayName="Switch - Text aus der Variable kopieren" Expression="[str_Qualifizierungsebene]" sap:VirtualizedContainerService.HintSize="577,2631" sap2010:WorkflowViewState.IdRef="Switch`1_1">
               <Switch.Default>
-                <Sequence DisplayName="Standard" sap:VirtualizedContainerService.HintSize="452,1059" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                <Sequence DisplayName="Standard" sap:VirtualizedContainerService.HintSize="575,1251" sap2010:WorkflowViewState.IdRef="Sequence_10">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <If Condition="[String.IsNullOrWhiteSpace(str_Qualifizierungsebene)]" sap:VirtualizedContainerService.HintSize="418,999" sap2010:WorkflowViewState.IdRef="If_1">
+                  <If Condition="[String.IsNullOrWhiteSpace(str_Qualifizierungsebene)]" sap:VirtualizedContainerService.HintSize="541,1191" sap2010:WorkflowViewState.IdRef="If_1">
                     <If.Then>
-                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,89" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_8">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -193,14 +193,20 @@
                       </Sequence>
                     </If.Then>
                     <If.Else>
-                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,781" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,971" sap2010:WorkflowViewState.IdRef="Sequence_9">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[str_JsonErrorFolderPath]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="382,191" sap2010:WorkflowViewState.IdRef="MoveFile_2" Path="[str_JsonNewFolderPath + str_JsonId]" />
-                        <ucas:ClickToolbarButton ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" DisplayName="Click Toolbar Button 'Button  Abbrechen'" sap:VirtualizedContainerService.HintSize="382,192" sap2010:WorkflowViewState.IdRef="ClickToolbarButton_2" Item="Abbrechen   (F12)">
+                        <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" sap2010:Annotation.AnnotationText="JSON- Datei in den ErrorOrdner verschieben " Destination="[str_JsonErrorFolderPath]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="416,224" sap2010:WorkflowViewState.IdRef="MoveFile_2" Path="[str_JsonNewFolderPath + str_JsonId]">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:MoveFile>
+                        <ucas:ClickToolbarButton ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" sap2010:Annotation.AnnotationText="Klickt auf den Abrechen Button in der Beurteilung Anlegen Maske (Fall wird abgebrochen und als Business Exception weiter bearbeitet)" DisplayName="Click Button &quot;Abbrechen'" sap:VirtualizedContainerService.HintSize="416,254" sap2010:WorkflowViewState.IdRef="ClickToolbarButton_2" Item="Abbrechen   (F12)">
                           <ucas:ClickToolbarButton.Items>
                             <scg:List x:TypeArguments="x:String" Capacity="16">
                               <x:String xml:space="preserve">Weiter   (Enter)</x:String>
@@ -227,8 +233,13 @@
                               </ui:Target.WaitForReady>
                             </ui:Target>
                           </ucas:ClickToolbarButton.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
                         </ucas:ClickToolbarButton>
-                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Ja'" sap:VirtualizedContainerService.HintSize="382,225" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="af64ea9f-d7a7-4d40-a2dc-212435e9c911" Version="V3">
+                        <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="Buton Ja wird auf dem Abbruch Popup gedrückt." ClickType="Single" DisplayName="Click 'Ja'" sap:VirtualizedContainerService.HintSize="416,258" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="af64ea9f-d7a7-4d40-a2dc-212435e9c911" Version="V3">
                           <uix:NClick.Target>
                             <uix:TargetAnchorable DesignTimeRectangle="60, 179, 120, 26" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;sap id='usr/btnBUTTON_1' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/btnBUTTON_1' check:text='Ja' /&gt;" Guid="35da509d-1821-482e-bb4f-39c2bb00e41d" InformativeScreenshot="61a008dd21cfcb44c0fdda94a11b043a.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='C31(1)/300 Aktuelles Bild verlassen' idx='*' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
                           </uix:NClick.Target>
@@ -242,8 +253,19 @@
                               </uix:VerifyExecutionOptions.Timeout>
                             </uix:VerifyExecutionOptions>
                           </uix:NClick.VerifyOptions>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
                         </uix:NClick>
-                        <Throw Exception="[new BusinessRuleException(&quot;Bezeichnung der Qualifizierungsebene nicht vorhanden&quot;)]" sap:VirtualizedContainerService.HintSize="382,113" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                        <Throw sap2010:Annotation.AnnotationText="Business Exception wird geworfen.  Try/Catch Block im Modul Process fängt diesen ab und verarbeitet ihn." DisplayName="Throw Business Exception" Exception="[new BusinessRuleException(&quot;Bezeichnung der Qualifizierungsebene nicht vorhanden&quot;)]" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Throw_1">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </Throw>
                       </Sequence>
                     </If.Else>
                   </If>
@@ -253,16 +275,17 @@
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence x:Key="Ausbildungsqualifizierung / modulare Qualifizierung für die 2. Qualifikationsebene" DisplayName="Body" sap:VirtualizedContainerService.HintSize="452,337" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <Sequence x:Key="Ausbildungsqualifizierung / modulare Qualifizierung für die 2. Qualifikationsebene" DisplayName="Body" sap:VirtualizedContainerService.HintSize="575,339" sap2010:WorkflowViewState.IdRef="Sequence_5">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'CTextField Datenfeld'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="418,277" sap2010:WorkflowViewState.IdRef="NTypeInto_6" ScopeIdentifier="af64ea9f-d7a7-4d40-a2dc-212435e9c911" Text="AQ2/MQ2" Version="V3">
+                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type into &quot;Ausbildungsqualifizierung&quot;" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="541,279" sap2010:WorkflowViewState.IdRef="NTypeInto_6" ScopeIdentifier="af64ea9f-d7a7-4d40-a2dc-212435e9c911" Text="AQ2/MQ2" Version="V3">
                   <uix:NTypeInto.Target>
                     <uix:TargetAnchorable DesignTimeRectangle="544, 494, 63, 24" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;sap id='usr/ctxtP9101-ZQUALIFIZIERUNG' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/ctxtP9101-ZQUALIFIZIERUNG' /&gt;" Guid="96641246-4176-4f01-a16b-aafa32c5d910" InformativeScreenshot="2c18eea2b2801d2d77f2bf14ca9d64f1.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='C31(1)/300 Beurteilung LHM anlegen' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
                   </uix:NTypeInto.Target>
@@ -278,13 +301,13 @@
                   </uix:NTypeInto.VerifyOptions>
                 </uix:NTypeInto>
               </Sequence>
-              <Sequence x:Key="Ausbildungsqualifizierung / modulare Qualifizierung für die 3. Qualifikationsebene" DisplayName="Body" sap:VirtualizedContainerService.HintSize="452,337" sap2010:WorkflowViewState.IdRef="Sequence_6">
+              <Sequence x:Key="Ausbildungsqualifizierung / modulare Qualifizierung für die 3. Qualifikationsebene" DisplayName="Body" sap:VirtualizedContainerService.HintSize="575,339" sap2010:WorkflowViewState.IdRef="Sequence_6">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'CTextField Datenfeld'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="418,277" sap2010:WorkflowViewState.IdRef="NTypeInto_7" ScopeIdentifier="af64ea9f-d7a7-4d40-a2dc-212435e9c911" Text="AQ3/MQ3" Version="V3">
+                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type into &quot;Ausbildungsqualifizierung&quot;" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="541,279" sap2010:WorkflowViewState.IdRef="NTypeInto_7" ScopeIdentifier="af64ea9f-d7a7-4d40-a2dc-212435e9c911" Text="AQ3/MQ3" Version="V3">
                   <uix:NTypeInto.Target>
                     <uix:TargetAnchorable DesignTimeRectangle="544, 494, 63, 24" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;sap id='usr/ctxtP9101-ZQUALIFIZIERUNG' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/ctxtP9101-ZQUALIFIZIERUNG' /&gt;" Guid="c84e7389-5457-4de2-85a0-7b7e9b7247a7" InformativeScreenshot="3873fa5f5eaf1633956a599ada113c82.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='C31(1)/300 Beurteilung LHM anlegen' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
                   </uix:NTypeInto.Target>
@@ -300,13 +323,13 @@
                   </uix:NTypeInto.VerifyOptions>
                 </uix:NTypeInto>
               </Sequence>
-              <Sequence x:Key="Modulare Qualifizierung für die 4. Qualifikationsebene" DisplayName="Body" sap:VirtualizedContainerService.HintSize="452,337" sap2010:WorkflowViewState.IdRef="Sequence_7">
+              <Sequence x:Key="Modulare Qualifizierung für die 4. Qualifikationsebene" DisplayName="Body" sap:VirtualizedContainerService.HintSize="575,339" sap2010:WorkflowViewState.IdRef="Sequence_7">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'CTextField Datenfeld'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="418,277" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="af64ea9f-d7a7-4d40-a2dc-212435e9c911" Text="MQ4" Version="V3">
+                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type into &quot;Ausbildungsqualifizierung&quot;" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="541,279" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="af64ea9f-d7a7-4d40-a2dc-212435e9c911" Text="MQ4" Version="V3">
                   <uix:NTypeInto.Target>
                     <uix:TargetAnchorable DesignTimeRectangle="499, 494, 63, 24" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;sap id='usr/ctxtP9101-ZQUALIFIZIERUNG' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/ctxtP9101-ZQUALIFIZIERUNG' /&gt;" Guid="2a35c544-8079-4d38-8252-216a255b790f" InformativeScreenshot="316779f4a267ba7f95f8560305dac46e.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='C31(1)/300 Beurteilung LHM anlegen' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
                   </uix:NTypeInto.Target>

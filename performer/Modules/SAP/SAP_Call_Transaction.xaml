@@ -106,13 +106,13 @@
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SAP_Call_Transaction" sap:VirtualizedContainerService.HintSize="1666,2453" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SAP_Call_Transaction" sap:VirtualizedContainerService.HintSize="2602,2561" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap:VirtualizedContainerService.HintSize="1666,2430" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence sap:VirtualizedContainerService.HintSize="1630,2538" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Int32" Name="int_initial_Counter" />
         <Variable x:TypeArguments="x:Boolean" Name="bool_homescreen_Done" />
@@ -124,8 +124,8 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1632,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;SAP Call Transaction started&quot;]" />
-      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="1632,210" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1596,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;SAP Call Transaction started&quot;]" />
+      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="1596,211" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
         <ui:MultipleAssign.AssignOperations>
           <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -155,19 +155,19 @@
           </scg:List>
         </ui:MultipleAssign.AssignOperations>
       </ui:MultipleAssign>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: C31(1)/300 Personalstammdaten pflegen" sap:VirtualizedContainerService.HintSize="1632,1800" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="21e5b92d-445d-4e90-a931-0f190f69c14f" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: C31(1)/300 Personalstammdaten pflegen" sap:VirtualizedContainerService.HintSize="1596,1903" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="21e5b92d-445d-4e90-a931-0f190f69c14f" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Ausführen" sap:VirtualizedContainerService.HintSize="1598,1477" sap2010:WorkflowViewState.IdRef="Sequence_8">
+            <Sequence DisplayName="Ausführen" sap:VirtualizedContainerService.HintSize="1562,1578" sap2010:WorkflowViewState.IdRef="Sequence_8">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ucas:CallTransaction DisplayName="Call Transaction" sap:VirtualizedContainerService.HintSize="1564,172" sap2010:WorkflowViewState.IdRef="CallTransaction_1" Transaction="[str_SapFirst_Transaction]">
+              <ucas:CallTransaction DisplayName="Call Transaction" sap:VirtualizedContainerService.HintSize="1528,173" sap2010:WorkflowViewState.IdRef="CallTransaction_1" Transaction="[str_SapFirst_Transaction]">
                 <ucas:CallTransaction.Target>
                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="e0887c3c-c447-4352-97be-b754d1847ee6">
                     <ui:Target.TimeoutMS>
@@ -179,33 +179,33 @@
                   </ui:Target>
                 </ucas:CallTransaction.Target>
               </ucas:CallTransaction>
-              <uix:NCheckState DisplayName="Check App State 'Personalstammdaten pfle…'" sap:VirtualizedContainerService.HintSize="1564,1243" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="21e5b92d-445d-4e90-a931-0f190f69c14f" Version="V3">
+              <uix:NCheckState sap2010:Annotation.AnnotationText="Überprüft ob die Transaction im SAP geöffnet wurde, wenn nicht wird 3 x versucht die Transaction zu öffnen. " DisplayName="Check App State 'Personalstammdaten pfle…'" sap:VirtualizedContainerService.HintSize="1528,1343" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="21e5b92d-445d-4e90-a931-0f190f69c14f" Version="V3">
                 <uix:NCheckState.IfExists>
-                  <Sequence DisplayName="Ziel wird angezeigt" sap:VirtualizedContainerService.HintSize="450,230" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence DisplayName="Ziel wird angezeigt" sap:VirtualizedContainerService.HintSize="450,232" sap2010:WorkflowViewState.IdRef="Sequence_3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Personalstammdaten_pflegen is Already Opened&quot;]" />
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,170" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Personalstammdaten_pflegen is Already Opened&quot;]" />
                   </Sequence>
                 </uix:NCheckState.IfExists>
                 <uix:NCheckState.IfNotExists>
-                  <Sequence DisplayName="Ziel wird nicht angezeigt" sap:VirtualizedContainerService.HintSize="1060,1001" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <Sequence DisplayName="Ziel wird nicht angezeigt" sap:VirtualizedContainerService.HintSize="1024,1068" sap2010:WorkflowViewState.IdRef="Sequence_7">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[int_initial_Counter &lt;=4 AND Not (bool_homescreen_Done)]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="1026,939" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+                    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[int_initial_Counter &lt;=4 AND Not (bool_homescreen_Done)]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="990,1006" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
                       <ui:InterruptibleDoWhile.Body>
-                        <Sequence DisplayName="Text" sap:VirtualizedContainerService.HintSize="1024,816" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                        <Sequence DisplayName="Text" sap:VirtualizedContainerService.HintSize="988,882" sap2010:WorkflowViewState.IdRef="Sequence_6">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ucas:CallTransaction DisplayName="Call Transaction" sap:VirtualizedContainerService.HintSize="990,172" sap2010:WorkflowViewState.IdRef="CallTransaction_2" Transaction="[str_SapFirst_Transaction]">
+                          <ucas:CallTransaction DisplayName="Call Transaction" sap:VirtualizedContainerService.HintSize="954,173" sap2010:WorkflowViewState.IdRef="CallTransaction_2" Transaction="[str_SapFirst_Transaction]">
                             <ucas:CallTransaction.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="bcdf5771-756b-4b8e-9421-be387acbaac6">
                                 <ui:Target.TimeoutMS>
@@ -217,15 +217,15 @@
                               </ui:Target>
                             </ucas:CallTransaction.Target>
                           </ucas:CallTransaction>
-                          <uix:NCheckState DisplayName="Check App State 'Favoriten'" sap:VirtualizedContainerService.HintSize="990,584" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="21e5b92d-445d-4e90-a931-0f190f69c14f" Version="V3">
+                          <uix:NCheckState DisplayName="Check App State 'Favoriten'" sap:VirtualizedContainerService.HintSize="954,649" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="21e5b92d-445d-4e90-a931-0f190f69c14f" Version="V3">
                             <uix:NCheckState.IfExists>
-                              <Sequence DisplayName="Ziel wird angezeigt" sap:VirtualizedContainerService.HintSize="468,344" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                              <Sequence DisplayName="Ziel wird angezeigt" sap:VirtualizedContainerService.HintSize="450,407" sap2010:WorkflowViewState.IdRef="Sequence_4">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_1">
+                                <Assign sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_1">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:Boolean">[bool_homescreen_Done]</OutArgument>
                                   </Assign.To>
@@ -233,17 +233,17 @@
                                     <InArgument x:TypeArguments="x:Boolean">[True]</InArgument>
                                   </Assign.Value>
                                 </Assign>
-                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,168" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[&quot;Personalstammdaten_pflegen is Opened&quot;]" />
+                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,170" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[&quot;Personalstammdaten_pflegen is Opened&quot;]" />
                               </Sequence>
                             </uix:NCheckState.IfExists>
                             <uix:NCheckState.IfNotExists>
-                              <Sequence DisplayName="Ziel wird nicht angezeigt" sap:VirtualizedContainerService.HintSize="468,169" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                              <Sequence DisplayName="Ziel wird nicht angezeigt" sap:VirtualizedContainerService.HintSize="450,230" sap2010:WorkflowViewState.IdRef="Sequence_5">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Assign sap:VirtualizedContainerService.HintSize="434,107" sap2010:WorkflowViewState.IdRef="Assign_2">
+                                <Assign sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="Assign_2">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:Int32">[int_initial_Counter]</OutArgument>
                                   </Assign.To>
@@ -265,6 +265,11 @@
                 <uix:NCheckState.Target>
                   <uix:TargetAnchorable DesignTimeRectangle="8, 32, 1246, 48" DesignTimeScaleFactor="1" ElementType="Toolbar" FullSelectorArgument="&lt;sap text='Personalstammdaten pflegen' id='titl' /&gt;" FuzzySelectorArgument="&lt;sap text='Personalstammdaten pflegen' id='titl' check:text='Personalstammdaten pflegen' /&gt;" Guid="fce5bfcf-4044-490c-ace2-e20325b4e6ee" InformativeScreenshot="473fa8a6ca1b3fa2b8709d1401281f9b.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='C31(1)/300 Personalstammdaten pflegen' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
                 </uix:NCheckState.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
               </uix:NCheckState>
             </Sequence>
           </ActivityAction>
@@ -273,7 +278,7 @@
           <uix:TargetApp Area="366, 22, 1262, 978" FilePath="C:\Program Files (x86)\SAP\FrontEnd\SAPGUI\saplogon.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGwSURBVFhH7ZPNSgJRGIZn3TJaj0HtRLqAsqspMqxNizatKoLKn6wgAltkdQFtoijLmYXibxIZEtEmZwZGLVPTQNOvGT2jR8x0HNHNPPBu533PM+cQKioqAwcAhoWMDChDxN3zZ2Tl+o3pZ1adMeaF/w6XSqAl9mkuQVrvoV8Zs4Vhh+Zi2fzPZOUX9HPAuFBupth4OofKRZoHhHoQ/HvViOUWiuX4dGEaVVeRBmgsIZg5ewDDaUBR5k4CoDfdArntrZWL2q00ywjap1BtHWnAqNkPiVReuJjKcAWjMLHsAHLLUys30yyf+sK04+AD4h/dDyiXy0AFnkC7eADkBiWUh6raaZaLZwp6VNdM44Ac+pw8xPIb7yPoFvZQeRvtOL0Y4PJHQGfcBXLNWTm5pP09W/y/XKRhgMw7IJ7c5Re0z9tAsy5cvLp2NpEpttaOIw3QmAMw63CD8egKjPbLjmI4vADdkr1WLp5cKG+vHUcaUInJB+SmW14qz62uPdmJdpyGAV0GaWdkl4soHYC0s7K04ygZIGnv+ML9he81Qx97+Gg3OQ8ngx09NRUVFZWWEMQvcmDfp4NQBhkAAAAASUVORK5CYII=" InformativeScreenshot="0a96f1f80c512fd9b4672626ed930b31.png" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='C31(1)/300 Personalstammdaten pflegen' /&gt;" Title="C31(1)/300 Personalstammdaten pflegen" />
         </uix:NApplicationCard.TargetApp>
       </uix:NApplicationCard>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1632,164" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;SAP Call Transaction finished&quot;]" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1596,166" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;SAP Call Transaction finished&quot;]" />
     </Sequence>
   </Sequence>
 </Activity>

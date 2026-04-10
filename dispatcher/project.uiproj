@@ -1,0 +1,6 @@
+{
+  "Name": "rpa005_TBÜ_Dispatcher_v1",
+  "ProjectType": "Process",
+  "Description": "Robotic Enterprise Framework",
+  "MainFile": "Main.xaml"
+}

@@ -105,13 +105,13 @@
       <AssemblyReference>System.Collections</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SAP_Logout" sap:VirtualizedContainerService.HintSize="1128,2388" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SAP_Logout" sap:VirtualizedContainerService.HintSize="2602,2582" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap:VirtualizedContainerService.HintSize="1128,2365" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence sap:VirtualizedContainerService.HintSize="1092,2559" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Int32" Name="int_initialCounter" />
         <Variable x:TypeArguments="x:Boolean" Name="bool_logoutDone" />
@@ -122,8 +122,8 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1094,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;SAP_Logout Started&quot;]" />
-      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="1094,179" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1058,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;SAP_Logout Started&quot;]" />
+      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="1058,180" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
         <ui:MultipleAssign.AssignOperations>
           <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -145,27 +145,27 @@
           </scg:List>
         </ui:MultipleAssign.AssignOperations>
       </ui:MultipleAssign>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: C31(1)/300 Personalstammdaten anzeigen" sap:VirtualizedContainerService.HintSize="1094,1930" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="836d19f4-de8e-47b0-8ec1-6a37108f5bfb" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: C31(1)/300 Personalstammdaten anzeigen" sap:VirtualizedContainerService.HintSize="1058,2121" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="836d19f4-de8e-47b0-8ec1-6a37108f5bfb" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Ausführen" sap:VirtualizedContainerService.HintSize="1060,1616" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <Sequence DisplayName="Ausführen" sap:VirtualizedContainerService.HintSize="1024,1805" sap2010:WorkflowViewState.IdRef="Sequence_6">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[int_initialCounter &lt;= 4 And Not(bool_logoutDone)]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="1026,1221" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+              <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Beenden Button wird gedrückt, bis das Abmeldefenster von SAP erscheint, danach wird die SAP GUI beendet. Dabei läuft ein Zähler mit, , sollte der SAP nicht beendet werden können, wird ein Kill Process ausgeführt." Condition="[int_initialCounter &lt;= 4 And Not(bool_logoutDone)]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="990,1406" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
                 <ui:InterruptibleDoWhile.Body>
-                  <Sequence DisplayName="Text" sap:VirtualizedContainerService.HintSize="1024,1091" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <Sequence DisplayName="Text" sap:VirtualizedContainerService.HintSize="988,1230" sap2010:WorkflowViewState.IdRef="Sequence_5">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ucas:ClickToolbarButton ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" DisplayName="Click Toolbar Button 'Button  Beenden'" sap:VirtualizedContainerService.HintSize="990,172" sap2010:WorkflowViewState.IdRef="ClickToolbarButton_1" Item="Beenden   (Umsch+F3)">
+                    <ucas:ClickToolbarButton ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" sap2010:Annotation.AnnotationText="Beenden Button in der GUI Leiste wird gedrückt." DisplayName="Click &quot;Beenden&quot;" sap:VirtualizedContainerService.HintSize="954,204" sap2010:WorkflowViewState.IdRef="ClickToolbarButton_1" Item="Beenden   (Umsch+F3)">
                       <ucas:ClickToolbarButton.Items>
                         <scg:List x:TypeArguments="x:String" Capacity="16">
                           <x:String xml:space="preserve">Weiter   (Enter)</x:String>
@@ -191,16 +191,21 @@
                           </ui:Target.WaitForReady>
                         </ui:Target>
                       </ucas:ClickToolbarButton.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
                     </ucas:ClickToolbarButton>
-                    <uix:NCheckState DisplayName="Check App State 'Favoriten'" sap:VirtualizedContainerService.HintSize="990,859" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="836d19f4-de8e-47b0-8ec1-6a37108f5bfb" Version="V3">
+                    <uix:NCheckState DisplayName="Check App State 'Favoriten'" sap:VirtualizedContainerService.HintSize="954,966" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="836d19f4-de8e-47b0-8ec1-6a37108f5bfb" Version="V3">
                       <uix:NCheckState.IfExists>
-                        <Sequence DisplayName="Ziel wird angezeigt" sap:VirtualizedContainerService.HintSize="468,619" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                        <Sequence DisplayName="Ziel wird angezeigt" sap:VirtualizedContainerService.HintSize="450,684" sap2010:WorkflowViewState.IdRef="Sequence_3">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Abmelden'" sap:VirtualizedContainerService.HintSize="434,225" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="836d19f4-de8e-47b0-8ec1-6a37108f5bfb" Version="V3">
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Abmelden'" sap:VirtualizedContainerService.HintSize="416,227" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="836d19f4-de8e-47b0-8ec1-6a37108f5bfb" Version="V3">
                             <uix:NClick.Target>
                               <uix:TargetAnchorable DesignTimeRectangle="1169, 91, 73, 26" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;sap id='tbar[0]/btn[15]' /&gt;" FuzzySelectorArgument="&lt;sap id='tbar[0]/btn[15]' check:text='Abmelden' /&gt;" Guid="4befc121-613c-436e-9f5d-123b8d531aa0" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='C31(1)/300 SAP Easy Access  -  Benutzermenü für RPA-BOT-TMS' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
                                 <uix:TargetAnchorable.Anchors>
@@ -219,7 +224,7 @@
                               </uix:VerifyExecutionOptions>
                             </uix:NClick.VerifyOptions>
                           </uix:NClick>
-                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Ja'" sap:VirtualizedContainerService.HintSize="434,225" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="836d19f4-de8e-47b0-8ec1-6a37108f5bfb" Version="V3">
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Ja'" sap:VirtualizedContainerService.HintSize="416,227" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="836d19f4-de8e-47b0-8ec1-6a37108f5bfb" Version="V3">
                             <uix:NClick.Target>
                               <uix:TargetAnchorable DesignTimeRectangle="68, 152, 96, 26" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;sap id='usr/btnSPOP-OPTION1' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/btnSPOP-OPTION1' check:text='Ja' /&gt;" Guid="9ebce10e-41a9-4820-b12a-ea1697b89569" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='C31(1)/300 Abmelden' idx='*' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
                                 <uix:TargetAnchorable.Anchors>
@@ -238,7 +243,7 @@
                               </uix:VerifyExecutionOptions>
                             </uix:NClick.VerifyOptions>
                           </uix:NClick>
-                          <Assign sap:VirtualizedContainerService.HintSize="434,107" sap2010:WorkflowViewState.IdRef="Assign_1">
+                          <Assign sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="Assign_1">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:Boolean">[bool_logoutDone]</OutArgument>
                             </Assign.To>
@@ -249,13 +254,13 @@
                         </Sequence>
                       </uix:NCheckState.IfExists>
                       <uix:NCheckState.IfNotExists>
-                        <Sequence DisplayName="Ziel wird nicht angezeigt" sap:VirtualizedContainerService.HintSize="468,169" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                        <Sequence DisplayName="Ziel wird nicht angezeigt" sap:VirtualizedContainerService.HintSize="450,230" sap2010:WorkflowViewState.IdRef="Sequence_4">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Assign sap:VirtualizedContainerService.HintSize="434,107" sap2010:WorkflowViewState.IdRef="Assign_2">
+                          <Assign sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="Assign_2">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:Int32">[int_initialCounter]</OutArgument>
                             </Assign.To>
@@ -275,9 +280,14 @@
                     </uix:NCheckState>
                   </Sequence>
                 </ui:InterruptibleDoWhile.Body>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
               </ui:InterruptibleDoWhile>
-              <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="1026,165" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="saplogon" />
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1026,168" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;SAP_Logout Ended&quot;]" />
+              <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="990,167" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="saplogon" />
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="990,170" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;SAP_Logout Ended&quot;]" />
             </Sequence>
           </ActivityAction>
         </uix:NApplicationCard.Body>

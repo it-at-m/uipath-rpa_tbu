@@ -1,0 +1,6 @@
+{
+  "Name": "rpa005_TBÜ_Performer_V2",
+  "ProjectType": "Process",
+  "Description": "Robotic Enterprise Framework - Performer für die Übertragung von Beruteilungsdateien aus dem TMS in das SAP System P31",
+  "MainFile": "Main.xaml"
+}

@@ -109,7 +109,7 @@
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Eingabe_Mindesanforderung" sap:VirtualizedContainerService.HintSize="1889,1509" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Eingabe_Mindesanforderung" sap:VirtualizedContainerService.HintSize="880,1623" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_LeistungErfuellt" />
     </Sequence.Variables>
@@ -118,29 +118,34 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap:VirtualizedContainerService.HintSize="486,114" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign sap2010:Annotation.AnnotationText="Speichert Argument in einer Variable" sap:VirtualizedContainerService.HintSize="520,206" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[str_LeistungErfuellt]</OutArgument>
       </Assign.To>
       <Assign.Value>
         <InArgument x:TypeArguments="x:String">[in_str_LeistungErfuellt]</InArgument>
       </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Personalstammdaten pflegen" sap:VirtualizedContainerService.HintSize="486,1372" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="af64ea9f-d7a7-4d40-a2dc-212435e9c911" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Personalstammdaten pflegen" sap:VirtualizedContainerService.HintSize="520,1394" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="af64ea9f-d7a7-4d40-a2dc-212435e9c911" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Ausführen" sap:VirtualizedContainerService.HintSize="452,1058" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence DisplayName="Ausführen" sap:VirtualizedContainerService.HintSize="486,1078" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[str_LeistungErfuellt]" sap:VirtualizedContainerService.HintSize="418,996" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+            <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[str_LeistungErfuellt]" sap:VirtualizedContainerService.HintSize="452,1016" sap2010:WorkflowViewState.IdRef="Switch`1_1">
               <Switch.Default>
-                <Sequence DisplayName="Standard" sap:VirtualizedContainerService.HintSize="416,89" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                <Sequence DisplayName="Standard" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_8">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -148,13 +153,13 @@
                   </sap:WorkflowViewStateService.ViewState>
                 </Sequence>
               </Switch.Default>
-              <Sequence x:Key="Ja" DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,337" sap2010:WorkflowViewState.IdRef="Sequence_7">
+              <Sequence x:Key="Ja" DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,339" sap2010:WorkflowViewState.IdRef="Sequence_7">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'CTextField Datenfeld'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="382,277" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="af64ea9f-d7a7-4d40-a2dc-212435e9c911" Text="01" Version="V3">
+                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type into &quot;Mindestanforderung erfüllt&quot;" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="416,279" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="af64ea9f-d7a7-4d40-a2dc-212435e9c911" Text="01" Version="V3">
                   <uix:NTypeInto.Target>
                     <uix:TargetAnchorable DesignTimeRectangle="552, 386, 23, 24" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;sap id='usr/ctxtP9101-ZMINDANF' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/ctxtP9101-ZMINDANF' /&gt;" Guid="a66f9546-8290-4333-9e2f-fa65e0d0a800" InformativeScreenshot="e5c9af49fc5f962c17075bb42be2652c.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='C31(1)/300 Beurteilung LHM anlegen' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
                   </uix:NTypeInto.Target>
@@ -170,13 +175,13 @@
                   </uix:NTypeInto.VerifyOptions>
                 </uix:NTypeInto>
               </Sequence>
-              <Sequence x:Key="Nein" DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,337" sap2010:WorkflowViewState.IdRef="Sequence_9">
+              <Sequence x:Key="Nein" DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,339" sap2010:WorkflowViewState.IdRef="Sequence_9">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'CTextField Datenfeld'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="382,277" sap2010:WorkflowViewState.IdRef="NTypeInto_6" ScopeIdentifier="af64ea9f-d7a7-4d40-a2dc-212435e9c911" Text="02" Version="V3">
+                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type into &quot;Ausbildungsqualifizierung&quot;" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="416,279" sap2010:WorkflowViewState.IdRef="NTypeInto_6" ScopeIdentifier="af64ea9f-d7a7-4d40-a2dc-212435e9c911" Text="02" Version="V3">
                   <uix:NTypeInto.Target>
                     <uix:TargetAnchorable DesignTimeRectangle="552, 386, 23, 24" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;sap id='usr/ctxtP9101-ZMINDANF' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/ctxtP9101-ZMINDANF' /&gt;" Guid="03f077c3-b9b1-4911-bb5a-ea9a798ab18b" InformativeScreenshot="c894fe07cc95cdd4c3aaa66406746ebe.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='C31(1)/300 Beurteilung LHM anlegen' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
                   </uix:NTypeInto.Target>
