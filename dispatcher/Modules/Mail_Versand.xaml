@@ -102,7 +102,7 @@
       <AssemblyReference>NPOI.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Mail_Versand" sap:VirtualizedContainerService.HintSize="1214,772" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Mail_Versand" sap:VirtualizedContainerService.HintSize="1340,1363" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_por_Bot_UserId" />
       <Variable x:TypeArguments="ss:SecureString" Name="secstr_por_Bot_Password" />
@@ -111,6 +111,7 @@
       <Variable x:TypeArguments="x:String" Name="str_GroupMailbox" />
       <Variable x:TypeArguments="x:String" Name="str_Bot_Email_Address" />
       <Variable x:TypeArguments="x:String" Name="str_EmailGroupMailbox" />
+      <Variable x:TypeArguments="x:String" Name="str_Mail_Body" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -156,7 +157,59 @@
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
     <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="por_Account_Robot" CacheStrategy="None" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="478,176" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[secstr_por_Bot_Password]" Username="[str_por_Bot_UserId]" />
-    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" ResourceAttachmentList="{x:Null}" ResourceAttachments="{x:Null}" Result="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" sap2010:Annotation.AnnotationText="E-mail wird nach dem Durchlauf des Dispatchers versand. Empfänger ist der Fachbereich, der sich fachlich um den Prozess kümmert." AttachmentInputMode="Existing" Body="[&quot;Lieber Statusempfänger,&#xA;&#xA;der Dispatcherlauf ist abgeschlossen. Es sind  &quot; + in_Logfile_DateienTransffered  + &quot; neue Datensätze zum Übertagen bereit.&#xA;Eine detalierte Logfile wurde im entsprechendem Ordner hinterlegt.&#xA;&#xA;Bitte antworten Sie nicht auf diese E-Mail, da sie automatisch generiert wurde.&#xA;Mit freundlichen Grüßen,&#xA;Ihr IT.TMS/Paul@-Roboter&#xA;&quot;]" DisplayName="Mailversand an ein Gruppenpostfach" Email="[str_por_Bot_UserId]" EnableSSL="True" From="[str_Bot_Email_Address]" sap:VirtualizedContainerService.HintSize="478,331" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="False" Port="[int_email_Port]" SecureConnection="StartTls" SecurePassword="[secstr_por_Bot_Password]" Server="[str_smtpServer]" Subject="Status Bot: TMS/Paul@Übertragung" To="[str_EmailGroupMailbox]">
+    <If Condition="[String.IsNullOrEmpty(in_Logfile_DateienTransffered)]" sap:VirtualizedContainerService.HintSize="478,591" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[str_Mail_Body]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String" xml:space="preserve">["Lieber Statusempfänger,
+
+der Dispatcherlauf ist abgeschlossen. Es liegen keine neuen Datensätze zum Übertragen bereit.
+
+Bitte antworten Sie nicht auf diese E-Mail, da sie automatisch generiert wurde.
+
+Mit freundlichen Grüßen,
+Ihr IT.TMS/Paul@-Roboter
+"]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Assign_2">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[str_Mail_Body]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String" xml:space="preserve">["Lieber Statusempfänger,
+
+der Dispatcherlauf ist abgeschlossen. Es sind  " + in_Logfile_DateienTransffered  + " neue Datensätze zum Übertagen bereit.
+Eine detalierte Logfile wurde im entsprechendem Ordner hinterlegt.
+
+Bitte antworten Sie nicht auf diese E-Mail, da sie automatisch generiert wurde.
+Mit freundlichen Grüßen,
+Ihr IT.TMS/Paul@-Roboter
+"]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </If.Else>
+    </If>
+    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" ResourceAttachmentList="{x:Null}" ResourceAttachments="{x:Null}" Result="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" sap2010:Annotation.AnnotationText="E-mail wird nach dem Durchlauf des Dispatchers versand. Empfänger ist der Fachbereich, der sich fachlich um den Prozess kümmert." AttachmentInputMode="Existing" Body="[str_Mail_body]" DisplayName="Mailversand an ein Gruppenpostfach" Email="[str_por_Bot_UserId]" EnableSSL="True" From="[str_Bot_Email_Address]" sap:VirtualizedContainerService.HintSize="478,331" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="False" Port="[int_email_Port]" SecureConnection="None" SecurePassword="[secstr_por_Bot_Password]" Server="[str_smtpServer]" Subject="Status Bot: TMS/Paul@Übertragung" To="[str_EmailGroupMailbox]">
       <ui:SendMail.AttachmentsBackup>
         <usau:BackupSlot x:TypeArguments="umame:AttachmentInputMode" StoredValue="Existing">
           <usau:BackupSlot.BackupValues>
