@@ -46,6 +46,14 @@
       <x:String>System.Runtime.Serialization</x:String>
       <x:String>System.Reflection</x:String>
       <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Numerics</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -94,30 +102,43 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
       <AssemblyReference>NPOI.Core</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="994,2439" sap2010:WorkflowViewState.IdRef="Sequence_9">
+  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="1340,3062" sap2010:WorkflowViewState.IdRef="Sequence_9">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Int32" Name="int_Json_Anzahl" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch sap2010:Annotation.AnnotationText="Der gesamte Dispatcher-prozess ist hier abgebildet. Die Aktivitäten sind alle im Try- Block. So soll gewährleistet werden, dass Exceptions per Mail an ein Postfach versendet werden." DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="452,2385" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch sap2010:Annotation.AnnotationText="Der gesamte Dispatcher-prozess ist hier abgebildet. Die Aktivitäten sind alle im Try- Block. So soll gewährleistet werden, dass Exceptions per Mail an ein Postfach versendet werden." DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="488,3008" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="450,1534" sap2010:WorkflowViewState.IdRef="Sequence_10">
+        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="486,2157" sap2010:WorkflowViewState.IdRef="Sequence_10">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Opening applications...&quot;]" />
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Einloggen auf dem FTP Server (im Browser: Chrome)" DisplayName="TMS_FTP_Logging - Invoke Workflow File (Modules\TMS_FTP_Logging.xaml)" sap:VirtualizedContainerService.HintSize="416,252" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Modules\TMS_FTP_Logging_chrome.xaml">
+          <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Opening applications...&quot;]" />
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Einloggen auf dem FTP Server (im Browser: Chrome)" DisplayName="TMS_FTP_Logging - Invoke Workflow File (Modules\TMS_FTP_Logging.xaml)" sap:VirtualizedContainerService.HintSize="452,252" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Modules\TMS_FTP_Logging_chrome.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
@@ -127,45 +148,71 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:InvokeWorkflowFile>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Dispatcher - Steuert den Ordern auf dem FTP Client an, lädt die JSONS herunter (Zip-Datei), befüllt die ItemQueue anhand der vorhandenen JSON Datein im Ordner" DisplayName="TMS_FTP_Get_JSON_Files - Invoke Workflow File (Modules\TMS_FTP_Get_JSON_Files.xaml)" sap:VirtualizedContainerService.HintSize="416,284" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Modules\TMS_FTP_Get_JSON_Files.xaml">
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="check_if_jsons_exists - Invoke Workflow File (Modules\check_if_jsons_exists.xaml)" sap:VirtualizedContainerService.HintSize="452,207" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Modules\check_if_jsons_exists.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
-              <OutArgument x:TypeArguments="x:String" x:Key="out_Logfile_DateiGespeichert">[io_Logfile_DateiGespeichert]</OutArgument>
-              <OutArgument x:TypeArguments="x:String" x:Key="out_Logfile_DateienTransffered">[io_Logfile_DateienTransffered]</OutArgument>
-              <OutArgument x:TypeArguments="x:String" x:Key="out_Logfile_DateienDispatchOrdner">[io_Logfile_DateienDispatchOrdner]</OutArgument>
-              <OutArgument x:TypeArguments="x:Boolean" x:Key="out_bool_zipFileEmpty">[io_bool_zipFileEmpty]</OutArgument>
+              <OutArgument x:TypeArguments="x:Int32" x:Key="out_int_JSON_ANZAHL">[int_Json_Anzahl]</OutArgument>
             </ui:InvokeWorkflowFile.Arguments>
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
           </ui:InvokeWorkflowFile>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Steuert den Ordner auf dem FTP Client an, löscht die JSON-Dateien aus dem Ordner" DisplayName="FTPClientOrdner_leeren - Invoke Workflow File (Modules\FTPClientOrdner_leeren.xaml)" sap:VirtualizedContainerService.HintSize="416,252" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Modules\FTPClientOrdner_leeren.xaml">
-            <ui:InvokeWorkflowFile.Arguments>
-              <scg:Dictionary x:TypeArguments="x:String, Argument" />
-            </ui:InvokeWorkflowFile.Arguments>
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-          </ui:InvokeWorkflowFile>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Erstellt die Logdatei über den gelaufenen Dispatcher-Lauf, speichert die Logfile in einem Ordner ab" DisplayName="Logfile_generieren - Invoke Workflow File (Modules\Logfile_generieren.xaml)" sap:VirtualizedContainerService.HintSize="416,268" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Modules\Logfile_generieren.xaml">
-            <ui:InvokeWorkflowFile.Arguments>
-              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_Logfile_DateienDispatchOrdner">[io_Logfile_DateienDispatchOrdner]</InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_Logfile_DateienTransffered">[io_Logfile_DateienTransffered]</InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_Logfile_DateiGespeichert">[io_Logfile_DateiGespeichert]</InArgument>
-              <InArgument x:TypeArguments="x:Boolean" x:Key="in_bool_zipFileEmpty">[io_bool_zipFileEmpty]</InArgument>
-            </ui:InvokeWorkflowFile.Arguments>
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-          </ui:InvokeWorkflowFile>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Versendet eine Statusmail, nach dem erfolgreichen Dispatcherlauf, an ein Mailpostfach" DisplayName="Mail_versand" sap:VirtualizedContainerService.HintSize="416,243" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Modules\Mail_Versand.xaml">
+          <If Condition="[int_Json_Anzahl &gt; 0]" sap:VirtualizedContainerService.HintSize="452,1220" sap2010:WorkflowViewState.IdRef="If_1">
+            <If.Then>
+              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,855" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Dispatcher - Steuert den Ordern auf dem FTP Client an, lädt die JSONS herunter (Zip-Datei), befüllt die ItemQueue anhand der vorhandenen JSON Datein im Ordner" DisplayName="TMS_FTP_Get_JSON_Files - Invoke Workflow File (Modules\TMS_FTP_Get_JSON_Files.xaml)" sap:VirtualizedContainerService.HintSize="416,284" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Modules\TMS_FTP_Get_JSON_Files.xaml">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+                    <OutArgument x:TypeArguments="x:String" x:Key="out_Logfile_DateiGespeichert">[io_Logfile_DateiGespeichert]</OutArgument>
+                    <OutArgument x:TypeArguments="x:String" x:Key="out_Logfile_DateienTransffered">[io_Logfile_DateienTransffered]</OutArgument>
+                    <OutArgument x:TypeArguments="x:String" x:Key="out_Logfile_DateienDispatchOrdner">[io_Logfile_DateienDispatchOrdner]</OutArgument>
+                    <OutArgument x:TypeArguments="x:Boolean" x:Key="out_bool_zipFileEmpty">[io_bool_zipFileEmpty]</OutArgument>
+                  </ui:InvokeWorkflowFile.Arguments>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:InvokeWorkflowFile>
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Steuert den Ordner auf dem FTP Client an, löscht die JSON-Dateien aus dem Ordner" DisplayName="FTPClientOrdner_leeren - Invoke Workflow File (Modules\FTPClientOrdner_leeren.xaml)" sap:VirtualizedContainerService.HintSize="416,252" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Modules\FTPClientOrdner_leeren.xaml">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                  </ui:InvokeWorkflowFile.Arguments>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:InvokeWorkflowFile>
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Erstellt die Logdatei über den gelaufenen Dispatcher-Lauf, speichert die Logfile in einem Ordner ab" DisplayName="Logfile_generieren - Invoke Workflow File (Modules\Logfile_generieren.xaml)" sap:VirtualizedContainerService.HintSize="416,259" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Modules\Logfile_generieren.xaml">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Logfile_DateienDispatchOrdner">[io_Logfile_DateienDispatchOrdner]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Logfile_DateienTransffered">[io_Logfile_DateienTransffered]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Logfile_DateiGespeichert">[io_Logfile_DateiGespeichert]</InArgument>
+                    <InArgument x:TypeArguments="x:Boolean" x:Key="in_bool_zipFileEmpty">[io_bool_zipFileEmpty]</InArgument>
+                  </ui:InvokeWorkflowFile.Arguments>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:InvokeWorkflowFile>
+              </Sequence>
+            </If.Then>
+            <If.Else>
+              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Keine JSON-Dateien zum verarbeiten vorhanden&quot;]" />
+              </Sequence>
+            </If.Else>
+          </If>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Versendet eine Statusmail, nach dem erfolgreichen Dispatcherlauf, an ein Mailpostfach" DisplayName="Mail_versand" sap:VirtualizedContainerService.HintSize="452,243" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Modules\Mail_Versand.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="in_Logfile_DateienTransffered">[io_Logfile_DateienTransffered]</InArgument>
@@ -184,7 +231,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,535" sap2010:WorkflowViewState.IdRef="Sequence_11">
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="486,535" sap2010:WorkflowViewState.IdRef="Sequence_11">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="str_systemExceptionMessage" />
               </Sequence.Variables>
@@ -193,7 +240,7 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Assign sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="Assign_1">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[str_systemExceptionMessage]</OutArgument>
                 </Assign.To>
@@ -201,7 +248,7 @@
                   <InArgument x:TypeArguments="x:String">[exception.Message.ToString]</InArgument>
                 </Assign.Value>
               </Assign>
-              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Im Fall einer Exception wird eine Mail an ein Postfach verschickt" DisplayName="E_Mail_System_Exception_InitAllApplication - Invoke Workflow File (Modules\E_Mail_System_Exception_InitAllApplication.xaml)" sap:VirtualizedContainerService.HintSize="416,252" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Modules\E_Mail_System_Exception_InitAllApplication.xaml">
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Im Fall einer Exception wird eine Mail an ein Postfach verschickt" DisplayName="E_Mail_System_Exception_InitAllApplication - Invoke Workflow File (Modules\E_Mail_System_Exception_InitAllApplication.xaml)" sap:VirtualizedContainerService.HintSize="452,252" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Modules\E_Mail_System_Exception_InitAllApplication.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
                   <InArgument x:TypeArguments="x:String" x:Key="in_ExceptionMessage">[str_systemExceptionMessage]</InArgument>
@@ -212,13 +259,13 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:InvokeWorkflowFile>
-              <Rethrow sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="Rethrow_1" />
+              <Rethrow sap:VirtualizedContainerService.HintSize="452,48" sap2010:WorkflowViewState.IdRef="Rethrow_1" />
             </Sequence>
           </ActivityAction>
         </Catch>
       </TryCatch.Catches>
       <TryCatch.Finally>
-        <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_12">
+        <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="486,90" sap2010:WorkflowViewState.IdRef="Sequence_12">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
