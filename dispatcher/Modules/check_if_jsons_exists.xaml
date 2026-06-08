@@ -109,7 +109,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="check_if_jsons_exists" sap:VirtualizedContainerService.HintSize="995,2506" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="check_if_jsons_exists" sap:VirtualizedContainerService.HintSize="1161,2506" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_JsonAnzahl" />
     </Sequence.Variables>
@@ -194,20 +194,41 @@
                 </uix:VerifyExecutionOptions>
               </uix:NClick.VerifyOptions>
             </uix:NClick>
-            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,389" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="DEV: Auswahl Test Beurteilungsordner" sap:VirtualizedContainerService.HintSize="486,227" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5889d435-6dd6-443d-a2f2-10d0eda621af" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://sftp012.successfactors.eu/#/outgoing" DesignTimeRectangle="277, 631, 132, 20" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl class='text' tableRow='6' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl class='text' type='' tag='SPAN' aaname='Test_Beurteilungsdaten' check:innerText='Test_Beurteilungsdaten' /&gt;" Guid="828e932a-91d6-4244-a1fd-331ec530d8b9" InformativeScreenshot="89c17739415121cbd4e75a9cd29215f9.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Web Transfer Client' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="253, 629, 24, 24" ElementType="Icon" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='6' tag='MAT-ICON' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='MAT-ICON' class='mat-icon notranslate icon material-icons mat-icon-no-color ng-star-inserted' aaname='folder' check:innerText='folder' /&gt;" Guid="5ae9934c-e76a-4971-a29e-bb1e9d3c13aa" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,389" sap2010:WorkflowViewState.IdRef="CommentOut_2">
               <ui:CommentOut.Body>
-                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,278" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,278" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="DEV: Auswahl Test Beurteilungsordner" sap:VirtualizedContainerService.HintSize="416,218" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5889d435-6dd6-443d-a2f2-10d0eda621af" Version="V3">
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="PROD: Auswahl Buerteilungsordner" sap:VirtualizedContainerService.HintSize="416,218" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5889d435-6dd6-443d-a2f2-10d0eda621af" Version="V3">
                     <uix:NClick.Target>
-                      <uix:TargetAnchorable BrowserURL="https://sftp012.successfactors.eu/#/outgoing" DesignTimeRectangle="277, 631, 132, 20" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl class='text' tableRow='6' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl class='text' type='' tag='SPAN' aaname='Test_Beurteilungsdaten' check:innerText='Test_Beurteilungsdaten' /&gt;" Guid="828e932a-91d6-4244-a1fd-331ec530d8b9" InformativeScreenshot="89c17739415121cbd4e75a9cd29215f9.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Web Transfer Client' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
+                      <uix:TargetAnchorable BrowserURL="https://sftp012.successfactors.eu/#/outgoing" DesignTimeRectangle="262, 429, 24, 24" DesignTimeScaleFactor="1" ElementType="Icon" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='3' tag='MAT-ICON' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='MAT-ICON' class='mat-icon notranslate icon material-icons mat-icon-no-color ng-star-inserted' aaname='folder' check:innerText='folder' /&gt;" Guid="a873e796-5409-4c34-acb5-3d3ce18bbf09" InformativeScreenshot="5bbeb17ba099ca363e5f9f000bda1271.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Web Transfer Client' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
                         <uix:TargetAnchorable.Anchors>
                           <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                            <uix:Target DesignTimeRectangle="253, 629, 24, 24" ElementType="Icon" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='6' tag='MAT-ICON' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='MAT-ICON' class='mat-icon notranslate icon material-icons mat-icon-no-color ng-star-inserted' aaname='folder' check:innerText='folder' /&gt;" Guid="5ae9934c-e76a-4971-a29e-bb1e9d3c13aa" SearchSteps="FuzzySelector" />
+                            <uix:Target DesignTimeRectangle="286, 431, 104, 20" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl class='text' tableRow='3' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl class='text' type='' tag='SPAN' aaname='Beurteilungsdaten' check:innerText='Beurteilungsdaten' /&gt;" Guid="5b38e47f-cf39-4b4b-a0fa-d1973a3f182b" SearchSteps="FuzzySelector" />
                           </scg:List>
                         </uix:TargetAnchorable.Anchors>
                       </uix:TargetAnchorable>
@@ -226,27 +247,6 @@
                 </Sequence>
               </ui:CommentOut.Body>
             </ui:CommentOut>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="PROD: Auswahl Buerteilungsordner" sap:VirtualizedContainerService.HintSize="486,227" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5889d435-6dd6-443d-a2f2-10d0eda621af" Version="V3">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="https://sftp012.successfactors.eu/#/outgoing" DesignTimeRectangle="262, 429, 24, 24" DesignTimeScaleFactor="1" ElementType="Icon" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='3' tag='MAT-ICON' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='MAT-ICON' class='mat-icon notranslate icon material-icons mat-icon-no-color ng-star-inserted' aaname='folder' check:innerText='folder' /&gt;" Guid="a873e796-5409-4c34-acb5-3d3ce18bbf09" InformativeScreenshot="5bbeb17ba099ca363e5f9f000bda1271.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Web Transfer Client' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
-                  <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
-                      <uix:Target DesignTimeRectangle="286, 431, 104, 20" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl class='text' tableRow='3' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl class='text' type='' tag='SPAN' aaname='Beurteilungsdaten' check:innerText='Beurteilungsdaten' /&gt;" Guid="5b38e47f-cf39-4b4b-a0fa-d1973a3f182b" SearchSteps="FuzzySelector" />
-                    </scg:List>
-                  </uix:TargetAnchorable.Anchors>
-                </uix:TargetAnchorable>
-              </uix:NClick.Target>
-              <uix:NClick.VerifyOptions>
-                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                  <uix:VerifyExecutionOptions.Retry>
-                    <InArgument x:TypeArguments="x:Boolean" />
-                  </uix:VerifyExecutionOptions.Retry>
-                  <uix:VerifyExecutionOptions.Timeout>
-                    <InArgument x:TypeArguments="x:Double" />
-                  </uix:VerifyExecutionOptions.Timeout>
-                </uix:VerifyExecutionOptions>
-              </uix:NClick.VerifyOptions>
-            </uix:NClick>
             <uix:NGetText DisplayName="Get Text 'artikel'" sap:VirtualizedContainerService.HintSize="486,183" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="5889d435-6dd6-443d-a2f2-10d0eda621af" TextString="[str_JsonAnzahl]" Version="V3">
               <uix:NGetText.Target>
                 <uix:TargetAnchorable BrowserURL="https://sftp012.successfactors.eu/#/outgoing/Test_Beurteilungsdaten" DesignTimeRectangle="214, 349, 9, 20" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl class='ng-star-inserted' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='ng-star-inserted' tag='SPAN' type='' /&gt;" Guid="113f8b42-1e15-4293-942e-2ae078269e2d" InformativeScreenshot="ce921f885e551bf3c8055536ae46da0c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Web Transfer Client' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">

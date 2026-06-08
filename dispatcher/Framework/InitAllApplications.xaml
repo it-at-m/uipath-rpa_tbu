@@ -1,15 +1,11 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Initialize_Applications" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Initialize_Applications" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="io_Logfile_DateiGespeichert" Type="InOutArgument(x:String)" />
     <x:Property Name="io_Logfile_DateienTransffered" Type="InOutArgument(x:String)" />
     <x:Property Name="io_Logfile_DateienDispatchOrdner" Type="InOutArgument(x:String)" />
     <x:Property Name="io_bool_zipFileEmpty" Type="InOutArgument(x:Boolean)" />
-    <x:Property Name="in_ExceptionMessage" Type="InArgument(x:String)" />
   </x:Members>
-  <this:Initialize_Applications.in_ExceptionMessage>
-    <InArgument x:TypeArguments="x:String" />
-  </this:Initialize_Applications.in_ExceptionMessage>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
@@ -114,14 +110,14 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="965,3640" sap2010:WorkflowViewState.IdRef="Sequence_9">
+  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="1161,3595" sap2010:WorkflowViewState.IdRef="Sequence_9">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch sap2010:Annotation.AnnotationText="Der gesamte Dispatcher-prozess ist hier abgebildet. Die Aktivitäten sind alle im Try- Block. So soll gewährleistet werden, dass Exceptions per Mail an ein Postfach versendet werden." DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="524,3586" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch sap2010:Annotation.AnnotationText="Der gesamte Dispatcher-prozess ist hier abgebildet. Die Aktivitäten sind alle im Try- Block. So soll gewährleistet werden, dass Exceptions per Mail an ein Postfach versendet werden." DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="524,3541" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Variables>
         <Variable x:TypeArguments="x:Int32" Name="int_Json_Anzahl" />
       </TryCatch.Variables>
@@ -253,33 +249,28 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="522,535" sap2010:WorkflowViewState.IdRef="Sequence_11">
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="522,490" sap2010:WorkflowViewState.IdRef="Sequence_11">
               <Sequence.Variables>
-                <Variable x:TypeArguments="x:String" Name="str_systemExceptionMessage" />
+                <Variable x:TypeArguments="s:Exception" Name="exc_SystemException" />
               </Sequence.Variables>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Assign sap:VirtualizedContainerService.HintSize="488,175" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign sap:VirtualizedContainerService.HintSize="488,175" sap2010:WorkflowViewState.IdRef="Assign_2">
                 <Assign.To>
-                  <OutArgument x:TypeArguments="x:String">[str_systemExceptionMessage]</OutArgument>
+                  <OutArgument x:TypeArguments="s:Exception">[exc_SystemException]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
-                  <InArgument x:TypeArguments="x:String">[exception.Message.ToString]</InArgument>
+                  <InArgument x:TypeArguments="s:Exception">[exception]</InArgument>
                 </Assign.Value>
               </Assign>
-              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Im Fall einer Exception wird eine Mail an ein Postfach verschickt" DisplayName="E_Mail_System_Exception_InitAllApplication - Invoke Workflow File (Modules\E_Mail_System_Exception_InitAllApplication.xaml)" sap:VirtualizedContainerService.HintSize="488,252" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Modules\E_Mail_System_Exception_InitAllApplication.xaml">
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Webex_System_Exception_InitAllApplication - Invoke Workflow File (Modules\Webex_System_Exception_InitAllApplication.xaml)" sap:VirtualizedContainerService.HintSize="488,207" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Modules\Webex_System_Exception_InitAllApplication.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_ExceptionMessage">[str_systemExceptionMessage]</InArgument>
+                  <InArgument x:TypeArguments="s:Exception" x:Key="in_SystemException">[exc_SystemException]</InArgument>
                 </ui:InvokeWorkflowFile.Arguments>
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
               </ui:InvokeWorkflowFile>
               <Rethrow sap:VirtualizedContainerService.HintSize="488,48" sap2010:WorkflowViewState.IdRef="Rethrow_1" />
             </Sequence>
