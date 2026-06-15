@@ -110,14 +110,14 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="1019,3595" sap2010:WorkflowViewState.IdRef="Sequence_9">
+  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="1344,3652" sap2010:WorkflowViewState.IdRef="Sequence_9">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch sap2010:Annotation.AnnotationText="Der gesamte Dispatcher-prozess ist hier abgebildet. Die Aktivitäten sind alle im Try- Block. So soll gewährleistet werden, dass Exceptions per Mail an ein Postfach versendet werden." DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="524,3541" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch sap2010:Annotation.AnnotationText="Der gesamte Dispatcher-prozess ist hier abgebildet. Die Aktivitäten sind alle im Try- Block. So soll gewährleistet werden, dass Exceptions per Mail an ein Postfach versendet werden." DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="524,3598" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Variables>
         <Variable x:TypeArguments="x:Int32" Name="int_Json_Anzahl" />
       </TryCatch.Variables>
@@ -127,7 +127,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="522,2735" sap2010:WorkflowViewState.IdRef="Sequence_10">
+        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="522,2792" sap2010:WorkflowViewState.IdRef="Sequence_10">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -150,9 +150,9 @@
               <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
-          <If Condition="[int_Json_Anzahl &gt; 0]" sap:VirtualizedContainerService.HintSize="488,1798" sap2010:WorkflowViewState.IdRef="If_1">
+          <If Condition="[int_Json_Anzahl &gt; 0]" sap:VirtualizedContainerService.HintSize="488,1855" sap2010:WorkflowViewState.IdRef="If_1">
             <If.Then>
-              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="486,1433" sap2010:WorkflowViewState.IdRef="Sequence_14">
+              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="486,1490" sap2010:WorkflowViewState.IdRef="Sequence_14">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -194,9 +194,9 @@
                     </Sequence>
                   </If.Else>
                 </If>
-                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Steuert den Ordner auf dem FTP Client an, löscht die JSON-Dateien aus dem Ordner" DisplayName="FTPClientOrdner_leeren - Invoke Workflow File (Modules\FTPClientOrdner_leeren.xaml)" sap:VirtualizedContainerService.HintSize="452,252" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Modules\FTPClientOrdner_leeren.xaml">
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Steuert den Ordner auf dem FTP Client an, löscht die JSON-Dateien aus dem Ordner" DisplayName="FTPClientOrdner_leeren - Invoke Workflow File (Modules\FTPClientOrdner_leeren.xaml)" sap:VirtualizedContainerService.HintSize="452,309" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Modules\FTPClientOrdner_leeren.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">

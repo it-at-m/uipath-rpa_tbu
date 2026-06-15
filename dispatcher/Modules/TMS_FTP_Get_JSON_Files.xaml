@@ -133,7 +133,7 @@
       <AssemblyReference>Microsoft.Extensions.DependencyModel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="" DisplayName="TMS_FTP_Get_JSON_Files" sap:VirtualizedContainerService.HintSize="1592,8978" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="" DisplayName="TMS_FTP_Get_JSON_Files" sap:VirtualizedContainerService.HintSize="1225,10597" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_JsonDispatcherFolderPath" />
       <Variable x:TypeArguments="x:String" Name="str_ZipFile" />
@@ -197,13 +197,13 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <uix:NApplicationCard sap2010:Annotation.AnnotationText="Ein Browser, um die JSON-Dateien vom FTP-Server zu laden " AttachMode="ByInstance" DisplayName="Browser: Chrome" sap:VirtualizedContainerService.HintSize="700,7862" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" ScopeGuid="55f00944-7166-46c1-950a-69a9cca5a11a" Version="V2">
+    <uix:NApplicationCard sap2010:Annotation.AnnotationText="Ein Browser, um die JSON-Dateien vom FTP-Server zu laden " AttachMode="ByInstance" DisplayName="Browser: Chrome" sap:VirtualizedContainerService.HintSize="700,9481" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" ScopeGuid="55f00944-7166-46c1-950a-69a9cca5a11a" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Ausführen" sap:VirtualizedContainerService.HintSize="666,7581" sap2010:WorkflowViewState.IdRef="Sequence_35">
+          <Sequence DisplayName="Ausführen" sap:VirtualizedContainerService.HintSize="666,9200" sap2010:WorkflowViewState.IdRef="Sequence_35">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="bool_FileExist" />
               <Variable x:TypeArguments="si:FileInfo" Name="str_zipFileInfo" />
@@ -353,7 +353,7 @@
                 </Sequence>
               </If.Else>
             </If>
-            <Sequence sap2010:Annotation.AnnotationText="Zip Datei mit den Jsons wird vom Download- in den JSonDispatcher Order verschoben" DisplayName="Zip Datei verschieben" sap:VirtualizedContainerService.HintSize="632,940" sap2010:WorkflowViewState.IdRef="Sequence_40">
+            <Sequence sap2010:Annotation.AnnotationText="Zip Datei mit den Jsons wird vom Download- in den JSonDispatcher Order verschoben" DisplayName="Zip Datei verschieben" sap:VirtualizedContainerService.HintSize="632,2559" sap2010:WorkflowViewState.IdRef="Sequence_40">
               <Sequence.Variables>
                 <Variable x:TypeArguments="si:FileInfo" Name="fi_downloadFIle" />
               </Sequence.Variables>
@@ -363,46 +363,155 @@
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:GetLastDownloadedFile FileResource="{x:Null}" Timeout="{x:Null}" DisplayName="Wait for Download" DownloadFolder="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), &quot;Downloads&quot;)]" File="[fi_downloadFIle]" sap:VirtualizedContainerService.HintSize="484,615" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_1" IgnoreFiles="crdownload,tmp">
-                <ui:GetLastDownloadedFile.Body>
-                  <ActivityAction>
-                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,323" sap2010:WorkflowViewState.IdRef="Sequence_41">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="Der gesamte Ordner &quot;Beurteilungsdaten&quot; wird als Zip-Datei heruntergeladen." ClickType="Single" DisplayName="Button &quot;Herunterladen&quot; " sap:VirtualizedContainerService.HintSize="416,263" sap2010:WorkflowViewState.IdRef="NClick_13" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="55f00944-7166-46c1-950a-69a9cca5a11a" Version="V3">
-                        <uix:NClick.Target>
-                          <uix:TargetAnchorable BrowserURL="https://sftp012.successfactors.eu/#/outgoing" DesignTimeRectangle="263, 252, 24, 24" DesignTimeScaleFactor="1" ElementType="Icon" FullSelectorArgument="&lt;webctrl aaname='get_app' tag='MAT-ICON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='get_app' tag='MAT-ICON' type='' class='mat-icon notranslate button-icon material-icons mat-icon-no-color' check:innerText='get_app' /&gt;" Guid="eb8dc696-d32c-4271-b712-dd38c88b8246" InformativeScreenshot="db4059a6e55c94640987ba560d77b76b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Web Transfer Client' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
-                            <uix:TargetAnchorable.Anchors>
-                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                <uix:Target DesignTimeRectangle="287, 254, 85, 20" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Herunterladen' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Herunterladen' tag='SPAN' type='' class='mat-tooltip-trigger button-text' check:innerText='Herunterladen' /&gt;" Guid="5e6a9236-15ed-4d76-b5a6-053b9d8b205f" SearchSteps="FuzzySelector" />
-                              </scg:List>
-                            </uix:TargetAnchorable.Anchors>
-                          </uix:TargetAnchorable>
-                        </uix:NClick.Target>
-                        <uix:NClick.VerifyOptions>
-                          <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                            <uix:VerifyExecutionOptions.Retry>
-                              <InArgument x:TypeArguments="x:Boolean" />
-                            </uix:VerifyExecutionOptions.Retry>
-                            <uix:VerifyExecutionOptions.Timeout>
-                              <InArgument x:TypeArguments="x:Double" />
-                            </uix:VerifyExecutionOptions.Timeout>
-                          </uix:VerifyExecutionOptions>
-                        </uix:NClick.VerifyOptions>
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                      </uix:NClick>
-                    </Sequence>
-                  </ActivityAction>
-                </ui:GetLastDownloadedFile.Body>
-              </ui:GetLastDownloadedFile>
-              <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[str_JsonDispatcherFolderPath +str_ZipFile]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="484,186" sap2010:WorkflowViewState.IdRef="MoveFile_3" Path="[fi_downloadFIle.FullName]" />
+              <If Condition="[Environment.UserName.ToLower.StartsWith(&quot;dv.&quot;)]" sap:VirtualizedContainerService.HintSize="554,1471" sap2010:WorkflowViewState.IdRef="If_6">
+                <If.Then>
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="518,666" sap2010:WorkflowViewState.IdRef="Sequence_45">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:GetLastDownloadedFile FileResource="{x:Null}" Timeout="{x:Null}" DisplayName="Wait for Download" DownloadFolder="[&quot;\\svmp13fsrds.muenchen.de\rds-fslogix-p$\Profiles\&quot; &amp; Environment.UserName.ToLower() &amp; &quot;\VDI\UserData\Downloads&quot;]" File="[fi_downloadFIle]" sap:VirtualizedContainerService.HintSize="484,606" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_2" IgnoreFiles="crdownload,tmp">
+                      <ui:GetLastDownloadedFile.Body>
+                        <ActivityAction>
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,323" sap2010:WorkflowViewState.IdRef="Sequence_47">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="Der gesamte Ordner &quot;Beurteilungsdaten&quot; wird als Zip-Datei heruntergeladen." ClickType="Single" DisplayName="Button &quot;Herunterladen&quot; " sap:VirtualizedContainerService.HintSize="416,263" sap2010:WorkflowViewState.IdRef="NClick_21" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="55f00944-7166-46c1-950a-69a9cca5a11a" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable BrowserURL="https://sftp012.successfactors.eu/#/outgoing" DesignTimeRectangle="263, 252, 24, 24" DesignTimeScaleFactor="1" ElementType="Icon" FullSelectorArgument="&lt;webctrl aaname='get_app' tag='MAT-ICON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='get_app' tag='MAT-ICON' type='' class='mat-icon notranslate button-icon material-icons mat-icon-no-color' check:innerText='get_app' /&gt;" Guid="eb8dc696-d32c-4271-b712-dd38c88b8246" InformativeScreenshot="db4059a6e55c94640987ba560d77b76b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Web Transfer Client' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target DesignTimeRectangle="287, 254, 85, 20" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Herunterladen' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Herunterladen' tag='SPAN' type='' class='mat-tooltip-trigger button-text' check:innerText='Herunterladen' /&gt;" Guid="5e6a9236-15ed-4d76-b5a6-053b9d8b205f" SearchSteps="FuzzySelector" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NClick.Target>
+                              <uix:NClick.VerifyOptions>
+                                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                  <uix:VerifyExecutionOptions.Retry>
+                                    <InArgument x:TypeArguments="x:Boolean" />
+                                  </uix:VerifyExecutionOptions.Retry>
+                                  <uix:VerifyExecutionOptions.Timeout>
+                                    <InArgument x:TypeArguments="x:Double" />
+                                  </uix:VerifyExecutionOptions.Timeout>
+                                </uix:VerifyExecutionOptions>
+                              </uix:NClick.VerifyOptions>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NClick>
+                          </Sequence>
+                        </ActivityAction>
+                      </ui:GetLastDownloadedFile.Body>
+                    </ui:GetLastDownloadedFile>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="518,666" sap2010:WorkflowViewState.IdRef="Sequence_46">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:GetLastDownloadedFile FileResource="{x:Null}" Timeout="{x:Null}" DisplayName="Wait for Download" DownloadFolder="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), &quot;Downloads&quot;)]" File="[fi_downloadFIle]" sap:VirtualizedContainerService.HintSize="484,606" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_3" IgnoreFiles="crdownload,tmp">
+                      <ui:GetLastDownloadedFile.Body>
+                        <ActivityAction>
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,323" sap2010:WorkflowViewState.IdRef="Sequence_48">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="Der gesamte Ordner &quot;Beurteilungsdaten&quot; wird als Zip-Datei heruntergeladen." ClickType="Single" DisplayName="Button &quot;Herunterladen&quot; " sap:VirtualizedContainerService.HintSize="416,263" sap2010:WorkflowViewState.IdRef="NClick_22" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="55f00944-7166-46c1-950a-69a9cca5a11a" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable BrowserURL="https://sftp012.successfactors.eu/#/outgoing" DesignTimeRectangle="263, 252, 24, 24" DesignTimeScaleFactor="1" ElementType="Icon" FullSelectorArgument="&lt;webctrl aaname='get_app' tag='MAT-ICON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='get_app' tag='MAT-ICON' type='' class='mat-icon notranslate button-icon material-icons mat-icon-no-color' check:innerText='get_app' /&gt;" Guid="eb8dc696-d32c-4271-b712-dd38c88b8246" InformativeScreenshot="db4059a6e55c94640987ba560d77b76b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Web Transfer Client' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target DesignTimeRectangle="287, 254, 85, 20" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Herunterladen' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Herunterladen' tag='SPAN' type='' class='mat-tooltip-trigger button-text' check:innerText='Herunterladen' /&gt;" Guid="5e6a9236-15ed-4d76-b5a6-053b9d8b205f" SearchSteps="FuzzySelector" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NClick.Target>
+                              <uix:NClick.VerifyOptions>
+                                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                  <uix:VerifyExecutionOptions.Retry>
+                                    <InArgument x:TypeArguments="x:Boolean" />
+                                  </uix:VerifyExecutionOptions.Retry>
+                                  <uix:VerifyExecutionOptions.Timeout>
+                                    <InArgument x:TypeArguments="x:Double" />
+                                  </uix:VerifyExecutionOptions.Timeout>
+                                </uix:VerifyExecutionOptions>
+                              </uix:NClick.VerifyOptions>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NClick>
+                          </Sequence>
+                        </ActivityAction>
+                      </ui:GetLastDownloadedFile.Body>
+                    </ui:GetLastDownloadedFile>
+                  </Sequence>
+                </If.Else>
+              </If>
+              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="554,777" sap2010:WorkflowViewState.IdRef="CommentOut_7">
+                <ui:CommentOut.Body>
+                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="518,666" sap2010:WorkflowViewState.IdRef="Sequence_49">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:GetLastDownloadedFile FileResource="{x:Null}" Timeout="{x:Null}" DisplayName="Wait for Download" DownloadFolder="['System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), &quot;Downloads&quot;)&#xD;&#xA;If Environment.UserName.ToLower().StartsWith(&quot;dv.&quot;) Then&#xD;&#xA;    folderPath = &quot;\\svmp13fsrds.muenchen.de\rds-fslogix-p$\Profiles\&quot; &amp; Environment.UserName.ToLower() &amp; &quot;\VDI\UserData\Downloads&quot;&#xD;&#xA;Else&#xD;&#xA;    folderPath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), &quot;Downloads&quot;)&#xD;&#xA;End If]" File="[fi_downloadFIle]" sap:VirtualizedContainerService.HintSize="484,606" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_1" IgnoreFiles="crdownload,tmp">
+                      <ui:GetLastDownloadedFile.Body>
+                        <ActivityAction>
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,323" sap2010:WorkflowViewState.IdRef="Sequence_41">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="Der gesamte Ordner &quot;Beurteilungsdaten&quot; wird als Zip-Datei heruntergeladen." ClickType="Single" DisplayName="Button &quot;Herunterladen&quot; " sap:VirtualizedContainerService.HintSize="416,263" sap2010:WorkflowViewState.IdRef="NClick_13" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="55f00944-7166-46c1-950a-69a9cca5a11a" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable BrowserURL="https://sftp012.successfactors.eu/#/outgoing" DesignTimeRectangle="263, 252, 24, 24" DesignTimeScaleFactor="1" ElementType="Icon" FullSelectorArgument="&lt;webctrl aaname='get_app' tag='MAT-ICON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='get_app' tag='MAT-ICON' type='' class='mat-icon notranslate button-icon material-icons mat-icon-no-color' check:innerText='get_app' /&gt;" Guid="eb8dc696-d32c-4271-b712-dd38c88b8246" InformativeScreenshot="db4059a6e55c94640987ba560d77b76b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Web Transfer Client' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target DesignTimeRectangle="287, 254, 85, 20" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Herunterladen' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Herunterladen' tag='SPAN' type='' class='mat-tooltip-trigger button-text' check:innerText='Herunterladen' /&gt;" Guid="5e6a9236-15ed-4d76-b5a6-053b9d8b205f" SearchSteps="FuzzySelector" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NClick.Target>
+                              <uix:NClick.VerifyOptions>
+                                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                  <uix:VerifyExecutionOptions.Retry>
+                                    <InArgument x:TypeArguments="x:Boolean" />
+                                  </uix:VerifyExecutionOptions.Retry>
+                                  <uix:VerifyExecutionOptions.Timeout>
+                                    <InArgument x:TypeArguments="x:Double" />
+                                  </uix:VerifyExecutionOptions.Timeout>
+                                </uix:VerifyExecutionOptions>
+                              </uix:NClick.VerifyOptions>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NClick>
+                          </Sequence>
+                        </ActivityAction>
+                      </ui:GetLastDownloadedFile.Body>
+                    </ui:GetLastDownloadedFile>
+                  </Sequence>
+                </ui:CommentOut.Body>
+              </ui:CommentOut>
+              <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[str_JsonDispatcherFolderPath +str_ZipFile]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="554,186" sap2010:WorkflowViewState.IdRef="MoveFile_3" Path="[fi_downloadFIle.FullName]" />
             </Sequence>
             <Delay sap2010:Annotation.AnnotationText="Verzögerung, um die Datein vollständig zu laden." Duration="00:00:05" sap:VirtualizedContainerService.HintSize="632,154" sap2010:WorkflowViewState.IdRef="Delay_2">
               <sap:WorkflowViewStateService.ViewState>

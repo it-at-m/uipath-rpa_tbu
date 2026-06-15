@@ -1,4 +1,11 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="FTPClientOrdner_leeren" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="FTPClientOrdner_leeren_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="FTPClientOrdner_leeren" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>FTPClientOrdner_leeren_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -36,6 +43,7 @@
       <x:String>UiPath.Platform.SyncObjects</x:String>
       <x:String>UiPath.UIAutomationNext.Contracts</x:String>
       <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Reflection</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -84,30 +92,64 @@
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>Microsoft.Extensions.DependencyModel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="FTPClientOrdner_leeren" sap:VirtualizedContainerService.HintSize="1019,1629" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="FTPClientOrdner_leeren" sap:VirtualizedContainerService.HintSize="1344,1883" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="str_JsonDispatcherFolderPath" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="554,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;FTP Client Folder removing started&quot;]" />
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Web Transfer Client" sap:VirtualizedContainerService.HintSize="554,1431" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="da19a439-0d14-4f31-963d-e7846a3e8bef" Version="V2">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="520,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;FTP Client Folder removing started&quot;]" />
+    <Assign sap:VirtualizedContainerService.HintSize="520,175" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[str_JsonDispatcherFolderPath]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[in_Config("rpa005_JsonDispatcherFolderPath").ToString]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Web Transfer Client" sap:VirtualizedContainerService.HintSize="520,1510" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="da19a439-0d14-4f31-963d-e7846a3e8bef" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="520,1190" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,1269" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,308" sap2010:WorkflowViewState.IdRef="CommentOut_8">
-              <ui:CommentOut.Body>
-                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,197" sap2010:WorkflowViewState.IdRef="Sequence_10">
+            <If Condition="[str_JsonDispatcherFolderPath.Contains(&quot;Test&quot;)]" sap:VirtualizedContainerService.HintSize="452,533" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,197" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NGoToUrl sap2010:Annotation.AnnotationText="Beim Testen Ordnerauswahl ändern!" DelayAfter="20" DisplayName="DEV: Zu löschenden Ordner öffnen" sap:VirtualizedContainerService.HintSize="416,137" sap2010:WorkflowViewState.IdRef="NGoToUrl_10" Url="https://sftp012.successfactors.eu/#/outgoing/Test_Beurteilungsdaten" Version="V3">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NGoToUrl>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,197" sap2010:WorkflowViewState.IdRef="Sequence_12">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -121,16 +163,9 @@
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NGoToUrl>
                 </Sequence>
-              </ui:CommentOut.Body>
-            </ui:CommentOut>
-            <uix:NGoToUrl sap2010:Annotation.AnnotationText="Beim Testen Ordnerauswahl ändern!" DelayAfter="20" DisplayName="DEV: Zu löschenden Ordner öffnen" sap:VirtualizedContainerService.HintSize="486,146" sap2010:WorkflowViewState.IdRef="NGoToUrl_10" Url="https://sftp012.successfactors.eu/#/outgoing/Test_Beurteilungsdaten" Version="V3">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </uix:NGoToUrl>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Auswahl Häckchen, um alle auszuwählen" sap:VirtualizedContainerService.HintSize="486,227" sap2010:WorkflowViewState.IdRef="NClick_10" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="da19a439-0d14-4f31-963d-e7846a3e8bef" Version="V3">
+              </If.Else>
+            </If>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Auswahl Häckchen, um alle auszuwählen" sap:VirtualizedContainerService.HintSize="452,227" sap2010:WorkflowViewState.IdRef="NClick_10" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="da19a439-0d14-4f31-963d-e7846a3e8bef" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://sftp012.successfactors.eu/#/outgoing/Beurteilungsdaten" DesignTimeRectangle="234, 332, 16, 16" DesignTimeScaleFactor="1" ElementType="CheckBox" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='SPAN' class='mat-checkbox-inner-container mat-checkbox-inner-container-no-side-margin' aaname='' /&gt;" Guid="813febe0-65a6-4002-b5e8-297d060be9ba" InformativeScreenshot="9a81ca0d20648846e2179b6f84595e03.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Web Transfer Client' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -151,7 +186,7 @@
                 </uix:VerifyExecutionOptions>
               </uix:NClick.VerifyOptions>
             </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Löschen'" sap:VirtualizedContainerService.HintSize="486,227" sap2010:WorkflowViewState.IdRef="NClick_11" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="da19a439-0d14-4f31-963d-e7846a3e8bef" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Löschen'" sap:VirtualizedContainerService.HintSize="452,227" sap2010:WorkflowViewState.IdRef="NClick_11" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="da19a439-0d14-4f31-963d-e7846a3e8bef" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://sftp012.successfactors.eu/#/outgoing/Beurteilungsdaten" DesignTimeRectangle="488, 252, 24, 24" DesignTimeScaleFactor="1" ElementType="Icon" FullSelectorArgument="&lt;webctrl aaname='delete' tag='MAT-ICON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='delete' tag='MAT-ICON' type='' class='mat-icon notranslate button-icon material-icons mat-icon-no-color' check:innerText='delete' /&gt;" Guid="1b73b269-83c8-4871-9718-0b49bf19897e" InformativeScreenshot="468c3ffff723fa045121218ebacf5e44.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Web Transfer Client' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -172,7 +207,7 @@
                 </uix:VerifyExecutionOptions>
               </uix:NClick.VerifyOptions>
             </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Bestätigen'" sap:VirtualizedContainerService.HintSize="486,220" sap2010:WorkflowViewState.IdRef="NClick_12" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="da19a439-0d14-4f31-963d-e7846a3e8bef" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Bestätigen'" sap:VirtualizedContainerService.HintSize="452,220" sap2010:WorkflowViewState.IdRef="NClick_12" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="da19a439-0d14-4f31-963d-e7846a3e8bef" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://sftp012.successfactors.eu/#/outgoing/Beurteilungsdaten" DesignTimeRectangle="763, 592, 90, 36" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='Bestätigen' parentid='mat-dialog-0' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Bestätigen' parentid='mat-dialog-0' tag='BUTTON' type='' class='mat-focus-indicator confirm-button mat-button mat-button-base cdk-focused cdk-program-focused' check:innerText='Bestätigen' /&gt;" Guid="1d8a188d-304a-48f0-a0ae-0c09c880d8c9" InformativeScreenshot="d78e96cb5f670c2e55f008c0abe0576a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Web Transfer Client' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
