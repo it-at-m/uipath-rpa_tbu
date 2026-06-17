@@ -111,7 +111,7 @@
       <AssemblyReference>Microsoft.Extensions.DependencyModel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="check_if_jsons_exists" sap:VirtualizedContainerService.HintSize="1019,2937" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="check_if_jsons_exists" sap:VirtualizedContainerService.HintSize="1344,3044" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_JsonAnzahl" />
       <Variable x:TypeArguments="x:String" Name="str_JsonDispatcherFolderPath" />
@@ -122,21 +122,26 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="520,175" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;JSON checker started&quot;]" />
-    <Assign sap:VirtualizedContainerService.HintSize="520,175" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <Assign sap2010:Annotation.AnnotationText="Abfrage Dev-/Prod Ordnerstruktur" sap:VirtualizedContainerService.HintSize="520,206" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[str_JsonDispatcherFolderPath]</OutArgument>
       </Assign.To>
       <Assign.Value>
         <InArgument x:TypeArguments="x:String">[in_Config("rpa005_JsonDispatcherFolderPath").ToString]</InArgument>
       </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Web Transfer Client" sap:VirtualizedContainerService.HintSize="520,2048" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="5889d435-6dd6-443d-a2f2-10d0eda621af" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Web Transfer Client" sap:VirtualizedContainerService.HintSize="520,2124" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="5889d435-6dd6-443d-a2f2-10d0eda621af" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,1798" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,1874" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -206,7 +211,12 @@
               </uix:NClick.VerifyOptions>
             </uix:NClick>
             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,177" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[str_JsonDispatcherFolderPath]" />
-            <If Condition="[str_JsonDispatcherFolderPath.Contains(&quot;Test&quot;)]" sap:VirtualizedContainerService.HintSize="452,695" sap2010:WorkflowViewState.IdRef="If_1">
+            <If sap2010:Annotation.AnnotationText="Dev-/Prod ORdnerwahl nach dem DispatcherFolder Path" Condition="[str_JsonDispatcherFolderPath.Contains(&quot;Test&quot;)]" sap:VirtualizedContainerService.HintSize="452,726" sap2010:WorkflowViewState.IdRef="If_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
               <If.Then>
                 <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,278" sap2010:WorkflowViewState.IdRef="Sequence_9">
                   <sap:WorkflowViewStateService.ViewState>
@@ -244,7 +254,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="PROD: Auswahl Buerteilungsordner" sap:VirtualizedContainerService.HintSize="416,218" sap2010:WorkflowViewState.IdRef="NClick_13" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5889d435-6dd6-443d-a2f2-10d0eda621af" Version="V3">
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="PROD: Auswahl Beurteilungsordner" sap:VirtualizedContainerService.HintSize="416,218" sap2010:WorkflowViewState.IdRef="NClick_13" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5889d435-6dd6-443d-a2f2-10d0eda621af" Version="V3">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://sftp012.successfactors.eu/#/outgoing" DesignTimeRectangle="262, 429, 24, 24" DesignTimeScaleFactor="1" ElementType="Icon" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='3' tag='MAT-ICON' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='MAT-ICON' class='mat-icon notranslate icon material-icons mat-icon-no-color ng-star-inserted' aaname='folder' check:innerText='folder' /&gt;" Guid="a873e796-5409-4c34-acb5-3d3ce18bbf09" InformativeScreenshot="5bbeb17ba099ca363e5f9f000bda1271.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Web Transfer Client' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
                         <uix:TargetAnchorable.Anchors>
@@ -268,7 +278,7 @@
                 </Sequence>
               </If.Else>
             </If>
-            <uix:NGetText DisplayName="Get Text 'artikel'" sap:VirtualizedContainerService.HintSize="452,183" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="5889d435-6dd6-443d-a2f2-10d0eda621af" TextString="[str_JsonAnzahl]" Version="V3">
+            <uix:NGetText sap2010:Annotation.AnnotationText="Liest aus, wie viele Jsons im FTP Client Ordner liegen" DisplayName="Get Text &quot;Artikel&quot;" sap:VirtualizedContainerService.HintSize="452,228" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="5889d435-6dd6-443d-a2f2-10d0eda621af" TextString="[str_JsonAnzahl]" Version="V3">
               <uix:NGetText.Target>
                 <uix:TargetAnchorable BrowserURL="https://sftp012.successfactors.eu/#/outgoing/Test_Beurteilungsdaten" DesignTimeRectangle="214, 349, 9, 20" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl class='ng-star-inserted' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='ng-star-inserted' tag='SPAN' type='' /&gt;" Guid="113f8b42-1e15-4293-942e-2ae078269e2d" InformativeScreenshot="ce921f885e551bf3c8055536ae46da0c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Web Transfer Client' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -278,6 +288,11 @@
                   </uix:TargetAnchorable.Anchors>
                 </uix:TargetAnchorable>
               </uix:NGetText.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </uix:NGetText>
           </Sequence>
         </ActivityAction>
@@ -294,7 +309,7 @@
         <InArgument x:TypeArguments="x:Int32">[CInt(str_JsonAnzahl)]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[str_JsonAnzahl + &quot;  JSON-Dateien im Ordner vorhanden&quot;]" />
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,166" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;JSON checker finished&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="520,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[str_JsonAnzahl + &quot;  JSON-Dateien im Ordner vorhanden&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="520,166" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;JSON checker finished&quot;]" />
   </Sequence>
 </Activity>
