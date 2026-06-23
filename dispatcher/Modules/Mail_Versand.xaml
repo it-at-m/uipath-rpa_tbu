@@ -102,7 +102,7 @@
       <AssemblyReference>NPOI.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Mail_Versand" sap:VirtualizedContainerService.HintSize="1138,1424" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Mail_Versand" sap:VirtualizedContainerService.HintSize="889,1424" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_por_Bot_UserId" />
       <Variable x:TypeArguments="ss:SecureString" Name="secstr_por_Bot_Password" />
@@ -214,7 +214,7 @@ Ihr IT.TMS/Paul@-Roboter
         </Sequence>
       </If.Else>
     </If>
-    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" ResourceAttachmentList="{x:Null}" ResourceAttachments="{x:Null}" Result="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" sap2010:Annotation.AnnotationText="E-mail wird nach dem Durchlauf des Dispatchers versand. Empfänger ist der Fachbereich, der sich fachlich um den Prozess kümmert." AttachmentInputMode="Existing" Body="[str_Mail_body]" DisplayName="Mailversand an ein Gruppenpostfach" Email="[str_por_Bot_UserId]" EnableSSL="True" From="[str_Bot_Email_Address]" sap:VirtualizedContainerService.HintSize="478,331" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="False" Port="[int_email_Port]" SecureConnection="None" SecurePassword="[secstr_por_Bot_Password]" Server="[str_smtpServer]" Subject="Status Bot: TMS/Paul@Übertragung" To="[str_EmailGroupMailbox]">
+    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" ResourceAttachmentList="{x:Null}" ResourceAttachments="{x:Null}" Result="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" sap2010:Annotation.AnnotationText="E-mail wird nach dem Durchlauf des Dispatchers versand. Empfänger ist der Fachbereich, der sich fachlich um den Prozess kümmert." AttachmentInputMode="Existing" Body="[str_Mail_body]" DisplayName="Mailversand an ein Gruppenpostfach" Email="[str_por_Bot_UserId]" EnableSSL="True" From="[str_Bot_Email_Address]" sap:VirtualizedContainerService.HintSize="478,331" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="False" Port="[int_email_Port]" SecureConnection="StartTlsWhenAvailable" SecurePassword="[secstr_por_Bot_Password]" Server="[str_smtpServer]" Subject="Status Bot: TMS/Paul@Übertragung" To="[str_EmailGroupMailbox]">
       <ui:SendMail.AttachmentsBackup>
         <usau:BackupSlot x:TypeArguments="umame:AttachmentInputMode" StoredValue="Existing">
           <usau:BackupSlot.BackupValues>
