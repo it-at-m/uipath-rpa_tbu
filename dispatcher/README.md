@@ -11,7 +11,6 @@
 * Gets transaction data from Orchestrator queue and updates back status
 * Takes screenshots in case of system exceptions
 
-
 ### How It Works ###
 
 1. **INITIALIZE PROCESS**
