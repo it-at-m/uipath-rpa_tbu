@@ -105,13 +105,13 @@
       <AssemblyReference>System.Collections</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SAP_Logout" sap:VirtualizedContainerService.HintSize="2602,2582" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SAP_Logout" sap:VirtualizedContainerService.HintSize="1092,2542" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap:VirtualizedContainerService.HintSize="1092,2559" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence sap:VirtualizedContainerService.HintSize="1092,2519" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Int32" Name="int_initialCounter" />
         <Variable x:TypeArguments="x:Boolean" Name="bool_logoutDone" />
@@ -145,21 +145,21 @@
           </scg:List>
         </ui:MultipleAssign.AssignOperations>
       </ui:MultipleAssign>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: C31(1)/300 Personalstammdaten anzeigen" sap:VirtualizedContainerService.HintSize="1058,2121" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="836d19f4-de8e-47b0-8ec1-6a37108f5bfb" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: C31(1)/300 Personalstammdaten anzeigen" sap:VirtualizedContainerService.HintSize="1058,2081" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="836d19f4-de8e-47b0-8ec1-6a37108f5bfb" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Ausführen" sap:VirtualizedContainerService.HintSize="1024,1805" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <Sequence DisplayName="Ausführen" sap:VirtualizedContainerService.HintSize="1024,1765" sap2010:WorkflowViewState.IdRef="Sequence_6">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Beenden Button wird gedrückt, bis das Abmeldefenster von SAP erscheint, danach wird die SAP GUI beendet. Dabei läuft ein Zähler mit, , sollte der SAP nicht beendet werden können, wird ein Kill Process ausgeführt." Condition="[int_initialCounter &lt;= 4 And Not(bool_logoutDone)]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="990,1406" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+              <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Beenden Button wird gedrückt, bis das Abmeldefenster von SAP erscheint, danach wird die SAP GUI beendet. Dabei läuft ein Zähler mit, , sollte der SAP nicht beendet werden können, wird ein Kill Process ausgeführt." Condition="[int_initialCounter &lt;= 4 And Not(bool_logoutDone)]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="990,1366" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
                 <ui:InterruptibleDoWhile.Body>
-                  <Sequence DisplayName="Text" sap:VirtualizedContainerService.HintSize="988,1230" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <Sequence DisplayName="Text" sap:VirtualizedContainerService.HintSize="988,1190" sap2010:WorkflowViewState.IdRef="Sequence_5">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -197,7 +197,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ucas:ClickToolbarButton>
-                    <uix:NCheckState DisplayName="Check App State 'Favoriten'" sap:VirtualizedContainerService.HintSize="954,966" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="836d19f4-de8e-47b0-8ec1-6a37108f5bfb" Version="V3">
+                    <uix:NCheckState DisplayName="Check App State 'Favoriten'" sap:VirtualizedContainerService.HintSize="954,926" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="836d19f4-de8e-47b0-8ec1-6a37108f5bfb" Version="V3">
                       <uix:NCheckState.IfExists>
                         <Sequence DisplayName="Ziel wird angezeigt" sap:VirtualizedContainerService.HintSize="450,684" sap2010:WorkflowViewState.IdRef="Sequence_3">
                           <sap:WorkflowViewStateService.ViewState>
@@ -292,7 +292,7 @@
           </ActivityAction>
         </uix:NApplicationCard.Body>
         <uix:NApplicationCard.TargetApp>
-          <uix:TargetApp Area="320, 36, 1262, 978" FilePath="C:\Program Files (x86)\SAP\FrontEnd\SAPGUI\saplogon.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGwSURBVFhH7ZPNSgJRGIZn3TJaj0HtRLqAsqspMqxNizatKoLKn6wgAltkdQFtoijLmYXibxIZEtEmZwZGLVPTQNOvGT2jR8x0HNHNPPBu533PM+cQKioqAwcAhoWMDChDxN3zZ2Tl+o3pZ1adMeaF/w6XSqAl9mkuQVrvoV8Zs4Vhh+Zi2fzPZOUX9HPAuFBupth4OofKRZoHhHoQ/HvViOUWiuX4dGEaVVeRBmgsIZg5ewDDaUBR5k4CoDfdArntrZWL2q00ywjap1BtHWnAqNkPiVReuJjKcAWjMLHsAHLLUys30yyf+sK04+AD4h/dDyiXy0AFnkC7eADkBiWUh6raaZaLZwp6VNdM44Ac+pw8xPIb7yPoFvZQeRvtOL0Y4PJHQGfcBXLNWTm5pP09W/y/XKRhgMw7IJ7c5Re0z9tAsy5cvLp2NpEpttaOIw3QmAMw63CD8egKjPbLjmI4vADdkr1WLp5cKG+vHUcaUInJB+SmW14qz62uPdmJdpyGAV0GaWdkl4soHYC0s7K04ygZIGnv+ML9he81Qx97+Gg3OQ8ngx09NRUVFZWWEMQvcmDfp4NQBhkAAAAASUVORK5CYII=" InformativeScreenshot="a83d9453adbfc4fc0139ed830c6003a2.png" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='C31(1)/300 SAP Easy Access  -  Benutzermenü für RPA-BOT-TMS' /&gt;" Title="SAP Logon 800" />
+          <uix:TargetApp Area="320, 36, 1262, 978" FilePath="C:\Program Files\SAP\FrontEnd\SAPGUI\saplogon.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGwSURBVFhH7ZPNSgJRGIZn3TJaj0HtRLqAsqspMqxNizatKoLKn6wgAltkdQFtoijLmYXibxIZEtEmZwZGLVPTQNOvGT2jR8x0HNHNPPBu533PM+cQKioqAwcAhoWMDChDxN3zZ2Tl+o3pZ1adMeaF/w6XSqAl9mkuQVrvoV8Zs4Vhh+Zi2fzPZOUX9HPAuFBupth4OofKRZoHhHoQ/HvViOUWiuX4dGEaVVeRBmgsIZg5ewDDaUBR5k4CoDfdArntrZWL2q00ywjap1BtHWnAqNkPiVReuJjKcAWjMLHsAHLLUys30yyf+sK04+AD4h/dDyiXy0AFnkC7eADkBiWUh6raaZaLZwp6VNdM44Ac+pw8xPIb7yPoFvZQeRvtOL0Y4PJHQGfcBXLNWTm5pP09W/y/XKRhgMw7IJ7c5Re0z9tAsy5cvLp2NpEpttaOIw3QmAMw63CD8egKjPbLjmI4vADdkr1WLp5cKG+vHUcaUInJB+SmW14qz62uPdmJdpyGAV0GaWdkl4soHYC0s7K04ygZIGnv+ML9he81Qx97+Gg3OQ8ngx09NRUVFZWWEMQvcmDfp4NQBhkAAAAASUVORK5CYII=" InformativeScreenshot="a83d9453adbfc4fc0139ed830c6003a2.png" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='C31(1)/300 SAP Easy Access  -  Benutzermenü für RPA-BOT-TMS' /&gt;" Title="SAP Logon 800" />
         </uix:NApplicationCard.TargetApp>
       </uix:NApplicationCard>
     </Sequence>
