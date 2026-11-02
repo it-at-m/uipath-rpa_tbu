@@ -7,3 +7,6 @@
 .tmh/
 .variations/
 Exceptions_Screenshots
+
+# Temporäre UIPath Dateien 
+~*.xaml

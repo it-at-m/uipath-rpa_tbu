@@ -106,7 +106,7 @@
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SAP_Call_Transaction" sap:VirtualizedContainerService.HintSize="2602,2561" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SAP_Call_Transaction" sap:VirtualizedContainerService.HintSize="1630,2561" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -275,7 +275,7 @@
           </ActivityAction>
         </uix:NApplicationCard.Body>
         <uix:NApplicationCard.TargetApp>
-          <uix:TargetApp Area="366, 22, 1262, 978" FilePath="C:\Program Files (x86)\SAP\FrontEnd\SAPGUI\saplogon.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGwSURBVFhH7ZPNSgJRGIZn3TJaj0HtRLqAsqspMqxNizatKoLKn6wgAltkdQFtoijLmYXibxIZEtEmZwZGLVPTQNOvGT2jR8x0HNHNPPBu533PM+cQKioqAwcAhoWMDChDxN3zZ2Tl+o3pZ1adMeaF/w6XSqAl9mkuQVrvoV8Zs4Vhh+Zi2fzPZOUX9HPAuFBupth4OofKRZoHhHoQ/HvViOUWiuX4dGEaVVeRBmgsIZg5ewDDaUBR5k4CoDfdArntrZWL2q00ywjap1BtHWnAqNkPiVReuJjKcAWjMLHsAHLLUys30yyf+sK04+AD4h/dDyiXy0AFnkC7eADkBiWUh6raaZaLZwp6VNdM44Ac+pw8xPIb7yPoFvZQeRvtOL0Y4PJHQGfcBXLNWTm5pP09W/y/XKRhgMw7IJ7c5Re0z9tAsy5cvLp2NpEpttaOIw3QmAMw63CD8egKjPbLjmI4vADdkr1WLp5cKG+vHUcaUInJB+SmW14qz62uPdmJdpyGAV0GaWdkl4soHYC0s7K04ygZIGnv+ML9he81Qx97+Gg3OQ8ngx09NRUVFZWWEMQvcmDfp4NQBhkAAAAASUVORK5CYII=" InformativeScreenshot="0a96f1f80c512fd9b4672626ed930b31.png" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='C31(1)/300 Personalstammdaten pflegen' /&gt;" Title="C31(1)/300 Personalstammdaten pflegen" />
+          <uix:TargetApp Area="366, 22, 1262, 978" FilePath="C:\Program Files\SAP\FrontEnd\SAPGUI\saplogon.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGwSURBVFhH7ZPNSgJRGIZn3TJaj0HtRLqAsqspMqxNizatKoLKn6wgAltkdQFtoijLmYXibxIZEtEmZwZGLVPTQNOvGT2jR8x0HNHNPPBu533PM+cQKioqAwcAhoWMDChDxN3zZ2Tl+o3pZ1adMeaF/w6XSqAl9mkuQVrvoV8Zs4Vhh+Zi2fzPZOUX9HPAuFBupth4OofKRZoHhHoQ/HvViOUWiuX4dGEaVVeRBmgsIZg5ewDDaUBR5k4CoDfdArntrZWL2q00ywjap1BtHWnAqNkPiVReuJjKcAWjMLHsAHLLUys30yyf+sK04+AD4h/dDyiXy0AFnkC7eADkBiWUh6raaZaLZwp6VNdM44Ac+pw8xPIb7yPoFvZQeRvtOL0Y4PJHQGfcBXLNWTm5pP09W/y/XKRhgMw7IJ7c5Re0z9tAsy5cvLp2NpEpttaOIw3QmAMw63CD8egKjPbLjmI4vADdkr1WLp5cKG+vHUcaUInJB+SmW14qz62uPdmJdpyGAV0GaWdkl4soHYC0s7K04ygZIGnv+ML9he81Qx97+Gg3OQ8ngx09NRUVFZWWEMQvcmDfp4NQBhkAAAAASUVORK5CYII=" InformativeScreenshot="0a96f1f80c512fd9b4672626ed930b31.png" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='C31(1)/300 Personalstammdaten pflegen' /&gt;" Title="C31(1)/300 Personalstammdaten pflegen" />
         </uix:NApplicationCard.TargetApp>
       </uix:NApplicationCard>
       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1596,166" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;SAP Call Transaction finished&quot;]" />
